@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice_layer" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice_layer" xmlns:intf="http://webservice_layer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice_layer" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="createCustomer">
+    <complexType>
+     <sequence>
+      <element name="cust" type="impl:Customer"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Customer">
+    <sequence>
+     <element name="address" nillable="true" type="xsd:string"/>
+     <element name="companyName" nillable="true" type="xsd:string"/>
+     <element name="cvr" type="xsd:int"/>
+     <element name="firstName" nillable="true" type="xsd:string"/>
+     <element name="id" type="xsd:int"/>
+     <element name="lastName" nillable="true" type="xsd:string"/>
+     <element name="telefone" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="createCustomerResponse">
+    <complexType>
+     <sequence>
+      <element name="createCustomerReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findCustomer">
+    <complexType>
+     <sequence>
+      <element name="customerNo" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findCustomerResponse">
+    <complexType>
+     <sequence>
+      <element name="findCustomerReturn" type="impl:Customer"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteCustomer">
+    <complexType>
+     <sequence>
+      <element name="cust" type="impl:Customer"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteCustomerResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteCustomerReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateCustomer">
+    <complexType>
+     <sequence>
+      <element name="cust" type="impl:Customer"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateCustomerResponse">
+    <complexType>
+     <sequence>
+      <element name="updateCustomerReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findCustomerArray">
+    <complexType/>
+   </element>
+   <element name="findCustomerArrayResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="findCustomerArrayReturn" type="impl:Customer"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="findCustomerArrayRequest">
+
+      <wsdl:part element="impl:findCustomerArray" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createCustomerRequest">
+
+      <wsdl:part element="impl:createCustomer" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteCustomerRequest">
+
+      <wsdl:part element="impl:deleteCustomer" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateCustomerRequest">
+
+      <wsdl:part element="impl:updateCustomer" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateCustomerResponse">
+
+      <wsdl:part element="impl:updateCustomerResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findCustomerRequest">
+
+      <wsdl:part element="impl:findCustomer" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteCustomerResponse">
+
+      <wsdl:part element="impl:deleteCustomerResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findCustomerResponse">
+
+      <wsdl:part element="impl:findCustomerResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findCustomerArrayResponse">
+
+      <wsdl:part element="impl:findCustomerArrayResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createCustomerResponse">
+
+      <wsdl:part element="impl:createCustomerResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CustomerWebservice">
+
+      <wsdl:operation name="createCustomer">
+
+         <wsdl:input message="impl:createCustomerRequest" name="createCustomerRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createCustomerResponse" name="createCustomerResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findCustomer">
+
+         <wsdl:input message="impl:findCustomerRequest" name="findCustomerRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findCustomerResponse" name="findCustomerResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteCustomer">
+
+         <wsdl:input message="impl:deleteCustomerRequest" name="deleteCustomerRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteCustomerResponse" name="deleteCustomerResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateCustomer">
+
+         <wsdl:input message="impl:updateCustomerRequest" name="updateCustomerRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateCustomerResponse" name="updateCustomerResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findCustomerArray">
+
+         <wsdl:input message="impl:findCustomerArrayRequest" name="findCustomerArrayRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findCustomerArrayResponse" name="findCustomerArrayResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CustomerWebserviceSoapBinding" type="impl:CustomerWebservice">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="createCustomer">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createCustomerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createCustomerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findCustomer">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findCustomerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findCustomerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteCustomer">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteCustomerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteCustomerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateCustomer">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateCustomerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateCustomerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findCustomerArray">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findCustomerArrayRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findCustomerArrayResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CustomerWebserviceService">
+
+      <wsdl:port binding="impl:CustomerWebserviceSoapBinding" name="CustomerWebservice">
+
+         <wsdlsoap:address location="http://localhost:8080/TMS/services/CustomerWebservice"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,48 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CustomerWebserviceService WSDL service -->
+
+  <service name="CustomerWebservice" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice_layer"/>
+      <parameter name="wsdlServiceElement" value="CustomerWebserviceService"/>
+      <parameter name="schemaQualified" value="http://webservice_layer"/>
+      <parameter name="wsdlServicePort" value="CustomerWebservice"/>
+      <parameter name="className" value="webservice_layer.CustomerWebserviceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="CustomerWebservice"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="createCustomer" qname="operNS:createCustomer" xmlns:operNS="http://webservice_layer" returnQName="retNS:createCustomerReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:cust" xmlns:pns="http://webservice_layer" type="tns:Customer" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="findCustomer" qname="operNS:findCustomer" xmlns:operNS="http://webservice_layer" returnQName="retNS:findCustomerReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Customer" xmlns:rtns="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:customerNo" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="deleteCustomer" qname="operNS:deleteCustomer" xmlns:operNS="http://webservice_layer" returnQName="retNS:deleteCustomerReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:cust" xmlns:pns="http://webservice_layer" type="tns:Customer" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="updateCustomer" qname="operNS:updateCustomer" xmlns:operNS="http://webservice_layer" returnQName="retNS:updateCustomerReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:cust" xmlns:pns="http://webservice_layer" type="tns:Customer" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="findCustomerArray" qname="operNS:findCustomerArray" xmlns:operNS="http://webservice_layer" returnQName="retNS:findCustomerArrayReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Customer" xmlns:rtns="http://webservice_layer" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="createCustomer updateCustomer deleteCustomer findCustomer findCustomerArray"/>
+
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:Customer"
+        type="java:webservice_layer.Customer"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
