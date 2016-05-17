@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice_layer" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice_layer" xmlns:intf="http://webservice_layer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice_layer" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="createJob">
+    <complexType>
+     <sequence>
+      <element name="job" type="impl:Job"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Customer">
+    <sequence>
+     <element name="address" nillable="true" type="xsd:string"/>
+     <element name="companyName" nillable="true" type="xsd:string"/>
+     <element name="cvr" type="xsd:int"/>
+     <element name="firstName" nillable="true" type="xsd:string"/>
+     <element name="id" type="xsd:int"/>
+     <element name="lastName" nillable="true" type="xsd:string"/>
+     <element name="telefone" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Job">
+    <sequence>
+     <element name="address" nillable="true" type="xsd:string"/>
+     <element name="customer" nillable="true" type="impl:Customer"/>
+     <element name="endDate" nillable="true" type="xsd:dateTime"/>
+     <element name="id" type="xsd:int"/>
+     <element name="startDate" nillable="true" type="xsd:dateTime"/>
+    </sequence>
+   </complexType>
+   <element name="createJobResponse">
+    <complexType/>
+   </element>
+   <element name="updateJob">
+    <complexType>
+     <sequence>
+      <element name="job" type="impl:Job"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateJobResponse">
+    <complexType>
+     <sequence>
+      <element name="updateJobReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteJob">
+    <complexType>
+     <sequence>
+      <element name="job" type="impl:Job"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteJobResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteJobReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addCompetency">
+    <complexType>
+     <sequence>
+      <element name="job" type="impl:Job"/>
+      <element name="competency" type="impl:Competency"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Competency">
+    <sequence>
+     <element name="competency" nillable="true" type="xsd:string"/>
+     <element name="id" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <element name="addCompetencyResponse">
+    <complexType/>
+   </element>
+   <element name="findJobArray">
+    <complexType/>
+   </element>
+   <element name="findJobArrayResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="findJobArrayReturn" type="impl:Job"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findJob">
+    <complexType>
+     <sequence>
+      <element name="jobId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findJobResponse">
+    <complexType>
+     <sequence>
+      <element name="findJobReturn" type="impl:Job"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findCustomerJobArray">
+    <complexType>
+     <sequence>
+      <element name="customerId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findCustomerJobArrayResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="findCustomerJobArrayReturn" type="impl:Job"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="updateJobResponse">
+
+      <wsdl:part element="impl:updateJobResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addCompetencyResponse">
+
+      <wsdl:part element="impl:addCompetencyResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findJobResponse">
+
+      <wsdl:part element="impl:findJobResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createJobResponse">
+
+      <wsdl:part element="impl:createJobResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findCustomerJobArrayRequest">
+
+      <wsdl:part element="impl:findCustomerJobArray" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findJobRequest">
+
+      <wsdl:part element="impl:findJob" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findJobArrayRequest">
+
+      <wsdl:part element="impl:findJobArray" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findCustomerJobArrayResponse">
+
+      <wsdl:part element="impl:findCustomerJobArrayResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findJobArrayResponse">
+
+      <wsdl:part element="impl:findJobArrayResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addCompetencyRequest">
+
+      <wsdl:part element="impl:addCompetency" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createJobRequest">
+
+      <wsdl:part element="impl:createJob" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteJobResponse">
+
+      <wsdl:part element="impl:deleteJobResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateJobRequest">
+
+      <wsdl:part element="impl:updateJob" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteJobRequest">
+
+      <wsdl:part element="impl:deleteJob" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="JobWebservice">
+
+      <wsdl:operation name="createJob">
+
+         <wsdl:input message="impl:createJobRequest" name="createJobRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createJobResponse" name="createJobResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateJob">
+
+         <wsdl:input message="impl:updateJobRequest" name="updateJobRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateJobResponse" name="updateJobResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteJob">
+
+         <wsdl:input message="impl:deleteJobRequest" name="deleteJobRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteJobResponse" name="deleteJobResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addCompetency">
+
+         <wsdl:input message="impl:addCompetencyRequest" name="addCompetencyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addCompetencyResponse" name="addCompetencyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findJobArray">
+
+         <wsdl:input message="impl:findJobArrayRequest" name="findJobArrayRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findJobArrayResponse" name="findJobArrayResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findJob">
+
+         <wsdl:input message="impl:findJobRequest" name="findJobRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findJobResponse" name="findJobResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findCustomerJobArray">
+
+         <wsdl:input message="impl:findCustomerJobArrayRequest" name="findCustomerJobArrayRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findCustomerJobArrayResponse" name="findCustomerJobArrayResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="JobWebserviceSoapBinding" type="impl:JobWebservice">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="createJob">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createJobRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createJobResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateJob">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateJobRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateJobResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteJob">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteJobRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteJobResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addCompetency">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addCompetencyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addCompetencyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findJobArray">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findJobArrayRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findJobArrayResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findJob">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findJobRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findJobResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findCustomerJobArray">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findCustomerJobArrayRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findCustomerJobArrayResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="JobWebserviceService">
+
+      <wsdl:port binding="impl:JobWebserviceSoapBinding" name="JobWebservice">
+
+         <wsdlsoap:address location="http://localhost:8080/TMS/services/JobWebservice"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

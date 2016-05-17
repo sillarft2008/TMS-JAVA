@@ -1,0 +1,71 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from JobWebserviceService WSDL service -->
+
+  <service name="JobWebservice" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice_layer"/>
+      <parameter name="wsdlServiceElement" value="JobWebserviceService"/>
+      <parameter name="schemaQualified" value="http://webservice_layer"/>
+      <parameter name="wsdlServicePort" value="JobWebservice"/>
+      <parameter name="className" value="webservice_layer.JobWebserviceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="JobWebservice"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="createJob" qname="operNS:createJob" xmlns:operNS="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:job" xmlns:pns="http://webservice_layer" type="tns:Job" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="updateJob" qname="operNS:updateJob" xmlns:operNS="http://webservice_layer" returnQName="retNS:updateJobReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:job" xmlns:pns="http://webservice_layer" type="tns:Job" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="deleteJob" qname="operNS:deleteJob" xmlns:operNS="http://webservice_layer" returnQName="retNS:deleteJobReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:job" xmlns:pns="http://webservice_layer" type="tns:Job" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="addCompetency" qname="operNS:addCompetency" xmlns:operNS="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:job" xmlns:pns="http://webservice_layer" type="tns:Job" xmlns:tns="http://webservice_layer"/>
+        <parameter qname="pns:competency" xmlns:pns="http://webservice_layer" type="tns:Competency" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="findJobArray" qname="operNS:findJobArray" xmlns:operNS="http://webservice_layer" returnQName="retNS:findJobArrayReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Job" xmlns:rtns="http://webservice_layer" soapAction="" >
+      </operation>
+      <operation name="findJob" qname="operNS:findJob" xmlns:operNS="http://webservice_layer" returnQName="retNS:findJobReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Job" xmlns:rtns="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:jobId" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="findCustomerJobArray" qname="operNS:findCustomerJobArray" xmlns:operNS="http://webservice_layer" returnQName="retNS:findCustomerJobArrayReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Job" xmlns:rtns="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:customerId" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="findJob addCompetency updateJob findCustomerJobArray createJob findJobArray deleteJob"/>
+
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:Customer"
+        type="java:webservice_layer.Customer"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:Job"
+        type="java:webservice_layer.Job"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:Competency"
+        type="java:webservice_layer.Competency"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

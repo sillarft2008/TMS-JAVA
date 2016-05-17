@@ -1,0 +1,51 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from EmployeeCompetencyWebserviceService WSDL service -->
+
+  <service name="EmployeeCompetencyWebservice" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice_layer"/>
+      <parameter name="wsdlServiceElement" value="EmployeeCompetencyWebserviceService"/>
+      <parameter name="schemaQualified" value="http://webservice_layer"/>
+      <parameter name="wsdlServicePort" value="EmployeeCompetencyWebservice"/>
+      <parameter name="className" value="webservice_layer.EmployeeCompetencyWebserviceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="EmployeeCompetencyWebservice"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="findAllEmployeeCompetencies" qname="operNS:findAllEmployeeCompetencies" xmlns:operNS="http://webservice_layer" returnQName="retNS:findAllEmployeeCompetenciesReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:EmployeeCompetency" xmlns:rtns="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:Id" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="deleteEmployeeCompetency" qname="operNS:deleteEmployeeCompetency" xmlns:operNS="http://webservice_layer" returnQName="retNS:deleteEmployeeCompetencyReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:ec" xmlns:pns="http://webservice_layer" type="tns:EmployeeCompetency" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="updateEmployeeCompetency" qname="operNS:updateEmployeeCompetency" xmlns:operNS="http://webservice_layer" returnQName="retNS:updateEmployeeCompetencyReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:ec" xmlns:pns="http://webservice_layer" type="tns:EmployeeCompetency" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="createEmployeeCompetency" qname="operNS:createEmployeeCompetency" xmlns:operNS="http://webservice_layer" returnQName="retNS:createEmployeeCompetencyReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:ec" xmlns:pns="http://webservice_layer" type="tns:EmployeeCompetency" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="findEmployeeCompetency" qname="operNS:findEmployeeCompetency" xmlns:operNS="http://webservice_layer" returnQName="retNS:findEmployeeCompetencyReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:EmployeeCompetency" xmlns:rtns="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:Id" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getAllEmployeeCompetencies" qname="operNS:getAllEmployeeCompetencies" xmlns:operNS="http://webservice_layer" returnQName="retNS:getAllEmployeeCompetenciesReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:EmployeeCompetency" xmlns:rtns="http://webservice_layer" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="findAllEmployeeCompetencies updateEmployeeCompetency createEmployeeCompetency findEmployeeCompetency getAllEmployeeCompetencies deleteEmployeeCompetency"/>
+
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:EmployeeCompetency"
+        type="java:webservice_layer.EmployeeCompetency"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

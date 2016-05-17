@@ -1,0 +1,48 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from EmployeeWebserviceService WSDL service -->
+
+  <service name="EmployeeWebservice" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice_layer"/>
+      <parameter name="wsdlServiceElement" value="EmployeeWebserviceService"/>
+      <parameter name="schemaQualified" value="http://webservice_layer"/>
+      <parameter name="wsdlServicePort" value="EmployeeWebservice"/>
+      <parameter name="className" value="webservice_layer.EmployeeWebserviceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="EmployeeWebservice"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="deleteEmployee" qname="operNS:deleteEmployee" xmlns:operNS="http://webservice_layer" returnQName="retNS:deleteEmployeeReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:employee" xmlns:pns="http://webservice_layer" type="tns:Employee" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="getAllEmployees" qname="operNS:getAllEmployees" xmlns:operNS="http://webservice_layer" returnQName="retNS:getAllEmployeesReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Employee" xmlns:rtns="http://webservice_layer" soapAction="" >
+      </operation>
+      <operation name="createEmployee" qname="operNS:createEmployee" xmlns:operNS="http://webservice_layer" returnQName="retNS:createEmployeeReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:employee" xmlns:pns="http://webservice_layer" type="tns:Employee" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="updateEmployee" qname="operNS:updateEmployee" xmlns:operNS="http://webservice_layer" returnQName="retNS:updateEmployeeReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:employee" xmlns:pns="http://webservice_layer" type="tns:Employee" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="findEmployee" qname="operNS:findEmployee" xmlns:operNS="http://webservice_layer" returnQName="retNS:findEmployeeReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Employee" xmlns:rtns="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:Id" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="updateEmployee createEmployee findEmployee deleteEmployee getAllEmployees"/>
+
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:Employee"
+        type="java:webservice_layer.Employee"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
