@@ -10,8 +10,6 @@
       <parameter name="className" value="webservice_layer.CompetencyWebservice"/>
       <parameter name="wsdlPortType" value="CompetencyWebservice"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="getAllCompetencies" qname="operNS:getAllCompetencies" returnQName="retNS:getAllCompetenciesReturn" returnType="rtns:Competency" soapAction="">
-      </operation>
       <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findCompetency" qname="operNS:findCompetency" returnQName="retNS:findCompetencyReturn" returnType="rtns:Competency" soapAction="">
         <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:Id" type="tns:int"/>
       </operation>
@@ -23,6 +21,8 @@
       </operation>
       <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteCompetency" qname="operNS:deleteCompetency" returnQName="retNS:deleteCompetencyReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://webservice_layer" qname="pns:competency" type="tns:Competency"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="getAllCompetencies" qname="operNS:getAllCompetencies" returnQName="retNS:getAllCompetenciesReturn" returnType="rtns:Competency" soapAction="">
       </operation>
       <parameter name="allowedMethods" value="createCompetency updateCompetency findCompetency deleteCompetency getAllCompetencies"/>
 

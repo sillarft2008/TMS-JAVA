@@ -8,9 +8,9 @@
 package webservice_layer;
 
 public interface CompetencyWebservice extends java.rmi.Remote {
-    public webservice_layer.Competency[] getAllCompetencies() throws java.rmi.RemoteException;
     public webservice_layer.Competency findCompetency(int id) throws java.rmi.RemoteException;
     public java.lang.String updateCompetency(webservice_layer.Competency competency) throws java.rmi.RemoteException;
     public java.lang.String createCompetency(webservice_layer.Competency competency) throws java.rmi.RemoteException;
     public java.lang.String deleteCompetency(webservice_layer.Competency competency) throws java.rmi.RemoteException;
+    public webservice_layer.Competency[] getAllCompetencies() throws java.rmi.RemoteException;
 }

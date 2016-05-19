@@ -24,15 +24,6 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getAllCompetencies");
-        oper.setReturnType(new javax.xml.namespace.QName("http://webservice_layer", "Competency"));
-        oper.setReturnClass(webservice_layer.Competency[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "getAllCompetenciesReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[0] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("findCompetency");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "Id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
@@ -41,7 +32,7 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
         oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "findCompetencyReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[1] = oper;
+        _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateCompetency");
@@ -52,7 +43,7 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
         oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "updateCompetencyReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[2] = oper;
+        _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("createCompetency");
@@ -63,7 +54,7 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
         oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "createCompetencyReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[3] = oper;
+        _operations[2] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("deleteCompetency");
@@ -72,6 +63,15 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         oper.setReturnClass(java.lang.String.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "deleteCompetencyReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[3] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getAllCompetencies");
+        oper.setReturnType(new javax.xml.namespace.QName("http://webservice_layer", "Competency"));
+        oper.setReturnClass(webservice_layer.Competency[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "getAllCompetenciesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[4] = oper;
@@ -180,46 +180,12 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
         }
     }
 
-    public webservice_layer.Competency[] getAllCompetencies() throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[0]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "getAllCompetencies"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (webservice_layer.Competency[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (webservice_layer.Competency[]) org.apache.axis.utils.JavaUtils.convert(_resp, webservice_layer.Competency[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
     public webservice_layer.Competency findCompetency(int id) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[1]);
+        _call.setOperation(_operations[0]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -253,7 +219,7 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[2]);
+        _call.setOperation(_operations[1]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -287,7 +253,7 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[3]);
+        _call.setOperation(_operations[2]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -321,7 +287,7 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[4]);
+        _call.setOperation(_operations[3]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -343,6 +309,40 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
                 return (java.lang.String) _resp;
             } catch (java.lang.Exception _exception) {
                 return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public webservice_layer.Competency[] getAllCompetencies() throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[4]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "getAllCompetencies"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (webservice_layer.Competency[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (webservice_layer.Competency[]) org.apache.axis.utils.JavaUtils.convert(_resp, webservice_layer.Competency[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

@@ -16,12 +16,12 @@ public class JobCompetencySQL {
 		System.out.println("FindJobCompetencies");
 		try {
 			dbconn.connect();
-			ResultSet rs = dbconn.select("SELECT count(*) as result FROM job_competency,competency WHERE Id = competencyId AND jobId = " + job.getId());
+			ResultSet rs = dbconn.select("SELECT count(*) as result FROM job_competency,competency WHERE competency.Id = job_competency.competencyId AND jobId = " + job.getId());
 			rs.next();
 			int count = rs.getInt("result");
 			CompetencyArray competencyArray = new CompetencyArray(count);
 			
-			ResultSet rs2 = dbconn.select("SELECT jobId,competencyId,Id,competency FROM job_competency,competency WHERE Id = competencyId AND jobId = " + job.getId());
+			ResultSet rs2 = dbconn.select("SELECT jobId,competencyId,competency.Id,competency FROM job_competency,competency WHERE competency.Id = job_competency.competencyId AND jobId = " + job.getId());
 			
 			while (rs2.next()){
 				Competency competency= new Competency();

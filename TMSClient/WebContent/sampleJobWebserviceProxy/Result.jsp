@@ -63,136 +63,104 @@ if(getJobWebservice10mtemp == null){
 break;
 case 13:
         gotMethod = true;
-        String customerId_1id=  request.getParameter("customerId16");
-        int customerId_1idTemp  = Integer.parseInt(customerId_1id);
-        webservice_layer.Job[] findCustomerJobArray13mtemp = sampleJobWebserviceProxyid.findCustomerJobArray(customerId_1idTemp);
-if(findCustomerJobArray13mtemp == null){
-%>
-<%=findCustomerJobArray13mtemp %>
-<%
-}else{
-        String tempreturnp14 = null;
-        if(findCustomerJobArray13mtemp != null){
-        java.util.List listreturnp14= java.util.Arrays.asList(findCustomerJobArray13mtemp);
-        tempreturnp14 = listreturnp14.toString();
+        String startDate_2id=  request.getParameter("startDate18");
+            java.util.Calendar startDate_2idTemp = null;
+        if(!startDate_2id.equals("")){
+        java.text.DateFormat dateFormatstartDate18 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempstartDate18  = dateFormatstartDate18.parse(startDate_2id);
+         startDate_2idTemp = new java.util.GregorianCalendar();
+        startDate_2idTemp.setTime(dateTempstartDate18);
         }
+        String address_3id=  request.getParameter("address20");
+            java.lang.String address_3idTemp = null;
+        if(!address_3id.equals("")){
+         address_3idTemp  = address_3id;
+        }
+        String endDate_4id=  request.getParameter("endDate22");
+            java.util.Calendar endDate_4idTemp = null;
+        if(!endDate_4id.equals("")){
+        java.text.DateFormat dateFormatendDate22 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempendDate22  = dateFormatendDate22.parse(endDate_4id);
+         endDate_4idTemp = new java.util.GregorianCalendar();
+        endDate_4idTemp.setTime(dateTempendDate22);
+        }
+        String telefone_6id=  request.getParameter("telefone26");
+            java.lang.String telefone_6idTemp = null;
+        if(!telefone_6id.equals("")){
+         telefone_6idTemp  = telefone_6id;
+        }
+        String cvr_7id=  request.getParameter("cvr28");
+        int cvr_7idTemp  = Integer.parseInt(cvr_7id);
+        String address_8id=  request.getParameter("address30");
+            java.lang.String address_8idTemp = null;
+        if(!address_8id.equals("")){
+         address_8idTemp  = address_8id;
+        }
+        String lastName_9id=  request.getParameter("lastName32");
+            java.lang.String lastName_9idTemp = null;
+        if(!lastName_9id.equals("")){
+         lastName_9idTemp  = lastName_9id;
+        }
+        String firstName_10id=  request.getParameter("firstName34");
+            java.lang.String firstName_10idTemp = null;
+        if(!firstName_10id.equals("")){
+         firstName_10idTemp  = firstName_10id;
+        }
+        String companyName_11id=  request.getParameter("companyName36");
+            java.lang.String companyName_11idTemp = null;
+        if(!companyName_11id.equals("")){
+         companyName_11idTemp  = companyName_11id;
+        }
+        String id_12id=  request.getParameter("id38");
+        int id_12idTemp  = Integer.parseInt(id_12id);
         %>
-        <%=tempreturnp14%>
+        <jsp:useBean id="webservice_layer1Customer_5id" scope="session" class="webservice_layer.Customer" />
         <%
-}
-break;
-case 18:
-        gotMethod = true;
-        webservice_layer.Job[] findJobArray18mtemp = sampleJobWebserviceProxyid.findJobArray();
-if(findJobArray18mtemp == null){
-%>
-<%=findJobArray18mtemp %>
-<%
-}else{
-        String tempreturnp19 = null;
-        if(findJobArray18mtemp != null){
-        java.util.List listreturnp19= java.util.Arrays.asList(findJobArray18mtemp);
-        tempreturnp19 = listreturnp19.toString();
-        }
-        %>
-        <%=tempreturnp19%>
-        <%
-}
-break;
-case 21:
-        gotMethod = true;
-        String startDate_3id=  request.getParameter("startDate26");
-            java.util.Calendar startDate_3idTemp = null;
-        if(!startDate_3id.equals("")){
-        java.text.DateFormat dateFormatstartDate26 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempstartDate26  = dateFormatstartDate26.parse(startDate_3id);
-         startDate_3idTemp = new java.util.GregorianCalendar();
-        startDate_3idTemp.setTime(dateTempstartDate26);
-        }
-        String address_4id=  request.getParameter("address28");
-            java.lang.String address_4idTemp = null;
-        if(!address_4id.equals("")){
-         address_4idTemp  = address_4id;
-        }
-        String endDate_5id=  request.getParameter("endDate30");
-            java.util.Calendar endDate_5idTemp = null;
-        if(!endDate_5id.equals("")){
-        java.text.DateFormat dateFormatendDate30 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempendDate30  = dateFormatendDate30.parse(endDate_5id);
-         endDate_5idTemp = new java.util.GregorianCalendar();
-        endDate_5idTemp.setTime(dateTempendDate30);
-        }
-        String telefone_7id=  request.getParameter("telefone34");
-            java.lang.String telefone_7idTemp = null;
-        if(!telefone_7id.equals("")){
-         telefone_7idTemp  = telefone_7id;
-        }
-        String cvr_8id=  request.getParameter("cvr36");
-        int cvr_8idTemp  = Integer.parseInt(cvr_8id);
-        String address_9id=  request.getParameter("address38");
-            java.lang.String address_9idTemp = null;
-        if(!address_9id.equals("")){
-         address_9idTemp  = address_9id;
-        }
-        String lastName_10id=  request.getParameter("lastName40");
-            java.lang.String lastName_10idTemp = null;
-        if(!lastName_10id.equals("")){
-         lastName_10idTemp  = lastName_10id;
-        }
-        String firstName_11id=  request.getParameter("firstName42");
-            java.lang.String firstName_11idTemp = null;
-        if(!firstName_11id.equals("")){
-         firstName_11idTemp  = firstName_11id;
-        }
-        String companyName_12id=  request.getParameter("companyName44");
-            java.lang.String companyName_12idTemp = null;
-        if(!companyName_12id.equals("")){
-         companyName_12idTemp  = companyName_12id;
-        }
-        String id_13id=  request.getParameter("id46");
+        webservice_layer1Customer_5id.setTelefone(telefone_6idTemp);
+        webservice_layer1Customer_5id.setCvr(cvr_7idTemp);
+        webservice_layer1Customer_5id.setAddress(address_8idTemp);
+        webservice_layer1Customer_5id.setLastName(lastName_9idTemp);
+        webservice_layer1Customer_5id.setFirstName(firstName_10idTemp);
+        webservice_layer1Customer_5id.setCompanyName(companyName_11idTemp);
+        webservice_layer1Customer_5id.setId(id_12idTemp);
+        String id_13id=  request.getParameter("id40");
         int id_13idTemp  = Integer.parseInt(id_13id);
         %>
-        <jsp:useBean id="webservice_layer1Customer_6id" scope="session" class="webservice_layer.Customer" />
+        <jsp:useBean id="webservice_layer1Job_1id" scope="session" class="webservice_layer.Job" />
         <%
-        webservice_layer1Customer_6id.setTelefone(telefone_7idTemp);
-        webservice_layer1Customer_6id.setCvr(cvr_8idTemp);
-        webservice_layer1Customer_6id.setAddress(address_9idTemp);
-        webservice_layer1Customer_6id.setLastName(lastName_10idTemp);
-        webservice_layer1Customer_6id.setFirstName(firstName_11idTemp);
-        webservice_layer1Customer_6id.setCompanyName(companyName_12idTemp);
-        webservice_layer1Customer_6id.setId(id_13idTemp);
-        String id_14id=  request.getParameter("id48");
-        int id_14idTemp  = Integer.parseInt(id_14id);
-        %>
-        <jsp:useBean id="webservice_layer1Job_2id" scope="session" class="webservice_layer.Job" />
-        <%
-        webservice_layer1Job_2id.setStartDate(startDate_3idTemp);
-        webservice_layer1Job_2id.setAddress(address_4idTemp);
-        webservice_layer1Job_2id.setEndDate(endDate_5idTemp);
-        webservice_layer1Job_2id.setCustomer(webservice_layer1Customer_6id);
-        webservice_layer1Job_2id.setId(id_14idTemp);
-        String competency_16id=  request.getParameter("competency52");
-            java.lang.String competency_16idTemp = null;
-        if(!competency_16id.equals("")){
-         competency_16idTemp  = competency_16id;
-        }
-        String id_17id=  request.getParameter("id54");
-        int id_17idTemp  = Integer.parseInt(id_17id);
-        %>
-        <jsp:useBean id="webservice_layer1Competency_15id" scope="session" class="webservice_layer.Competency" />
-        <%
-        webservice_layer1Competency_15id.setCompetency(competency_16idTemp);
-        webservice_layer1Competency_15id.setId(id_17idTemp);
-        sampleJobWebserviceProxyid.addCompetency(webservice_layer1Job_2id,webservice_layer1Competency_15id);
+        webservice_layer1Job_1id.setStartDate(startDate_2idTemp);
+        webservice_layer1Job_1id.setAddress(address_3idTemp);
+        webservice_layer1Job_1id.setEndDate(endDate_4idTemp);
+        webservice_layer1Job_1id.setCustomer(webservice_layer1Customer_5id);
+        webservice_layer1Job_1id.setId(id_13idTemp);
+        sampleJobWebserviceProxyid.createJob(webservice_layer1Job_1id);
 break;
-case 56:
+case 42:
         gotMethod = true;
-        String jobId_18id=  request.getParameter("jobId85");
-        int jobId_18idTemp  = Integer.parseInt(jobId_18id);
-        webservice_layer.Job findJob56mtemp = sampleJobWebserviceProxyid.findJob(jobId_18idTemp);
-if(findJob56mtemp == null){
+        webservice_layer.Job[] findJobArray42mtemp = sampleJobWebserviceProxyid.findJobArray();
+if(findJobArray42mtemp == null){
 %>
-<%=findJob56mtemp %>
+<%=findJobArray42mtemp %>
+<%
+}else{
+        String tempreturnp43 = null;
+        if(findJobArray42mtemp != null){
+        java.util.List listreturnp43= java.util.Arrays.asList(findJobArray42mtemp);
+        tempreturnp43 = listreturnp43.toString();
+        }
+        %>
+        <%=tempreturnp43%>
+        <%
+}
+break;
+case 45:
+        gotMethod = true;
+        String jobId_14id=  request.getParameter("jobId74");
+        int jobId_14idTemp  = Integer.parseInt(jobId_14id);
+        webservice_layer.Job findJob45mtemp = sampleJobWebserviceProxyid.findJob(jobId_14idTemp);
+if(findJob45mtemp == null){
+%>
+<%=findJob45mtemp %>
 <%
 }else{
 %>
@@ -204,13 +172,13 @@ if(findJob56mtemp == null){
 <TD COLSPAN="2" ALIGN="LEFT">startDate:</TD>
 <TD>
 <%
-if(findJob56mtemp != null){
-java.util.Calendar typestartDate59 = findJob56mtemp.getStartDate();
-        java.text.DateFormat dateFormatstartDate59 = java.text.DateFormat.getDateInstance();
-        java.util.Date datestartDate59 = typestartDate59.getTime();
-        String tempResultstartDate59 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatstartDate59.format(datestartDate59));
+if(findJob45mtemp != null){
+java.util.Calendar typestartDate48 = findJob45mtemp.getStartDate();
+        java.text.DateFormat dateFormatstartDate48 = java.text.DateFormat.getDateInstance();
+        java.util.Date datestartDate48 = typestartDate48.getTime();
+        String tempResultstartDate48 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatstartDate48.format(datestartDate48));
         %>
-        <%= tempResultstartDate59 %>
+        <%= tempResultstartDate48 %>
         <%
 }%>
 </TD>
@@ -219,11 +187,11 @@ java.util.Calendar typestartDate59 = findJob56mtemp.getStartDate();
 <TD COLSPAN="2" ALIGN="LEFT">address:</TD>
 <TD>
 <%
-if(findJob56mtemp != null){
-java.lang.String typeaddress61 = findJob56mtemp.getAddress();
-        String tempResultaddress61 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress61));
+if(findJob45mtemp != null){
+java.lang.String typeaddress50 = findJob45mtemp.getAddress();
+        String tempResultaddress50 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress50));
         %>
-        <%= tempResultaddress61 %>
+        <%= tempResultaddress50 %>
         <%
 }%>
 </TD>
@@ -232,15 +200,15 @@ java.lang.String typeaddress61 = findJob56mtemp.getAddress();
 <TD COLSPAN="2" ALIGN="LEFT">arrayOFCompetency:</TD>
 <TD>
 <%
-if(findJob56mtemp != null){
-webservice_layer.Competency[] typearrayOFCompetency63 = findJob56mtemp.getArrayOFCompetency();
-        String temparrayOFCompetency63 = null;
-        if(typearrayOFCompetency63 != null){
-        java.util.List listarrayOFCompetency63= java.util.Arrays.asList(typearrayOFCompetency63);
-        temparrayOFCompetency63 = listarrayOFCompetency63.toString();
+if(findJob45mtemp != null){
+webservice_layer.Competency[] typearrayOFCompetency52 = findJob45mtemp.getArrayOFCompetency();
+        String temparrayOFCompetency52 = null;
+        if(typearrayOFCompetency52 != null){
+        java.util.List listarrayOFCompetency52= java.util.Arrays.asList(typearrayOFCompetency52);
+        temparrayOFCompetency52 = listarrayOFCompetency52.toString();
         }
         %>
-        <%=temparrayOFCompetency63%>
+        <%=temparrayOFCompetency52%>
         <%
 }%>
 </TD>
@@ -249,13 +217,13 @@ webservice_layer.Competency[] typearrayOFCompetency63 = findJob56mtemp.getArrayO
 <TD COLSPAN="2" ALIGN="LEFT">endDate:</TD>
 <TD>
 <%
-if(findJob56mtemp != null){
-java.util.Calendar typeendDate65 = findJob56mtemp.getEndDate();
-        java.text.DateFormat dateFormatendDate65 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateendDate65 = typeendDate65.getTime();
-        String tempResultendDate65 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatendDate65.format(dateendDate65));
+if(findJob45mtemp != null){
+java.util.Calendar typeendDate54 = findJob45mtemp.getEndDate();
+        java.text.DateFormat dateFormatendDate54 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateendDate54 = typeendDate54.getTime();
+        String tempResultendDate54 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatendDate54.format(dateendDate54));
         %>
-        <%= tempResultendDate65 %>
+        <%= tempResultendDate54 %>
         <%
 }%>
 </TD>
@@ -268,13 +236,13 @@ java.util.Calendar typeendDate65 = findJob56mtemp.getEndDate();
 <TD COLSPAN="1" ALIGN="LEFT">telefone:</TD>
 <TD>
 <%
-if(findJob56mtemp != null){
-webservice_layer.Customer tebece0=findJob56mtemp.getCustomer();
+if(findJob45mtemp != null){
+webservice_layer.Customer tebece0=findJob45mtemp.getCustomer();
 if(tebece0 != null){
-java.lang.String typetelefone69 = tebece0.getTelefone();
-        String tempResulttelefone69 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typetelefone69));
+java.lang.String typetelefone58 = tebece0.getTelefone();
+        String tempResulttelefone58 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typetelefone58));
         %>
-        <%= tempResulttelefone69 %>
+        <%= tempResulttelefone58 %>
         <%
 }}%>
 </TD>
@@ -284,8 +252,8 @@ java.lang.String typetelefone69 = tebece0.getTelefone();
 <TD COLSPAN="1" ALIGN="LEFT">cvr:</TD>
 <TD>
 <%
-if(findJob56mtemp != null){
-webservice_layer.Customer tebece0=findJob56mtemp.getCustomer();
+if(findJob45mtemp != null){
+webservice_layer.Customer tebece0=findJob45mtemp.getCustomer();
 if(tebece0 != null){
 %>
 <%=tebece0.getCvr()
@@ -297,13 +265,13 @@ if(tebece0 != null){
 <TD COLSPAN="1" ALIGN="LEFT">address:</TD>
 <TD>
 <%
-if(findJob56mtemp != null){
-webservice_layer.Customer tebece0=findJob56mtemp.getCustomer();
+if(findJob45mtemp != null){
+webservice_layer.Customer tebece0=findJob45mtemp.getCustomer();
 if(tebece0 != null){
-java.lang.String typeaddress73 = tebece0.getAddress();
-        String tempResultaddress73 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress73));
+java.lang.String typeaddress62 = tebece0.getAddress();
+        String tempResultaddress62 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress62));
         %>
-        <%= tempResultaddress73 %>
+        <%= tempResultaddress62 %>
         <%
 }}%>
 </TD>
@@ -313,13 +281,13 @@ java.lang.String typeaddress73 = tebece0.getAddress();
 <TD COLSPAN="1" ALIGN="LEFT">lastName:</TD>
 <TD>
 <%
-if(findJob56mtemp != null){
-webservice_layer.Customer tebece0=findJob56mtemp.getCustomer();
+if(findJob45mtemp != null){
+webservice_layer.Customer tebece0=findJob45mtemp.getCustomer();
 if(tebece0 != null){
-java.lang.String typelastName75 = tebece0.getLastName();
-        String tempResultlastName75 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typelastName75));
+java.lang.String typelastName64 = tebece0.getLastName();
+        String tempResultlastName64 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typelastName64));
         %>
-        <%= tempResultlastName75 %>
+        <%= tempResultlastName64 %>
         <%
 }}%>
 </TD>
@@ -329,13 +297,13 @@ java.lang.String typelastName75 = tebece0.getLastName();
 <TD COLSPAN="1" ALIGN="LEFT">firstName:</TD>
 <TD>
 <%
-if(findJob56mtemp != null){
-webservice_layer.Customer tebece0=findJob56mtemp.getCustomer();
+if(findJob45mtemp != null){
+webservice_layer.Customer tebece0=findJob45mtemp.getCustomer();
 if(tebece0 != null){
-java.lang.String typefirstName77 = tebece0.getFirstName();
-        String tempResultfirstName77 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typefirstName77));
+java.lang.String typefirstName66 = tebece0.getFirstName();
+        String tempResultfirstName66 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typefirstName66));
         %>
-        <%= tempResultfirstName77 %>
+        <%= tempResultfirstName66 %>
         <%
 }}%>
 </TD>
@@ -345,13 +313,13 @@ java.lang.String typefirstName77 = tebece0.getFirstName();
 <TD COLSPAN="1" ALIGN="LEFT">companyName:</TD>
 <TD>
 <%
-if(findJob56mtemp != null){
-webservice_layer.Customer tebece0=findJob56mtemp.getCustomer();
+if(findJob45mtemp != null){
+webservice_layer.Customer tebece0=findJob45mtemp.getCustomer();
 if(tebece0 != null){
-java.lang.String typecompanyName79 = tebece0.getCompanyName();
-        String tempResultcompanyName79 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecompanyName79));
+java.lang.String typecompanyName68 = tebece0.getCompanyName();
+        String tempResultcompanyName68 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecompanyName68));
         %>
-        <%= tempResultcompanyName79 %>
+        <%= tempResultcompanyName68 %>
         <%
 }}%>
 </TD>
@@ -361,8 +329,8 @@ java.lang.String typecompanyName79 = tebece0.getCompanyName();
 <TD COLSPAN="1" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findJob56mtemp != null){
-webservice_layer.Customer tebece0=findJob56mtemp.getCustomer();
+if(findJob45mtemp != null){
+webservice_layer.Customer tebece0=findJob45mtemp.getCustomer();
 if(tebece0 != null){
 %>
 <%=tebece0.getId()
@@ -373,254 +341,286 @@ if(tebece0 != null){
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findJob56mtemp != null){
+if(findJob45mtemp != null){
 %>
-<%=findJob56mtemp.getId()
+<%=findJob45mtemp.getId()
 %><%}%>
 </TD>
 </TABLE>
 <%
 }
 break;
-case 87:
+case 76:
         gotMethod = true;
-        String startDate_20id=  request.getParameter("startDate92");
-            java.util.Calendar startDate_20idTemp = null;
-        if(!startDate_20id.equals("")){
-        java.text.DateFormat dateFormatstartDate92 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempstartDate92  = dateFormatstartDate92.parse(startDate_20id);
-         startDate_20idTemp = new java.util.GregorianCalendar();
-        startDate_20idTemp.setTime(dateTempstartDate92);
+        String startDate_16id=  request.getParameter("startDate81");
+            java.util.Calendar startDate_16idTemp = null;
+        if(!startDate_16id.equals("")){
+        java.text.DateFormat dateFormatstartDate81 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempstartDate81  = dateFormatstartDate81.parse(startDate_16id);
+         startDate_16idTemp = new java.util.GregorianCalendar();
+        startDate_16idTemp.setTime(dateTempstartDate81);
         }
-        String address_21id=  request.getParameter("address94");
-            java.lang.String address_21idTemp = null;
-        if(!address_21id.equals("")){
-         address_21idTemp  = address_21id;
+        String address_17id=  request.getParameter("address83");
+            java.lang.String address_17idTemp = null;
+        if(!address_17id.equals("")){
+         address_17idTemp  = address_17id;
         }
-        String endDate_22id=  request.getParameter("endDate96");
-            java.util.Calendar endDate_22idTemp = null;
-        if(!endDate_22id.equals("")){
-        java.text.DateFormat dateFormatendDate96 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempendDate96  = dateFormatendDate96.parse(endDate_22id);
-         endDate_22idTemp = new java.util.GregorianCalendar();
-        endDate_22idTemp.setTime(dateTempendDate96);
+        String endDate_18id=  request.getParameter("endDate85");
+            java.util.Calendar endDate_18idTemp = null;
+        if(!endDate_18id.equals("")){
+        java.text.DateFormat dateFormatendDate85 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempendDate85  = dateFormatendDate85.parse(endDate_18id);
+         endDate_18idTemp = new java.util.GregorianCalendar();
+        endDate_18idTemp.setTime(dateTempendDate85);
         }
-        String telefone_24id=  request.getParameter("telefone100");
-            java.lang.String telefone_24idTemp = null;
-        if(!telefone_24id.equals("")){
-         telefone_24idTemp  = telefone_24id;
+        String telefone_20id=  request.getParameter("telefone89");
+            java.lang.String telefone_20idTemp = null;
+        if(!telefone_20id.equals("")){
+         telefone_20idTemp  = telefone_20id;
         }
-        String cvr_25id=  request.getParameter("cvr102");
-        int cvr_25idTemp  = Integer.parseInt(cvr_25id);
-        String address_26id=  request.getParameter("address104");
-            java.lang.String address_26idTemp = null;
-        if(!address_26id.equals("")){
-         address_26idTemp  = address_26id;
+        String cvr_21id=  request.getParameter("cvr91");
+        int cvr_21idTemp  = Integer.parseInt(cvr_21id);
+        String address_22id=  request.getParameter("address93");
+            java.lang.String address_22idTemp = null;
+        if(!address_22id.equals("")){
+         address_22idTemp  = address_22id;
         }
-        String lastName_27id=  request.getParameter("lastName106");
-            java.lang.String lastName_27idTemp = null;
-        if(!lastName_27id.equals("")){
-         lastName_27idTemp  = lastName_27id;
+        String lastName_23id=  request.getParameter("lastName95");
+            java.lang.String lastName_23idTemp = null;
+        if(!lastName_23id.equals("")){
+         lastName_23idTemp  = lastName_23id;
         }
-        String firstName_28id=  request.getParameter("firstName108");
-            java.lang.String firstName_28idTemp = null;
-        if(!firstName_28id.equals("")){
-         firstName_28idTemp  = firstName_28id;
+        String firstName_24id=  request.getParameter("firstName97");
+            java.lang.String firstName_24idTemp = null;
+        if(!firstName_24id.equals("")){
+         firstName_24idTemp  = firstName_24id;
         }
-        String companyName_29id=  request.getParameter("companyName110");
-            java.lang.String companyName_29idTemp = null;
-        if(!companyName_29id.equals("")){
-         companyName_29idTemp  = companyName_29id;
+        String companyName_25id=  request.getParameter("companyName99");
+            java.lang.String companyName_25idTemp = null;
+        if(!companyName_25id.equals("")){
+         companyName_25idTemp  = companyName_25id;
         }
-        String id_30id=  request.getParameter("id112");
+        String id_26id=  request.getParameter("id101");
+        int id_26idTemp  = Integer.parseInt(id_26id);
+        %>
+        <jsp:useBean id="webservice_layer1Customer_19id" scope="session" class="webservice_layer.Customer" />
+        <%
+        webservice_layer1Customer_19id.setTelefone(telefone_20idTemp);
+        webservice_layer1Customer_19id.setCvr(cvr_21idTemp);
+        webservice_layer1Customer_19id.setAddress(address_22idTemp);
+        webservice_layer1Customer_19id.setLastName(lastName_23idTemp);
+        webservice_layer1Customer_19id.setFirstName(firstName_24idTemp);
+        webservice_layer1Customer_19id.setCompanyName(companyName_25idTemp);
+        webservice_layer1Customer_19id.setId(id_26idTemp);
+        String id_27id=  request.getParameter("id103");
+        int id_27idTemp  = Integer.parseInt(id_27id);
+        %>
+        <jsp:useBean id="webservice_layer1Job_15id" scope="session" class="webservice_layer.Job" />
+        <%
+        webservice_layer1Job_15id.setStartDate(startDate_16idTemp);
+        webservice_layer1Job_15id.setAddress(address_17idTemp);
+        webservice_layer1Job_15id.setEndDate(endDate_18idTemp);
+        webservice_layer1Job_15id.setCustomer(webservice_layer1Customer_19id);
+        webservice_layer1Job_15id.setId(id_27idTemp);
+        String competency_29id=  request.getParameter("competency107");
+            java.lang.String competency_29idTemp = null;
+        if(!competency_29id.equals("")){
+         competency_29idTemp  = competency_29id;
+        }
+        String id_30id=  request.getParameter("id109");
         int id_30idTemp  = Integer.parseInt(id_30id);
         %>
-        <jsp:useBean id="webservice_layer1Customer_23id" scope="session" class="webservice_layer.Customer" />
+        <jsp:useBean id="webservice_layer1Competency_28id" scope="session" class="webservice_layer.Competency" />
         <%
-        webservice_layer1Customer_23id.setTelefone(telefone_24idTemp);
-        webservice_layer1Customer_23id.setCvr(cvr_25idTemp);
-        webservice_layer1Customer_23id.setAddress(address_26idTemp);
-        webservice_layer1Customer_23id.setLastName(lastName_27idTemp);
-        webservice_layer1Customer_23id.setFirstName(firstName_28idTemp);
-        webservice_layer1Customer_23id.setCompanyName(companyName_29idTemp);
-        webservice_layer1Customer_23id.setId(id_30idTemp);
-        String id_31id=  request.getParameter("id114");
-        int id_31idTemp  = Integer.parseInt(id_31id);
-        %>
-        <jsp:useBean id="webservice_layer1Job_19id" scope="session" class="webservice_layer.Job" />
-        <%
-        webservice_layer1Job_19id.setStartDate(startDate_20idTemp);
-        webservice_layer1Job_19id.setAddress(address_21idTemp);
-        webservice_layer1Job_19id.setEndDate(endDate_22idTemp);
-        webservice_layer1Job_19id.setCustomer(webservice_layer1Customer_23id);
-        webservice_layer1Job_19id.setId(id_31idTemp);
-        sampleJobWebserviceProxyid.createJob(webservice_layer1Job_19id);
+        webservice_layer1Competency_28id.setCompetency(competency_29idTemp);
+        webservice_layer1Competency_28id.setId(id_30idTemp);
+        sampleJobWebserviceProxyid.addCompetency(webservice_layer1Job_15id,webservice_layer1Competency_28id);
 break;
-case 116:
+case 111:
         gotMethod = true;
-        String startDate_33id=  request.getParameter("startDate121");
-            java.util.Calendar startDate_33idTemp = null;
-        if(!startDate_33id.equals("")){
-        java.text.DateFormat dateFormatstartDate121 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempstartDate121  = dateFormatstartDate121.parse(startDate_33id);
-         startDate_33idTemp = new java.util.GregorianCalendar();
-        startDate_33idTemp.setTime(dateTempstartDate121);
+        String startDate_32id=  request.getParameter("startDate116");
+            java.util.Calendar startDate_32idTemp = null;
+        if(!startDate_32id.equals("")){
+        java.text.DateFormat dateFormatstartDate116 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempstartDate116  = dateFormatstartDate116.parse(startDate_32id);
+         startDate_32idTemp = new java.util.GregorianCalendar();
+        startDate_32idTemp.setTime(dateTempstartDate116);
         }
-        String address_34id=  request.getParameter("address123");
-            java.lang.String address_34idTemp = null;
-        if(!address_34id.equals("")){
-         address_34idTemp  = address_34id;
+        String address_33id=  request.getParameter("address118");
+            java.lang.String address_33idTemp = null;
+        if(!address_33id.equals("")){
+         address_33idTemp  = address_33id;
         }
-        String endDate_35id=  request.getParameter("endDate125");
-            java.util.Calendar endDate_35idTemp = null;
-        if(!endDate_35id.equals("")){
-        java.text.DateFormat dateFormatendDate125 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempendDate125  = dateFormatendDate125.parse(endDate_35id);
-         endDate_35idTemp = new java.util.GregorianCalendar();
-        endDate_35idTemp.setTime(dateTempendDate125);
+        String endDate_34id=  request.getParameter("endDate120");
+            java.util.Calendar endDate_34idTemp = null;
+        if(!endDate_34id.equals("")){
+        java.text.DateFormat dateFormatendDate120 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempendDate120  = dateFormatendDate120.parse(endDate_34id);
+         endDate_34idTemp = new java.util.GregorianCalendar();
+        endDate_34idTemp.setTime(dateTempendDate120);
         }
-        String telefone_37id=  request.getParameter("telefone129");
-            java.lang.String telefone_37idTemp = null;
-        if(!telefone_37id.equals("")){
-         telefone_37idTemp  = telefone_37id;
+        String telefone_36id=  request.getParameter("telefone124");
+            java.lang.String telefone_36idTemp = null;
+        if(!telefone_36id.equals("")){
+         telefone_36idTemp  = telefone_36id;
         }
-        String cvr_38id=  request.getParameter("cvr131");
-        int cvr_38idTemp  = Integer.parseInt(cvr_38id);
-        String address_39id=  request.getParameter("address133");
-            java.lang.String address_39idTemp = null;
-        if(!address_39id.equals("")){
-         address_39idTemp  = address_39id;
+        String cvr_37id=  request.getParameter("cvr126");
+        int cvr_37idTemp  = Integer.parseInt(cvr_37id);
+        String address_38id=  request.getParameter("address128");
+            java.lang.String address_38idTemp = null;
+        if(!address_38id.equals("")){
+         address_38idTemp  = address_38id;
         }
-        String lastName_40id=  request.getParameter("lastName135");
-            java.lang.String lastName_40idTemp = null;
-        if(!lastName_40id.equals("")){
-         lastName_40idTemp  = lastName_40id;
+        String lastName_39id=  request.getParameter("lastName130");
+            java.lang.String lastName_39idTemp = null;
+        if(!lastName_39id.equals("")){
+         lastName_39idTemp  = lastName_39id;
         }
-        String firstName_41id=  request.getParameter("firstName137");
-            java.lang.String firstName_41idTemp = null;
-        if(!firstName_41id.equals("")){
-         firstName_41idTemp  = firstName_41id;
+        String firstName_40id=  request.getParameter("firstName132");
+            java.lang.String firstName_40idTemp = null;
+        if(!firstName_40id.equals("")){
+         firstName_40idTemp  = firstName_40id;
         }
-        String companyName_42id=  request.getParameter("companyName139");
-            java.lang.String companyName_42idTemp = null;
-        if(!companyName_42id.equals("")){
-         companyName_42idTemp  = companyName_42id;
+        String companyName_41id=  request.getParameter("companyName134");
+            java.lang.String companyName_41idTemp = null;
+        if(!companyName_41id.equals("")){
+         companyName_41idTemp  = companyName_41id;
         }
-        String id_43id=  request.getParameter("id141");
+        String id_42id=  request.getParameter("id136");
+        int id_42idTemp  = Integer.parseInt(id_42id);
+        %>
+        <jsp:useBean id="webservice_layer1Customer_35id" scope="session" class="webservice_layer.Customer" />
+        <%
+        webservice_layer1Customer_35id.setTelefone(telefone_36idTemp);
+        webservice_layer1Customer_35id.setCvr(cvr_37idTemp);
+        webservice_layer1Customer_35id.setAddress(address_38idTemp);
+        webservice_layer1Customer_35id.setLastName(lastName_39idTemp);
+        webservice_layer1Customer_35id.setFirstName(firstName_40idTemp);
+        webservice_layer1Customer_35id.setCompanyName(companyName_41idTemp);
+        webservice_layer1Customer_35id.setId(id_42idTemp);
+        String id_43id=  request.getParameter("id138");
         int id_43idTemp  = Integer.parseInt(id_43id);
         %>
-        <jsp:useBean id="webservice_layer1Customer_36id" scope="session" class="webservice_layer.Customer" />
+        <jsp:useBean id="webservice_layer1Job_31id" scope="session" class="webservice_layer.Job" />
         <%
-        webservice_layer1Customer_36id.setTelefone(telefone_37idTemp);
-        webservice_layer1Customer_36id.setCvr(cvr_38idTemp);
-        webservice_layer1Customer_36id.setAddress(address_39idTemp);
-        webservice_layer1Customer_36id.setLastName(lastName_40idTemp);
-        webservice_layer1Customer_36id.setFirstName(firstName_41idTemp);
-        webservice_layer1Customer_36id.setCompanyName(companyName_42idTemp);
-        webservice_layer1Customer_36id.setId(id_43idTemp);
-        String id_44id=  request.getParameter("id143");
-        int id_44idTemp  = Integer.parseInt(id_44id);
-        %>
-        <jsp:useBean id="webservice_layer1Job_32id" scope="session" class="webservice_layer.Job" />
-        <%
-        webservice_layer1Job_32id.setStartDate(startDate_33idTemp);
-        webservice_layer1Job_32id.setAddress(address_34idTemp);
-        webservice_layer1Job_32id.setEndDate(endDate_35idTemp);
-        webservice_layer1Job_32id.setCustomer(webservice_layer1Customer_36id);
-        webservice_layer1Job_32id.setId(id_44idTemp);
-        java.lang.String deleteJob116mtemp = sampleJobWebserviceProxyid.deleteJob(webservice_layer1Job_32id);
-if(deleteJob116mtemp == null){
+        webservice_layer1Job_31id.setStartDate(startDate_32idTemp);
+        webservice_layer1Job_31id.setAddress(address_33idTemp);
+        webservice_layer1Job_31id.setEndDate(endDate_34idTemp);
+        webservice_layer1Job_31id.setCustomer(webservice_layer1Customer_35id);
+        webservice_layer1Job_31id.setId(id_43idTemp);
+        java.lang.String deleteJob111mtemp = sampleJobWebserviceProxyid.deleteJob(webservice_layer1Job_31id);
+if(deleteJob111mtemp == null){
 %>
-<%=deleteJob116mtemp %>
+<%=deleteJob111mtemp %>
 <%
 }else{
-        String tempResultreturnp117 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteJob116mtemp));
+        String tempResultreturnp112 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteJob111mtemp));
         %>
-        <%= tempResultreturnp117 %>
+        <%= tempResultreturnp112 %>
         <%
 }
 break;
-case 145:
+case 140:
         gotMethod = true;
-        String startDate_46id=  request.getParameter("startDate150");
-            java.util.Calendar startDate_46idTemp = null;
-        if(!startDate_46id.equals("")){
-        java.text.DateFormat dateFormatstartDate150 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempstartDate150  = dateFormatstartDate150.parse(startDate_46id);
-         startDate_46idTemp = new java.util.GregorianCalendar();
-        startDate_46idTemp.setTime(dateTempstartDate150);
+        String startDate_45id=  request.getParameter("startDate145");
+            java.util.Calendar startDate_45idTemp = null;
+        if(!startDate_45id.equals("")){
+        java.text.DateFormat dateFormatstartDate145 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempstartDate145  = dateFormatstartDate145.parse(startDate_45id);
+         startDate_45idTemp = new java.util.GregorianCalendar();
+        startDate_45idTemp.setTime(dateTempstartDate145);
         }
-        String address_47id=  request.getParameter("address152");
-            java.lang.String address_47idTemp = null;
-        if(!address_47id.equals("")){
-         address_47idTemp  = address_47id;
+        String address_46id=  request.getParameter("address147");
+            java.lang.String address_46idTemp = null;
+        if(!address_46id.equals("")){
+         address_46idTemp  = address_46id;
         }
-        String endDate_48id=  request.getParameter("endDate154");
-            java.util.Calendar endDate_48idTemp = null;
-        if(!endDate_48id.equals("")){
-        java.text.DateFormat dateFormatendDate154 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempendDate154  = dateFormatendDate154.parse(endDate_48id);
-         endDate_48idTemp = new java.util.GregorianCalendar();
-        endDate_48idTemp.setTime(dateTempendDate154);
+        String endDate_47id=  request.getParameter("endDate149");
+            java.util.Calendar endDate_47idTemp = null;
+        if(!endDate_47id.equals("")){
+        java.text.DateFormat dateFormatendDate149 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempendDate149  = dateFormatendDate149.parse(endDate_47id);
+         endDate_47idTemp = new java.util.GregorianCalendar();
+        endDate_47idTemp.setTime(dateTempendDate149);
         }
-        String telefone_50id=  request.getParameter("telefone158");
-            java.lang.String telefone_50idTemp = null;
-        if(!telefone_50id.equals("")){
-         telefone_50idTemp  = telefone_50id;
+        String telefone_49id=  request.getParameter("telefone153");
+            java.lang.String telefone_49idTemp = null;
+        if(!telefone_49id.equals("")){
+         telefone_49idTemp  = telefone_49id;
         }
-        String cvr_51id=  request.getParameter("cvr160");
-        int cvr_51idTemp  = Integer.parseInt(cvr_51id);
-        String address_52id=  request.getParameter("address162");
-            java.lang.String address_52idTemp = null;
-        if(!address_52id.equals("")){
-         address_52idTemp  = address_52id;
+        String cvr_50id=  request.getParameter("cvr155");
+        int cvr_50idTemp  = Integer.parseInt(cvr_50id);
+        String address_51id=  request.getParameter("address157");
+            java.lang.String address_51idTemp = null;
+        if(!address_51id.equals("")){
+         address_51idTemp  = address_51id;
         }
-        String lastName_53id=  request.getParameter("lastName164");
-            java.lang.String lastName_53idTemp = null;
-        if(!lastName_53id.equals("")){
-         lastName_53idTemp  = lastName_53id;
+        String lastName_52id=  request.getParameter("lastName159");
+            java.lang.String lastName_52idTemp = null;
+        if(!lastName_52id.equals("")){
+         lastName_52idTemp  = lastName_52id;
         }
-        String firstName_54id=  request.getParameter("firstName166");
-            java.lang.String firstName_54idTemp = null;
-        if(!firstName_54id.equals("")){
-         firstName_54idTemp  = firstName_54id;
+        String firstName_53id=  request.getParameter("firstName161");
+            java.lang.String firstName_53idTemp = null;
+        if(!firstName_53id.equals("")){
+         firstName_53idTemp  = firstName_53id;
         }
-        String companyName_55id=  request.getParameter("companyName168");
-            java.lang.String companyName_55idTemp = null;
-        if(!companyName_55id.equals("")){
-         companyName_55idTemp  = companyName_55id;
+        String companyName_54id=  request.getParameter("companyName163");
+            java.lang.String companyName_54idTemp = null;
+        if(!companyName_54id.equals("")){
+         companyName_54idTemp  = companyName_54id;
         }
-        String id_56id=  request.getParameter("id170");
+        String id_55id=  request.getParameter("id165");
+        int id_55idTemp  = Integer.parseInt(id_55id);
+        %>
+        <jsp:useBean id="webservice_layer1Customer_48id" scope="session" class="webservice_layer.Customer" />
+        <%
+        webservice_layer1Customer_48id.setTelefone(telefone_49idTemp);
+        webservice_layer1Customer_48id.setCvr(cvr_50idTemp);
+        webservice_layer1Customer_48id.setAddress(address_51idTemp);
+        webservice_layer1Customer_48id.setLastName(lastName_52idTemp);
+        webservice_layer1Customer_48id.setFirstName(firstName_53idTemp);
+        webservice_layer1Customer_48id.setCompanyName(companyName_54idTemp);
+        webservice_layer1Customer_48id.setId(id_55idTemp);
+        String id_56id=  request.getParameter("id167");
         int id_56idTemp  = Integer.parseInt(id_56id);
         %>
-        <jsp:useBean id="webservice_layer1Customer_49id" scope="session" class="webservice_layer.Customer" />
+        <jsp:useBean id="webservice_layer1Job_44id" scope="session" class="webservice_layer.Job" />
         <%
-        webservice_layer1Customer_49id.setTelefone(telefone_50idTemp);
-        webservice_layer1Customer_49id.setCvr(cvr_51idTemp);
-        webservice_layer1Customer_49id.setAddress(address_52idTemp);
-        webservice_layer1Customer_49id.setLastName(lastName_53idTemp);
-        webservice_layer1Customer_49id.setFirstName(firstName_54idTemp);
-        webservice_layer1Customer_49id.setCompanyName(companyName_55idTemp);
-        webservice_layer1Customer_49id.setId(id_56idTemp);
-        String id_57id=  request.getParameter("id172");
-        int id_57idTemp  = Integer.parseInt(id_57id);
-        %>
-        <jsp:useBean id="webservice_layer1Job_45id" scope="session" class="webservice_layer.Job" />
-        <%
-        webservice_layer1Job_45id.setStartDate(startDate_46idTemp);
-        webservice_layer1Job_45id.setAddress(address_47idTemp);
-        webservice_layer1Job_45id.setEndDate(endDate_48idTemp);
-        webservice_layer1Job_45id.setCustomer(webservice_layer1Customer_49id);
-        webservice_layer1Job_45id.setId(id_57idTemp);
-        java.lang.String updateJob145mtemp = sampleJobWebserviceProxyid.updateJob(webservice_layer1Job_45id);
-if(updateJob145mtemp == null){
+        webservice_layer1Job_44id.setStartDate(startDate_45idTemp);
+        webservice_layer1Job_44id.setAddress(address_46idTemp);
+        webservice_layer1Job_44id.setEndDate(endDate_47idTemp);
+        webservice_layer1Job_44id.setCustomer(webservice_layer1Customer_48id);
+        webservice_layer1Job_44id.setId(id_56idTemp);
+        java.lang.String updateJob140mtemp = sampleJobWebserviceProxyid.updateJob(webservice_layer1Job_44id);
+if(updateJob140mtemp == null){
 %>
-<%=updateJob145mtemp %>
+<%=updateJob140mtemp %>
 <%
 }else{
-        String tempResultreturnp146 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateJob145mtemp));
+        String tempResultreturnp141 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateJob140mtemp));
         %>
-        <%= tempResultreturnp146 %>
+        <%= tempResultreturnp141 %>
+        <%
+}
+break;
+case 169:
+        gotMethod = true;
+        String customerId_57id=  request.getParameter("customerId172");
+        int customerId_57idTemp  = Integer.parseInt(customerId_57id);
+        webservice_layer.Job[] findCustomerJobArray169mtemp = sampleJobWebserviceProxyid.findCustomerJobArray(customerId_57idTemp);
+if(findCustomerJobArray169mtemp == null){
+%>
+<%=findCustomerJobArray169mtemp %>
+<%
+}else{
+        String tempreturnp170 = null;
+        if(findCustomerJobArray169mtemp != null){
+        java.util.List listreturnp170= java.util.Arrays.asList(findCustomerJobArray169mtemp);
+        tempreturnp170 = listreturnp170.toString();
+        }
+        %>
+        <%=tempreturnp170%>
         <%
 }
 break;

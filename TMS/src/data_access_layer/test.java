@@ -64,7 +64,7 @@ public class test {
 	public static void findCustomerJobArray(){
 		JobController JWS = new JobController();
 		//JobWebservice JWS = new JobWebservice();
-		int customerId = 22;
+		int customerId = 1;
 		@SuppressWarnings("unused")
 		//Job[] jobArray = JWS.findCustomerJobArray(customerId);
 		JobArray joblist = JWS.findCustomerJobArray(customerId);

@@ -72,41 +72,8 @@ valid = false;
 <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <TABLE>
 <TR>
-<TD COLSPAN="3" ALIGN="LEFT">cust:</TD>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">telefone:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone21" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">cvr:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr23" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">address:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address25" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">lastName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName27" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">firstName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName29" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">companyName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName31" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id33" SIZE=20></TD>
+<TD COLSPAN="1" ALIGN="LEFT">customerNo:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="customerNo33" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -122,8 +89,41 @@ valid = false;
 <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <TABLE>
 <TR>
-<TD COLSPAN="1" ALIGN="LEFT">customerNo:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="customerNo52" SIZE=20></TD>
+<TD COLSPAN="3" ALIGN="LEFT">cust:</TD>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">telefone:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone40" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">cvr:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr42" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">address:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address44" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">lastName:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName46" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">firstName:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName48" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">companyName:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName50" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">id:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id52" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>

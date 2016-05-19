@@ -4,22 +4,6 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://webservice_layer" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="getAllCompetencies">
-    <complexType/>
-   </element>
-   <element name="getAllCompetenciesResponse">
-    <complexType>
-     <sequence>
-      <element maxOccurs="unbounded" name="getAllCompetenciesReturn" type="impl:Competency"/>
-     </sequence>
-    </complexType>
-   </element>
-   <complexType name="Competency">
-    <sequence>
-     <element name="competency" nillable="true" type="xsd:string"/>
-     <element name="id" type="xsd:int"/>
-    </sequence>
-   </complexType>
    <element name="findCompetency">
     <complexType>
      <sequence>
@@ -34,6 +18,12 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <complexType name="Competency">
+    <sequence>
+     <element name="competency" nillable="true" type="xsd:string"/>
+     <element name="id" type="xsd:int"/>
+    </sequence>
+   </complexType>
    <element name="updateCompetency">
     <complexType>
      <sequence>
@@ -76,6 +66,16 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="getAllCompetencies">
+    <complexType/>
+   </element>
+   <element name="getAllCompetenciesResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllCompetenciesReturn" type="impl:Competency"/>
+     </sequence>
+    </complexType>
+   </element>
   </schema>
  </wsdl:types>
 
@@ -111,17 +111,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="getAllCompetenciesRequest">
+   <wsdl:message name="deleteCompetencyRequest">
 
-      <wsdl:part element="impl:getAllCompetencies" name="parameters">
+      <wsdl:part element="impl:deleteCompetency" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="deleteCompetencyRequest">
+   <wsdl:message name="getAllCompetenciesRequest">
 
-      <wsdl:part element="impl:deleteCompetency" name="parameters">
+      <wsdl:part element="impl:getAllCompetencies" name="parameters">
 
       </wsdl:part>
 
@@ -160,18 +160,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    </wsdl:message>
 
    <wsdl:portType name="CompetencyWebservice">
-
-      <wsdl:operation name="getAllCompetencies">
-
-         <wsdl:input message="impl:getAllCompetenciesRequest" name="getAllCompetenciesRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getAllCompetenciesResponse" name="getAllCompetenciesResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
 
       <wsdl:operation name="findCompetency">
 
@@ -221,29 +209,23 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="getAllCompetencies">
+
+         <wsdl:input message="impl:getAllCompetenciesRequest" name="getAllCompetenciesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllCompetenciesResponse" name="getAllCompetenciesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="CompetencyWebserviceSoapBinding" type="impl:CompetencyWebservice">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-
-      <wsdl:operation name="getAllCompetencies">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getAllCompetenciesRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getAllCompetenciesResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
 
       <wsdl:operation name="findCompetency">
 
@@ -310,6 +292,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="deleteCompetencyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllCompetencies">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllCompetenciesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllCompetenciesResponse">
 
             <wsdlsoap:body use="literal"/>
 

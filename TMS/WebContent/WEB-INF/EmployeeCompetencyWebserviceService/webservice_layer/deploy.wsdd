@@ -10,7 +10,7 @@
       <parameter name="className" value="webservice_layer.EmployeeCompetencyWebservice"/>
       <parameter name="wsdlPortType" value="EmployeeCompetencyWebservice"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findAllEmployeeCompetencies" qname="operNS:findAllEmployeeCompetencies" returnQName="retNS:findAllEmployeeCompetenciesReturn" returnType="rtns:EmployeeCompetency" soapAction="">
+      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findEmployeeCompetency" qname="operNS:findEmployeeCompetency" returnQName="retNS:findEmployeeCompetencyReturn" returnType="rtns:EmployeeCompetency" soapAction="">
         <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:Id" type="tns:int"/>
       </operation>
       <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteEmployeeCompetency" qname="operNS:deleteEmployeeCompetency" returnQName="retNS:deleteEmployeeCompetencyReturn" returnType="rtns:string" soapAction="">
@@ -19,15 +19,15 @@
       <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateEmployeeCompetency" qname="operNS:updateEmployeeCompetency" returnQName="retNS:updateEmployeeCompetencyReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://webservice_layer" qname="pns:ec" type="tns:EmployeeCompetency"/>
       </operation>
+      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="getAllEmployeeCompetencies" qname="operNS:getAllEmployeeCompetencies" returnQName="retNS:getAllEmployeeCompetenciesReturn" returnType="rtns:EmployeeCompetency" soapAction="">
+      </operation>
       <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="createEmployeeCompetency" qname="operNS:createEmployeeCompetency" returnQName="retNS:createEmployeeCompetencyReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://webservice_layer" qname="pns:ec" type="tns:EmployeeCompetency"/>
       </operation>
-      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findEmployeeCompetency" qname="operNS:findEmployeeCompetency" returnQName="retNS:findEmployeeCompetencyReturn" returnType="rtns:EmployeeCompetency" soapAction="">
+      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findAllEmployeeCompetencies" qname="operNS:findAllEmployeeCompetencies" returnQName="retNS:findAllEmployeeCompetenciesReturn" returnType="rtns:EmployeeCompetency" soapAction="">
         <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:Id" type="tns:int"/>
       </operation>
-      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="getAllEmployeeCompetencies" qname="operNS:getAllEmployeeCompetencies" returnQName="retNS:getAllEmployeeCompetenciesReturn" returnType="rtns:EmployeeCompetency" soapAction="">
-      </operation>
-      <parameter name="allowedMethods" value="findAllEmployeeCompetencies updateEmployeeCompetency createEmployeeCompetency findEmployeeCompetency getAllEmployeeCompetencies deleteEmployeeCompetency"/>
+      <parameter name="allowedMethods" value="updateEmployeeCompetency findAllEmployeeCompetencies createEmployeeCompetency findEmployeeCompetency getAllEmployeeCompetencies deleteEmployeeCompetency"/>
 
       <typeMapping xmlns:ns="http://webservice_layer" qname="ns:EmployeeCompetency" type="java:webservice_layer.EmployeeCompetency" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
   </service>

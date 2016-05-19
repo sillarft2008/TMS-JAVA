@@ -4,17 +4,10 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://webservice_layer" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="findCustomerJobArray">
+   <element name="createJob">
     <complexType>
      <sequence>
-      <element name="customerId" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="findCustomerJobArrayResponse">
-    <complexType>
-     <sequence>
-      <element maxOccurs="unbounded" name="findCustomerJobArrayReturn" type="impl:Job"/>
+      <element name="job" type="impl:Job"/>
      </sequence>
     </complexType>
    </element>
@@ -50,6 +43,9 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="startDate" nillable="true" type="xsd:dateTime"/>
     </sequence>
    </complexType>
+   <element name="createJobResponse">
+    <complexType/>
+   </element>
    <element name="findJobArray">
     <complexType/>
    </element>
@@ -59,17 +55,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
       <element maxOccurs="unbounded" name="findJobArrayReturn" type="impl:Job"/>
      </sequence>
     </complexType>
-   </element>
-   <element name="addCompetency">
-    <complexType>
-     <sequence>
-      <element name="job" type="impl:Job"/>
-      <element name="competency" type="impl:Competency"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="addCompetencyResponse">
-    <complexType/>
    </element>
    <element name="findJob">
     <complexType>
@@ -85,14 +70,15 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="createJob">
+   <element name="addCompetency">
     <complexType>
      <sequence>
       <element name="job" type="impl:Job"/>
+      <element name="competency" type="impl:Competency"/>
      </sequence>
     </complexType>
    </element>
-   <element name="createJobResponse">
+   <element name="addCompetencyResponse">
     <complexType/>
    </element>
    <element name="deleteJob">
@@ -123,6 +109,20 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="findCustomerJobArray">
+    <complexType>
+     <sequence>
+      <element name="customerId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findCustomerJobArrayResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="findCustomerJobArrayReturn" type="impl:Job"/>
+     </sequence>
+    </complexType>
+   </element>
   </schema>
  </wsdl:types>
 
@@ -150,17 +150,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="findCustomerJobArrayRequest">
+   <wsdl:message name="createJobResponse">
 
-      <wsdl:part element="impl:findCustomerJobArray" name="parameters">
+      <wsdl:part element="impl:createJobResponse" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="createJobResponse">
+   <wsdl:message name="findCustomerJobArrayRequest">
 
-      <wsdl:part element="impl:createJobResponse" name="parameters">
+      <wsdl:part element="impl:findCustomerJobArray" name="parameters">
 
       </wsdl:part>
 
@@ -240,13 +240,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="JobWebservice">
 
-      <wsdl:operation name="findCustomerJobArray">
+      <wsdl:operation name="createJob">
 
-         <wsdl:input message="impl:findCustomerJobArrayRequest" name="findCustomerJobArrayRequest">
+         <wsdl:input message="impl:createJobRequest" name="createJobRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:findCustomerJobArrayResponse" name="findCustomerJobArrayResponse">
+         <wsdl:output message="impl:createJobResponse" name="createJobResponse">
 
        </wsdl:output>
 
@@ -264,18 +264,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="addCompetency">
-
-         <wsdl:input message="impl:addCompetencyRequest" name="addCompetencyRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:addCompetencyResponse" name="addCompetencyResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="findJob">
 
          <wsdl:input message="impl:findJobRequest" name="findJobRequest">
@@ -288,13 +276,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="createJob">
+      <wsdl:operation name="addCompetency">
 
-         <wsdl:input message="impl:createJobRequest" name="createJobRequest">
+         <wsdl:input message="impl:addCompetencyRequest" name="addCompetencyRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:createJobResponse" name="createJobResponse">
+         <wsdl:output message="impl:addCompetencyResponse" name="addCompetencyResponse">
 
        </wsdl:output>
 
@@ -324,23 +312,35 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="findCustomerJobArray">
+
+         <wsdl:input message="impl:findCustomerJobArrayRequest" name="findCustomerJobArrayRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findCustomerJobArrayResponse" name="findCustomerJobArrayResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="JobWebserviceSoapBinding" type="impl:JobWebservice">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="findCustomerJobArray">
+      <wsdl:operation name="createJob">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="findCustomerJobArrayRequest">
+         <wsdl:input name="createJobRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="findCustomerJobArrayResponse">
+         <wsdl:output name="createJobResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -366,24 +366,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="addCompetency">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="addCompetencyRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="addCompetencyResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="findJob">
 
          <wsdlsoap:operation soapAction=""/>
@@ -402,17 +384,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="createJob">
+      <wsdl:operation name="addCompetency">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="createJobRequest">
+         <wsdl:input name="addCompetencyRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="createJobResponse">
+         <wsdl:output name="addCompetencyResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -449,6 +431,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="updateJobResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findCustomerJobArray">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findCustomerJobArrayRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findCustomerJobArrayResponse">
 
             <wsdlsoap:body use="literal"/>
 

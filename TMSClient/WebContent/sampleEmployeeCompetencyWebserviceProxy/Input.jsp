@@ -62,7 +62,7 @@ valid = false;
 <TABLE>
 <TR>
 <TD COLSPAN="1" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id18" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id24" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -71,7 +71,7 @@ valid = false;
 </FORM>
 <%
 break;
-case 20:
+case 26:
 valid = false;
 %>
 <FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
@@ -82,17 +82,17 @@ valid = false;
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">competencyId:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="competencyId25" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="competencyId31" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">employeeId:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="employeeId27" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="employeeId33" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id29" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id35" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -101,7 +101,7 @@ valid = false;
 </FORM>
 <%
 break;
-case 31:
+case 37:
 valid = false;
 %>
 <FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
@@ -112,17 +112,17 @@ valid = false;
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">competencyId:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="competencyId36" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="competencyId42" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">employeeId:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="employeeId38" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="employeeId44" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id40" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id46" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -131,7 +131,18 @@ valid = false;
 </FORM>
 <%
 break;
-case 42:
+case 48:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
+case 51:
 valid = false;
 %>
 <FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
@@ -142,17 +153,17 @@ valid = false;
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">competencyId:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="competencyId47" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="competencyId56" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">employeeId:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="employeeId49" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="employeeId58" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id51" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id60" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -161,7 +172,7 @@ valid = false;
 </FORM>
 <%
 break;
-case 53:
+case 62:
 valid = false;
 %>
 <FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
@@ -169,20 +180,9 @@ valid = false;
 <TABLE>
 <TR>
 <TD COLSPAN="1" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id62" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id65" SIZE=20></TD>
 </TR>
 </TABLE>
-<BR>
-<INPUT TYPE="SUBMIT" VALUE="Invoke">
-<INPUT TYPE="RESET" VALUE="Clear">
-</FORM>
-<%
-break;
-case 64:
-valid = false;
-%>
-<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
-<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <BR>
 <INPUT TYPE="SUBMIT" VALUE="Invoke">
 <INPUT TYPE="RESET" VALUE="Clear">

@@ -44,10 +44,10 @@ public class JobWebserviceProxy implements webservice_layer.JobWebservice {
     return jobWebservice;
   }
   
-  public webservice_layer.Job[] findCustomerJobArray(int customerId) throws java.rmi.RemoteException{
+  public void createJob(webservice_layer.Job job) throws java.rmi.RemoteException{
     if (jobWebservice == null)
       _initJobWebserviceProxy();
-    return jobWebservice.findCustomerJobArray(customerId);
+    jobWebservice.createJob(job);
   }
   
   public webservice_layer.Job[] findJobArray() throws java.rmi.RemoteException{
@@ -56,22 +56,16 @@ public class JobWebserviceProxy implements webservice_layer.JobWebservice {
     return jobWebservice.findJobArray();
   }
   
-  public void addCompetency(webservice_layer.Job job, webservice_layer.Competency competency) throws java.rmi.RemoteException{
-    if (jobWebservice == null)
-      _initJobWebserviceProxy();
-    jobWebservice.addCompetency(job, competency);
-  }
-  
   public webservice_layer.Job findJob(int jobId) throws java.rmi.RemoteException{
     if (jobWebservice == null)
       _initJobWebserviceProxy();
     return jobWebservice.findJob(jobId);
   }
   
-  public void createJob(webservice_layer.Job job) throws java.rmi.RemoteException{
+  public void addCompetency(webservice_layer.Job job, webservice_layer.Competency competency) throws java.rmi.RemoteException{
     if (jobWebservice == null)
       _initJobWebserviceProxy();
-    jobWebservice.createJob(job);
+    jobWebservice.addCompetency(job, competency);
   }
   
   public java.lang.String deleteJob(webservice_layer.Job job) throws java.rmi.RemoteException{
@@ -84,6 +78,12 @@ public class JobWebserviceProxy implements webservice_layer.JobWebservice {
     if (jobWebservice == null)
       _initJobWebserviceProxy();
     return jobWebservice.updateJob(job);
+  }
+  
+  public webservice_layer.Job[] findCustomerJobArray(int customerId) throws java.rmi.RemoteException{
+    if (jobWebservice == null)
+      _initJobWebserviceProxy();
+    return jobWebservice.findCustomerJobArray(customerId);
   }
   
   

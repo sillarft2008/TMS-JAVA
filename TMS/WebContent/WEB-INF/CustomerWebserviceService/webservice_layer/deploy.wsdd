@@ -12,16 +12,16 @@
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findCustomerArray" qname="operNS:findCustomerArray" returnQName="retNS:findCustomerArrayReturn" returnType="rtns:Customer" soapAction="">
       </operation>
-      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="createCustomer" qname="operNS:createCustomer" returnQName="retNS:createCustomerReturn" returnType="rtns:string" soapAction="">
-        <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://webservice_layer" qname="pns:cust" type="tns:Customer"/>
-      </operation>
       <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findCustomer" qname="operNS:findCustomer" returnQName="retNS:findCustomerReturn" returnType="rtns:Customer" soapAction="">
         <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:customerNo" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateCustomer" qname="operNS:updateCustomer" returnQName="retNS:updateCustomerReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://webservice_layer" qname="pns:cust" type="tns:Customer"/>
       </operation>
       <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteCustomer" qname="operNS:deleteCustomer" returnQName="retNS:deleteCustomerReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://webservice_layer" qname="pns:cust" type="tns:Customer"/>
       </operation>
-      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateCustomer" qname="operNS:updateCustomer" returnQName="retNS:updateCustomerReturn" returnType="rtns:string" soapAction="">
+      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="createCustomer" qname="operNS:createCustomer" returnQName="retNS:createCustomerReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://webservice_layer" qname="pns:cust" type="tns:Customer"/>
       </operation>
       <parameter name="allowedMethods" value="createCustomer updateCustomer deleteCustomer findCustomer findCustomerArray"/>

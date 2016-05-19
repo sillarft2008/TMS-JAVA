@@ -4,17 +4,17 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://webservice_layer" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="findAllEmployeeCompetencies">
+   <element name="findEmployeeCompetency">
     <complexType>
      <sequence>
       <element name="Id" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>
-   <element name="findAllEmployeeCompetenciesResponse">
+   <element name="findEmployeeCompetencyResponse">
     <complexType>
      <sequence>
-      <element maxOccurs="unbounded" name="findAllEmployeeCompetenciesReturn" type="impl:EmployeeCompetency"/>
+      <element name="findEmployeeCompetencyReturn" type="impl:EmployeeCompetency"/>
      </sequence>
     </complexType>
    </element>
@@ -53,6 +53,16 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="getAllEmployeeCompetencies">
+    <complexType/>
+   </element>
+   <element name="getAllEmployeeCompetenciesResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllEmployeeCompetenciesReturn" type="impl:EmployeeCompetency"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="createEmployeeCompetency">
     <complexType>
      <sequence>
@@ -67,40 +77,22 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="findEmployeeCompetency">
+   <element name="findAllEmployeeCompetencies">
     <complexType>
      <sequence>
       <element name="Id" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>
-   <element name="findEmployeeCompetencyResponse">
+   <element name="findAllEmployeeCompetenciesResponse">
     <complexType>
      <sequence>
-      <element name="findEmployeeCompetencyReturn" type="impl:EmployeeCompetency"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getAllEmployeeCompetencies">
-    <complexType/>
-   </element>
-   <element name="getAllEmployeeCompetenciesResponse">
-    <complexType>
-     <sequence>
-      <element maxOccurs="unbounded" name="getAllEmployeeCompetenciesReturn" type="impl:EmployeeCompetency"/>
+      <element maxOccurs="unbounded" name="findAllEmployeeCompetenciesReturn" type="impl:EmployeeCompetency"/>
      </sequence>
     </complexType>
    </element>
   </schema>
  </wsdl:types>
-
-   <wsdl:message name="findAllEmployeeCompetenciesResponse">
-
-      <wsdl:part element="impl:findAllEmployeeCompetenciesResponse" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
 
    <wsdl:message name="getAllEmployeeCompetenciesRequest">
 
@@ -110,17 +102,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="getAllEmployeeCompetenciesResponse">
+   <wsdl:message name="findAllEmployeeCompetenciesResponse">
 
-      <wsdl:part element="impl:getAllEmployeeCompetenciesResponse" name="parameters">
+      <wsdl:part element="impl:findAllEmployeeCompetenciesResponse" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="findAllEmployeeCompetenciesRequest">
+   <wsdl:message name="getAllEmployeeCompetenciesResponse">
 
-      <wsdl:part element="impl:findAllEmployeeCompetencies" name="parameters">
+      <wsdl:part element="impl:getAllEmployeeCompetenciesResponse" name="parameters">
 
       </wsdl:part>
 
@@ -142,6 +134,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+   <wsdl:message name="findAllEmployeeCompetenciesRequest">
+
+      <wsdl:part element="impl:findAllEmployeeCompetencies" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:message name="deleteEmployeeCompetencyResponse">
 
       <wsdl:part element="impl:deleteEmployeeCompetencyResponse" name="parameters">
@@ -158,17 +158,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="createEmployeeCompetencyResponse">
+   <wsdl:message name="findEmployeeCompetencyRequest">
 
-      <wsdl:part element="impl:createEmployeeCompetencyResponse" name="parameters">
+      <wsdl:part element="impl:findEmployeeCompetency" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="findEmployeeCompetencyRequest">
+   <wsdl:message name="createEmployeeCompetencyResponse">
 
-      <wsdl:part element="impl:findEmployeeCompetency" name="parameters">
+      <wsdl:part element="impl:createEmployeeCompetencyResponse" name="parameters">
 
       </wsdl:part>
 
@@ -192,13 +192,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="EmployeeCompetencyWebservice">
 
-      <wsdl:operation name="findAllEmployeeCompetencies">
+      <wsdl:operation name="findEmployeeCompetency">
 
-         <wsdl:input message="impl:findAllEmployeeCompetenciesRequest" name="findAllEmployeeCompetenciesRequest">
+         <wsdl:input message="impl:findEmployeeCompetencyRequest" name="findEmployeeCompetencyRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:findAllEmployeeCompetenciesResponse" name="findAllEmployeeCompetenciesResponse">
+         <wsdl:output message="impl:findEmployeeCompetencyResponse" name="findEmployeeCompetencyResponse">
 
        </wsdl:output>
 
@@ -228,30 +228,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="createEmployeeCompetency">
-
-         <wsdl:input message="impl:createEmployeeCompetencyRequest" name="createEmployeeCompetencyRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:createEmployeeCompetencyResponse" name="createEmployeeCompetencyResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="findEmployeeCompetency">
-
-         <wsdl:input message="impl:findEmployeeCompetencyRequest" name="findEmployeeCompetencyRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:findEmployeeCompetencyResponse" name="findEmployeeCompetencyResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="getAllEmployeeCompetencies">
 
          <wsdl:input message="impl:getAllEmployeeCompetenciesRequest" name="getAllEmployeeCompetenciesRequest">
@@ -264,23 +240,47 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="createEmployeeCompetency">
+
+         <wsdl:input message="impl:createEmployeeCompetencyRequest" name="createEmployeeCompetencyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createEmployeeCompetencyResponse" name="createEmployeeCompetencyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findAllEmployeeCompetencies">
+
+         <wsdl:input message="impl:findAllEmployeeCompetenciesRequest" name="findAllEmployeeCompetenciesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findAllEmployeeCompetenciesResponse" name="findAllEmployeeCompetenciesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="EmployeeCompetencyWebserviceSoapBinding" type="impl:EmployeeCompetencyWebservice">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="findAllEmployeeCompetencies">
+      <wsdl:operation name="findEmployeeCompetency">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="findAllEmployeeCompetenciesRequest">
+         <wsdl:input name="findEmployeeCompetencyRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="findAllEmployeeCompetenciesResponse">
+         <wsdl:output name="findEmployeeCompetencyResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -324,6 +324,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="getAllEmployeeCompetencies">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllEmployeeCompetenciesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllEmployeeCompetenciesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="createEmployeeCompetency">
 
          <wsdlsoap:operation soapAction=""/>
@@ -342,35 +360,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="findEmployeeCompetency">
+      <wsdl:operation name="findAllEmployeeCompetencies">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="findEmployeeCompetencyRequest">
+         <wsdl:input name="findAllEmployeeCompetenciesRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="findEmployeeCompetencyResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getAllEmployeeCompetencies">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getAllEmployeeCompetenciesRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getAllEmployeeCompetenciesResponse">
+         <wsdl:output name="findAllEmployeeCompetenciesResponse">
 
             <wsdlsoap:body use="literal"/>
 

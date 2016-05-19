@@ -64,30 +64,12 @@ if(getCompetencyWebservice10mtemp == null){
 break;
 case 15:
         gotMethod = true;
-        webservice_layer.Competency[] getAllCompetencies15mtemp = sampleCompetencyWebserviceProxyid.getAllCompetencies();
-if(getAllCompetencies15mtemp == null){
-%>
-<%=getAllCompetencies15mtemp %>
-<%
-}else{
-        String tempreturnp16 = null;
-        if(getAllCompetencies15mtemp != null){
-        java.util.List listreturnp16= java.util.Arrays.asList(getAllCompetencies15mtemp);
-        tempreturnp16 = listreturnp16.toString();
-        }
-        %>
-        <%=tempreturnp16%>
-        <%
-}
-break;
-case 18:
-        gotMethod = true;
-        String id_1id=  request.getParameter("id25");
+        String id_1id=  request.getParameter("id22");
         int id_1idTemp  = Integer.parseInt(id_1id);
-        webservice_layer.Competency findCompetency18mtemp = sampleCompetencyWebserviceProxyid.findCompetency(id_1idTemp);
-if(findCompetency18mtemp == null){
+        webservice_layer.Competency findCompetency15mtemp = sampleCompetencyWebserviceProxyid.findCompetency(id_1idTemp);
+if(findCompetency15mtemp == null){
 %>
-<%=findCompetency18mtemp %>
+<%=findCompetency15mtemp %>
 <%
 }else{
 %>
@@ -99,11 +81,11 @@ if(findCompetency18mtemp == null){
 <TD COLSPAN="2" ALIGN="LEFT">competency:</TD>
 <TD>
 <%
-if(findCompetency18mtemp != null){
-java.lang.String typecompetency21 = findCompetency18mtemp.getCompetency();
-        String tempResultcompetency21 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecompetency21));
+if(findCompetency15mtemp != null){
+java.lang.String typecompetency18 = findCompetency15mtemp.getCompetency();
+        String tempResultcompetency18 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecompetency18));
         %>
-        <%= tempResultcompetency21 %>
+        <%= tempResultcompetency18 %>
         <%
 }%>
 </TD>
@@ -112,90 +94,108 @@ java.lang.String typecompetency21 = findCompetency18mtemp.getCompetency();
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findCompetency18mtemp != null){
+if(findCompetency15mtemp != null){
 %>
-<%=findCompetency18mtemp.getId()
+<%=findCompetency15mtemp.getId()
 %><%}%>
 </TD>
 </TABLE>
 <%
 }
 break;
-case 27:
+case 24:
         gotMethod = true;
-        String competency_3id=  request.getParameter("competency32");
+        String competency_3id=  request.getParameter("competency29");
             java.lang.String competency_3idTemp = null;
         if(!competency_3id.equals("")){
          competency_3idTemp  = competency_3id;
         }
-        String id_4id=  request.getParameter("id34");
+        String id_4id=  request.getParameter("id31");
         int id_4idTemp  = Integer.parseInt(id_4id);
         %>
         <jsp:useBean id="webservice_layer1Competency_2id" scope="session" class="webservice_layer.Competency" />
         <%
         webservice_layer1Competency_2id.setCompetency(competency_3idTemp);
         webservice_layer1Competency_2id.setId(id_4idTemp);
-        java.lang.String updateCompetency27mtemp = sampleCompetencyWebserviceProxyid.updateCompetency(webservice_layer1Competency_2id);
-if(updateCompetency27mtemp == null){
+        java.lang.String updateCompetency24mtemp = sampleCompetencyWebserviceProxyid.updateCompetency(webservice_layer1Competency_2id);
+if(updateCompetency24mtemp == null){
 %>
-<%=updateCompetency27mtemp %>
+<%=updateCompetency24mtemp %>
 <%
 }else{
-        String tempResultreturnp28 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateCompetency27mtemp));
+        String tempResultreturnp25 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateCompetency24mtemp));
         %>
-        <%= tempResultreturnp28 %>
+        <%= tempResultreturnp25 %>
         <%
 }
 break;
-case 36:
+case 33:
         gotMethod = true;
-        String competency_6id=  request.getParameter("competency41");
+        String competency_6id=  request.getParameter("competency38");
             java.lang.String competency_6idTemp = null;
         if(!competency_6id.equals("")){
          competency_6idTemp  = competency_6id;
         }
-        String id_7id=  request.getParameter("id43");
+        String id_7id=  request.getParameter("id40");
         int id_7idTemp  = Integer.parseInt(id_7id);
         %>
         <jsp:useBean id="webservice_layer1Competency_5id" scope="session" class="webservice_layer.Competency" />
         <%
         webservice_layer1Competency_5id.setCompetency(competency_6idTemp);
         webservice_layer1Competency_5id.setId(id_7idTemp);
-        java.lang.String createCompetency36mtemp = sampleCompetencyWebserviceProxyid.createCompetency(webservice_layer1Competency_5id);
-if(createCompetency36mtemp == null){
+        java.lang.String createCompetency33mtemp = sampleCompetencyWebserviceProxyid.createCompetency(webservice_layer1Competency_5id);
+if(createCompetency33mtemp == null){
 %>
-<%=createCompetency36mtemp %>
+<%=createCompetency33mtemp %>
 <%
 }else{
-        String tempResultreturnp37 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(createCompetency36mtemp));
+        String tempResultreturnp34 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(createCompetency33mtemp));
         %>
-        <%= tempResultreturnp37 %>
+        <%= tempResultreturnp34 %>
         <%
 }
 break;
-case 45:
+case 42:
         gotMethod = true;
-        String competency_9id=  request.getParameter("competency50");
+        String competency_9id=  request.getParameter("competency47");
             java.lang.String competency_9idTemp = null;
         if(!competency_9id.equals("")){
          competency_9idTemp  = competency_9id;
         }
-        String id_10id=  request.getParameter("id52");
+        String id_10id=  request.getParameter("id49");
         int id_10idTemp  = Integer.parseInt(id_10id);
         %>
         <jsp:useBean id="webservice_layer1Competency_8id" scope="session" class="webservice_layer.Competency" />
         <%
         webservice_layer1Competency_8id.setCompetency(competency_9idTemp);
         webservice_layer1Competency_8id.setId(id_10idTemp);
-        java.lang.String deleteCompetency45mtemp = sampleCompetencyWebserviceProxyid.deleteCompetency(webservice_layer1Competency_8id);
-if(deleteCompetency45mtemp == null){
+        java.lang.String deleteCompetency42mtemp = sampleCompetencyWebserviceProxyid.deleteCompetency(webservice_layer1Competency_8id);
+if(deleteCompetency42mtemp == null){
 %>
-<%=deleteCompetency45mtemp %>
+<%=deleteCompetency42mtemp %>
 <%
 }else{
-        String tempResultreturnp46 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteCompetency45mtemp));
+        String tempResultreturnp43 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteCompetency42mtemp));
         %>
-        <%= tempResultreturnp46 %>
+        <%= tempResultreturnp43 %>
+        <%
+}
+break;
+case 51:
+        gotMethod = true;
+        webservice_layer.Competency[] getAllCompetencies51mtemp = sampleCompetencyWebserviceProxyid.getAllCompetencies();
+if(getAllCompetencies51mtemp == null){
+%>
+<%=getAllCompetencies51mtemp %>
+<%
+}else{
+        String tempreturnp52 = null;
+        if(getAllCompetencies51mtemp != null){
+        java.util.List listreturnp52= java.util.Arrays.asList(getAllCompetencies51mtemp);
+        tempreturnp52 = listreturnp52.toString();
+        }
+        %>
+        <%=tempreturnp52%>
         <%
 }
 break;

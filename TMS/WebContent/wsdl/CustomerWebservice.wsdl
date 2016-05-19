@@ -25,20 +25,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="telefone" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
-   <element name="createCustomer">
-    <complexType>
-     <sequence>
-      <element name="cust" type="impl:Customer"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="createCustomerResponse">
-    <complexType>
-     <sequence>
-      <element name="createCustomerReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
    <element name="findCustomer">
     <complexType>
      <sequence>
@@ -50,20 +36,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="findCustomerReturn" type="impl:Customer"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="deleteCustomer">
-    <complexType>
-     <sequence>
-      <element name="cust" type="impl:Customer"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="deleteCustomerResponse">
-    <complexType>
-     <sequence>
-      <element name="deleteCustomerReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -81,28 +53,40 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="deleteCustomer">
+    <complexType>
+     <sequence>
+      <element name="cust" type="impl:Customer"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteCustomerResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteCustomerReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createCustomer">
+    <complexType>
+     <sequence>
+      <element name="cust" type="impl:Customer"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createCustomerResponse">
+    <complexType>
+     <sequence>
+      <element name="createCustomerReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
   </schema>
  </wsdl:types>
 
    <wsdl:message name="findCustomerArrayRequest">
 
       <wsdl:part element="impl:findCustomerArray" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="createCustomerRequest">
-
-      <wsdl:part element="impl:createCustomer" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="deleteCustomerRequest">
-
-      <wsdl:part element="impl:deleteCustomer" name="parameters">
 
       </wsdl:part>
 
@@ -119,6 +103,22 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:message name="updateCustomerResponse">
 
       <wsdl:part element="impl:updateCustomerResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteCustomerRequest">
+
+      <wsdl:part element="impl:deleteCustomer" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createCustomerRequest">
+
+      <wsdl:part element="impl:createCustomer" name="parameters">
 
       </wsdl:part>
 
@@ -178,18 +178,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="createCustomer">
-
-         <wsdl:input message="impl:createCustomerRequest" name="createCustomerRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:createCustomerResponse" name="createCustomerResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="findCustomer">
 
          <wsdl:input message="impl:findCustomerRequest" name="findCustomerRequest">
@@ -197,6 +185,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:findCustomerResponse" name="findCustomerResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateCustomer">
+
+         <wsdl:input message="impl:updateCustomerRequest" name="updateCustomerRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateCustomerResponse" name="updateCustomerResponse">
 
        </wsdl:output>
 
@@ -214,13 +214,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="updateCustomer">
+      <wsdl:operation name="createCustomer">
 
-         <wsdl:input message="impl:updateCustomerRequest" name="updateCustomerRequest">
+         <wsdl:input message="impl:createCustomerRequest" name="createCustomerRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:updateCustomerResponse" name="updateCustomerResponse">
+         <wsdl:output message="impl:createCustomerResponse" name="createCustomerResponse">
 
        </wsdl:output>
 
@@ -250,24 +250,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="createCustomer">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="createCustomerRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="createCustomerResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="findCustomer">
 
          <wsdlsoap:operation soapAction=""/>
@@ -279,6 +261,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="findCustomerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateCustomer">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateCustomerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateCustomerResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -304,17 +304,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="updateCustomer">
+      <wsdl:operation name="createCustomer">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="updateCustomerRequest">
+         <wsdl:input name="createCustomerRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="updateCustomerResponse">
+         <wsdl:output name="createCustomerResponse">
 
             <wsdlsoap:body use="literal"/>
 
