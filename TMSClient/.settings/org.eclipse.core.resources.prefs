@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/webservice_layer/Competency.java=UTF-8
+encoding//src/webservice_layer/CompetencyArray.java=UTF-8
 encoding//src/webservice_layer/CompetencyWebservice.java=UTF-8
 encoding//src/webservice_layer/CompetencyWebserviceService.java=UTF-8
 encoding//src/webservice_layer/CompetencyWebserviceServiceLocator.java=UTF-8

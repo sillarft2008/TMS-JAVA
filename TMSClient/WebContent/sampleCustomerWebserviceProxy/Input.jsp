@@ -59,43 +59,54 @@ valid = false;
 %>
 <FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
 <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
+case 16:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <TABLE>
 <TR>
 <TD COLSPAN="3" ALIGN="LEFT">cust:</TD>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">telefone:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone18" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone21" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">cvr:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr20" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr23" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">address:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address22" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address25" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">lastName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName24" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName27" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">firstName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName26" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName29" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">companyName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName28" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName31" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id30" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id33" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -104,7 +115,7 @@ valid = false;
 </FORM>
 <%
 break;
-case 32:
+case 35:
 valid = false;
 %>
 <FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
@@ -112,7 +123,7 @@ valid = false;
 <TABLE>
 <TR>
 <TD COLSPAN="1" ALIGN="LEFT">customerNo:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="customerNo49" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="customerNo52" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -121,7 +132,7 @@ valid = false;
 </FORM>
 <%
 break;
-case 51:
+case 54:
 valid = false;
 %>
 <FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
@@ -132,37 +143,37 @@ valid = false;
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">telefone:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone56" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone59" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">cvr:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr58" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr61" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">address:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address60" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address63" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">lastName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName62" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName65" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">firstName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName64" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName67" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">companyName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName66" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName69" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id68" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id71" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -171,7 +182,7 @@ valid = false;
 </FORM>
 <%
 break;
-case 70:
+case 73:
 valid = false;
 %>
 <FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
@@ -182,50 +193,39 @@ valid = false;
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">telefone:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone75" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone78" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">cvr:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr77" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr80" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">address:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address79" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address82" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">lastName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName81" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName84" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">firstName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName83" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName86" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">companyName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName85" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName88" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id87" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id90" SIZE=20></TD>
 </TR>
 </TABLE>
-<BR>
-<INPUT TYPE="SUBMIT" VALUE="Invoke">
-<INPUT TYPE="RESET" VALUE="Clear">
-</FORM>
-<%
-break;
-case 89:
-valid = false;
-%>
-<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
-<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <BR>
 <INPUT TYPE="SUBMIT" VALUE="Invoke">
 <INPUT TYPE="RESET" VALUE="Clear">

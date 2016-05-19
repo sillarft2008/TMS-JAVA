@@ -24,6 +24,15 @@ public class CustomerWebserviceSoapBindingStub extends org.apache.axis.client.St
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("findCustomerArray");
+        oper.setReturnType(new javax.xml.namespace.QName("http://webservice_layer", "Customer"));
+        oper.setReturnClass(webservice_layer.Customer[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "findCustomerArrayReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[0] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("createCustomer");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "cust"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservice_layer", "Customer"), webservice_layer.Customer.class, false, false);
         oper.addParameter(param);
@@ -32,7 +41,7 @@ public class CustomerWebserviceSoapBindingStub extends org.apache.axis.client.St
         oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "createCustomerReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[0] = oper;
+        _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("findCustomer");
@@ -43,7 +52,7 @@ public class CustomerWebserviceSoapBindingStub extends org.apache.axis.client.St
         oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "findCustomerReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[1] = oper;
+        _operations[2] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("deleteCustomer");
@@ -54,7 +63,7 @@ public class CustomerWebserviceSoapBindingStub extends org.apache.axis.client.St
         oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "deleteCustomerReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[2] = oper;
+        _operations[3] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateCustomer");
@@ -63,15 +72,6 @@ public class CustomerWebserviceSoapBindingStub extends org.apache.axis.client.St
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         oper.setReturnClass(java.lang.String.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "updateCustomerReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[3] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("findCustomerArray");
-        oper.setReturnType(new javax.xml.namespace.QName("http://webservice_layer", "Customer"));
-        oper.setReturnClass(webservice_layer.Customer[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "findCustomerArrayReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[4] = oper;
@@ -180,12 +180,46 @@ public class CustomerWebserviceSoapBindingStub extends org.apache.axis.client.St
         }
     }
 
-    public java.lang.String createCustomer(webservice_layer.Customer cust) throws java.rmi.RemoteException {
+    public webservice_layer.Customer[] findCustomerArray() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[0]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "findCustomerArray"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (webservice_layer.Customer[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (webservice_layer.Customer[]) org.apache.axis.utils.JavaUtils.convert(_resp, webservice_layer.Customer[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.lang.String createCustomer(webservice_layer.Customer cust) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[1]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -219,7 +253,7 @@ public class CustomerWebserviceSoapBindingStub extends org.apache.axis.client.St
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[1]);
+        _call.setOperation(_operations[2]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -253,7 +287,7 @@ public class CustomerWebserviceSoapBindingStub extends org.apache.axis.client.St
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[2]);
+        _call.setOperation(_operations[3]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -287,7 +321,7 @@ public class CustomerWebserviceSoapBindingStub extends org.apache.axis.client.St
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[3]);
+        _call.setOperation(_operations[4]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -309,40 +343,6 @@ public class CustomerWebserviceSoapBindingStub extends org.apache.axis.client.St
                 return (java.lang.String) _resp;
             } catch (java.lang.Exception _exception) {
                 return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public webservice_layer.Customer[] findCustomerArray() throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[4]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "findCustomerArray"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (webservice_layer.Customer[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (webservice_layer.Customer[]) org.apache.axis.utils.JavaUtils.convert(_resp, webservice_layer.Customer[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

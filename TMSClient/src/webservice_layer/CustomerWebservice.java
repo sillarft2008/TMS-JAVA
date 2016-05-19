@@ -8,9 +8,9 @@
 package webservice_layer;
 
 public interface CustomerWebservice extends java.rmi.Remote {
+    public webservice_layer.Customer[] findCustomerArray() throws java.rmi.RemoteException;
     public java.lang.String createCustomer(webservice_layer.Customer cust) throws java.rmi.RemoteException;
     public webservice_layer.Customer findCustomer(int customerNo) throws java.rmi.RemoteException;
     public java.lang.String deleteCustomer(webservice_layer.Customer cust) throws java.rmi.RemoteException;
     public java.lang.String updateCustomer(webservice_layer.Customer cust) throws java.rmi.RemoteException;
-    public webservice_layer.Customer[] findCustomerArray() throws java.rmi.RemoteException;
 }

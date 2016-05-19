@@ -2,6 +2,8 @@ package data_access_layer;
 
 
 import model_controller.JobController;
+import webservice_layer.Competency;
+import webservice_layer.CompetencyArray;
 import webservice_layer.Customer;
 import webservice_layer.CustomerWebservice;
 import webservice_layer.Job;
@@ -61,11 +63,16 @@ public class test {
 	
 	public static void findCustomerJobArray(){
 		JobController JWS = new JobController();
+		//JobWebservice JWS = new JobWebservice();
 		int customerId = 22;
 		@SuppressWarnings("unused")
+		//Job[] jobArray = JWS.findCustomerJobArray(customerId);
 		JobArray joblist = JWS.findCustomerJobArray(customerId);
-		//System.out.println("Jobarray\n");
-		//System.out.println(joblist.toString());
+		System.out.println("Jobarray\n");
+		System.out.println(joblist.toString());
+		//System.out.println(jobArray[0].toString());
+		//Competency[] ccc = jobArray[0].getCompetencyArray();
+		//System.out.println(ccc[0].toString());
 	}
 	
 }

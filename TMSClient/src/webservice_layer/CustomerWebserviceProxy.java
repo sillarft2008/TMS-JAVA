@@ -44,6 +44,12 @@ public class CustomerWebserviceProxy implements webservice_layer.CustomerWebserv
     return customerWebservice;
   }
   
+  public webservice_layer.Customer[] findCustomerArray() throws java.rmi.RemoteException{
+    if (customerWebservice == null)
+      _initCustomerWebserviceProxy();
+    return customerWebservice.findCustomerArray();
+  }
+  
   public java.lang.String createCustomer(webservice_layer.Customer cust) throws java.rmi.RemoteException{
     if (customerWebservice == null)
       _initCustomerWebserviceProxy();
@@ -66,12 +72,6 @@ public class CustomerWebserviceProxy implements webservice_layer.CustomerWebserv
     if (customerWebservice == null)
       _initCustomerWebserviceProxy();
     return customerWebservice.updateCustomer(cust);
-  }
-  
-  public webservice_layer.Customer[] findCustomerArray() throws java.rmi.RemoteException{
-    if (customerWebservice == null)
-      _initCustomerWebserviceProxy();
-    return customerWebservice.findCustomerArray();
   }
   
   

@@ -63,34 +63,52 @@ if(getCustomerWebservice10mtemp == null){
 break;
 case 13:
         gotMethod = true;
-        String telefone_2id=  request.getParameter("telefone18");
+        webservice_layer.Customer[] findCustomerArray13mtemp = sampleCustomerWebserviceProxyid.findCustomerArray();
+if(findCustomerArray13mtemp == null){
+%>
+<%=findCustomerArray13mtemp %>
+<%
+}else{
+        String tempreturnp14 = null;
+        if(findCustomerArray13mtemp != null){
+        java.util.List listreturnp14= java.util.Arrays.asList(findCustomerArray13mtemp);
+        tempreturnp14 = listreturnp14.toString();
+        }
+        %>
+        <%=tempreturnp14%>
+        <%
+}
+break;
+case 16:
+        gotMethod = true;
+        String telefone_2id=  request.getParameter("telefone21");
             java.lang.String telefone_2idTemp = null;
         if(!telefone_2id.equals("")){
          telefone_2idTemp  = telefone_2id;
         }
-        String cvr_3id=  request.getParameter("cvr20");
+        String cvr_3id=  request.getParameter("cvr23");
         int cvr_3idTemp  = Integer.parseInt(cvr_3id);
-        String address_4id=  request.getParameter("address22");
+        String address_4id=  request.getParameter("address25");
             java.lang.String address_4idTemp = null;
         if(!address_4id.equals("")){
          address_4idTemp  = address_4id;
         }
-        String lastName_5id=  request.getParameter("lastName24");
+        String lastName_5id=  request.getParameter("lastName27");
             java.lang.String lastName_5idTemp = null;
         if(!lastName_5id.equals("")){
          lastName_5idTemp  = lastName_5id;
         }
-        String firstName_6id=  request.getParameter("firstName26");
+        String firstName_6id=  request.getParameter("firstName29");
             java.lang.String firstName_6idTemp = null;
         if(!firstName_6id.equals("")){
          firstName_6idTemp  = firstName_6id;
         }
-        String companyName_7id=  request.getParameter("companyName28");
+        String companyName_7id=  request.getParameter("companyName31");
             java.lang.String companyName_7idTemp = null;
         if(!companyName_7id.equals("")){
          companyName_7idTemp  = companyName_7id;
         }
-        String id_8id=  request.getParameter("id30");
+        String id_8id=  request.getParameter("id33");
         int id_8idTemp  = Integer.parseInt(id_8id);
         %>
         <jsp:useBean id="webservice_layer1Customer_1id" scope="session" class="webservice_layer.Customer" />
@@ -102,26 +120,26 @@ case 13:
         webservice_layer1Customer_1id.setFirstName(firstName_6idTemp);
         webservice_layer1Customer_1id.setCompanyName(companyName_7idTemp);
         webservice_layer1Customer_1id.setId(id_8idTemp);
-        java.lang.String createCustomer13mtemp = sampleCustomerWebserviceProxyid.createCustomer(webservice_layer1Customer_1id);
-if(createCustomer13mtemp == null){
+        java.lang.String createCustomer16mtemp = sampleCustomerWebserviceProxyid.createCustomer(webservice_layer1Customer_1id);
+if(createCustomer16mtemp == null){
 %>
-<%=createCustomer13mtemp %>
+<%=createCustomer16mtemp %>
 <%
 }else{
-        String tempResultreturnp14 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(createCustomer13mtemp));
+        String tempResultreturnp17 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(createCustomer16mtemp));
         %>
-        <%= tempResultreturnp14 %>
+        <%= tempResultreturnp17 %>
         <%
 }
 break;
-case 32:
+case 35:
         gotMethod = true;
-        String customerNo_9id=  request.getParameter("customerNo49");
+        String customerNo_9id=  request.getParameter("customerNo52");
         int customerNo_9idTemp  = Integer.parseInt(customerNo_9id);
-        webservice_layer.Customer findCustomer32mtemp = sampleCustomerWebserviceProxyid.findCustomer(customerNo_9idTemp);
-if(findCustomer32mtemp == null){
+        webservice_layer.Customer findCustomer35mtemp = sampleCustomerWebserviceProxyid.findCustomer(customerNo_9idTemp);
+if(findCustomer35mtemp == null){
 %>
-<%=findCustomer32mtemp %>
+<%=findCustomer35mtemp %>
 <%
 }else{
 %>
@@ -133,11 +151,11 @@ if(findCustomer32mtemp == null){
 <TD COLSPAN="2" ALIGN="LEFT">telefone:</TD>
 <TD>
 <%
-if(findCustomer32mtemp != null){
-java.lang.String typetelefone35 = findCustomer32mtemp.getTelefone();
-        String tempResulttelefone35 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typetelefone35));
+if(findCustomer35mtemp != null){
+java.lang.String typetelefone38 = findCustomer35mtemp.getTelefone();
+        String tempResulttelefone38 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typetelefone38));
         %>
-        <%= tempResulttelefone35 %>
+        <%= tempResulttelefone38 %>
         <%
 }%>
 </TD>
@@ -146,9 +164,9 @@ java.lang.String typetelefone35 = findCustomer32mtemp.getTelefone();
 <TD COLSPAN="2" ALIGN="LEFT">cvr:</TD>
 <TD>
 <%
-if(findCustomer32mtemp != null){
+if(findCustomer35mtemp != null){
 %>
-<%=findCustomer32mtemp.getCvr()
+<%=findCustomer35mtemp.getCvr()
 %><%}%>
 </TD>
 <TR>
@@ -156,11 +174,11 @@ if(findCustomer32mtemp != null){
 <TD COLSPAN="2" ALIGN="LEFT">address:</TD>
 <TD>
 <%
-if(findCustomer32mtemp != null){
-java.lang.String typeaddress39 = findCustomer32mtemp.getAddress();
-        String tempResultaddress39 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress39));
+if(findCustomer35mtemp != null){
+java.lang.String typeaddress42 = findCustomer35mtemp.getAddress();
+        String tempResultaddress42 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress42));
         %>
-        <%= tempResultaddress39 %>
+        <%= tempResultaddress42 %>
         <%
 }%>
 </TD>
@@ -169,11 +187,11 @@ java.lang.String typeaddress39 = findCustomer32mtemp.getAddress();
 <TD COLSPAN="2" ALIGN="LEFT">lastName:</TD>
 <TD>
 <%
-if(findCustomer32mtemp != null){
-java.lang.String typelastName41 = findCustomer32mtemp.getLastName();
-        String tempResultlastName41 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typelastName41));
+if(findCustomer35mtemp != null){
+java.lang.String typelastName44 = findCustomer35mtemp.getLastName();
+        String tempResultlastName44 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typelastName44));
         %>
-        <%= tempResultlastName41 %>
+        <%= tempResultlastName44 %>
         <%
 }%>
 </TD>
@@ -182,11 +200,11 @@ java.lang.String typelastName41 = findCustomer32mtemp.getLastName();
 <TD COLSPAN="2" ALIGN="LEFT">firstName:</TD>
 <TD>
 <%
-if(findCustomer32mtemp != null){
-java.lang.String typefirstName43 = findCustomer32mtemp.getFirstName();
-        String tempResultfirstName43 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typefirstName43));
+if(findCustomer35mtemp != null){
+java.lang.String typefirstName46 = findCustomer35mtemp.getFirstName();
+        String tempResultfirstName46 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typefirstName46));
         %>
-        <%= tempResultfirstName43 %>
+        <%= tempResultfirstName46 %>
         <%
 }%>
 </TD>
@@ -195,11 +213,11 @@ java.lang.String typefirstName43 = findCustomer32mtemp.getFirstName();
 <TD COLSPAN="2" ALIGN="LEFT">companyName:</TD>
 <TD>
 <%
-if(findCustomer32mtemp != null){
-java.lang.String typecompanyName45 = findCustomer32mtemp.getCompanyName();
-        String tempResultcompanyName45 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecompanyName45));
+if(findCustomer35mtemp != null){
+java.lang.String typecompanyName48 = findCustomer35mtemp.getCompanyName();
+        String tempResultcompanyName48 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecompanyName48));
         %>
-        <%= tempResultcompanyName45 %>
+        <%= tempResultcompanyName48 %>
         <%
 }%>
 </TD>
@@ -208,45 +226,45 @@ java.lang.String typecompanyName45 = findCustomer32mtemp.getCompanyName();
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findCustomer32mtemp != null){
+if(findCustomer35mtemp != null){
 %>
-<%=findCustomer32mtemp.getId()
+<%=findCustomer35mtemp.getId()
 %><%}%>
 </TD>
 </TABLE>
 <%
 }
 break;
-case 51:
+case 54:
         gotMethod = true;
-        String telefone_11id=  request.getParameter("telefone56");
+        String telefone_11id=  request.getParameter("telefone59");
             java.lang.String telefone_11idTemp = null;
         if(!telefone_11id.equals("")){
          telefone_11idTemp  = telefone_11id;
         }
-        String cvr_12id=  request.getParameter("cvr58");
+        String cvr_12id=  request.getParameter("cvr61");
         int cvr_12idTemp  = Integer.parseInt(cvr_12id);
-        String address_13id=  request.getParameter("address60");
+        String address_13id=  request.getParameter("address63");
             java.lang.String address_13idTemp = null;
         if(!address_13id.equals("")){
          address_13idTemp  = address_13id;
         }
-        String lastName_14id=  request.getParameter("lastName62");
+        String lastName_14id=  request.getParameter("lastName65");
             java.lang.String lastName_14idTemp = null;
         if(!lastName_14id.equals("")){
          lastName_14idTemp  = lastName_14id;
         }
-        String firstName_15id=  request.getParameter("firstName64");
+        String firstName_15id=  request.getParameter("firstName67");
             java.lang.String firstName_15idTemp = null;
         if(!firstName_15id.equals("")){
          firstName_15idTemp  = firstName_15id;
         }
-        String companyName_16id=  request.getParameter("companyName66");
+        String companyName_16id=  request.getParameter("companyName69");
             java.lang.String companyName_16idTemp = null;
         if(!companyName_16id.equals("")){
          companyName_16idTemp  = companyName_16id;
         }
-        String id_17id=  request.getParameter("id68");
+        String id_17id=  request.getParameter("id71");
         int id_17idTemp  = Integer.parseInt(id_17id);
         %>
         <jsp:useBean id="webservice_layer1Customer_10id" scope="session" class="webservice_layer.Customer" />
@@ -258,48 +276,48 @@ case 51:
         webservice_layer1Customer_10id.setFirstName(firstName_15idTemp);
         webservice_layer1Customer_10id.setCompanyName(companyName_16idTemp);
         webservice_layer1Customer_10id.setId(id_17idTemp);
-        java.lang.String deleteCustomer51mtemp = sampleCustomerWebserviceProxyid.deleteCustomer(webservice_layer1Customer_10id);
-if(deleteCustomer51mtemp == null){
+        java.lang.String deleteCustomer54mtemp = sampleCustomerWebserviceProxyid.deleteCustomer(webservice_layer1Customer_10id);
+if(deleteCustomer54mtemp == null){
 %>
-<%=deleteCustomer51mtemp %>
+<%=deleteCustomer54mtemp %>
 <%
 }else{
-        String tempResultreturnp52 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteCustomer51mtemp));
+        String tempResultreturnp55 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteCustomer54mtemp));
         %>
-        <%= tempResultreturnp52 %>
+        <%= tempResultreturnp55 %>
         <%
 }
 break;
-case 70:
+case 73:
         gotMethod = true;
-        String telefone_19id=  request.getParameter("telefone75");
+        String telefone_19id=  request.getParameter("telefone78");
             java.lang.String telefone_19idTemp = null;
         if(!telefone_19id.equals("")){
          telefone_19idTemp  = telefone_19id;
         }
-        String cvr_20id=  request.getParameter("cvr77");
+        String cvr_20id=  request.getParameter("cvr80");
         int cvr_20idTemp  = Integer.parseInt(cvr_20id);
-        String address_21id=  request.getParameter("address79");
+        String address_21id=  request.getParameter("address82");
             java.lang.String address_21idTemp = null;
         if(!address_21id.equals("")){
          address_21idTemp  = address_21id;
         }
-        String lastName_22id=  request.getParameter("lastName81");
+        String lastName_22id=  request.getParameter("lastName84");
             java.lang.String lastName_22idTemp = null;
         if(!lastName_22id.equals("")){
          lastName_22idTemp  = lastName_22id;
         }
-        String firstName_23id=  request.getParameter("firstName83");
+        String firstName_23id=  request.getParameter("firstName86");
             java.lang.String firstName_23idTemp = null;
         if(!firstName_23id.equals("")){
          firstName_23idTemp  = firstName_23id;
         }
-        String companyName_24id=  request.getParameter("companyName85");
+        String companyName_24id=  request.getParameter("companyName88");
             java.lang.String companyName_24idTemp = null;
         if(!companyName_24id.equals("")){
          companyName_24idTemp  = companyName_24id;
         }
-        String id_25id=  request.getParameter("id87");
+        String id_25id=  request.getParameter("id90");
         int id_25idTemp  = Integer.parseInt(id_25id);
         %>
         <jsp:useBean id="webservice_layer1Customer_18id" scope="session" class="webservice_layer.Customer" />
@@ -311,33 +329,15 @@ case 70:
         webservice_layer1Customer_18id.setFirstName(firstName_23idTemp);
         webservice_layer1Customer_18id.setCompanyName(companyName_24idTemp);
         webservice_layer1Customer_18id.setId(id_25idTemp);
-        java.lang.String updateCustomer70mtemp = sampleCustomerWebserviceProxyid.updateCustomer(webservice_layer1Customer_18id);
-if(updateCustomer70mtemp == null){
+        java.lang.String updateCustomer73mtemp = sampleCustomerWebserviceProxyid.updateCustomer(webservice_layer1Customer_18id);
+if(updateCustomer73mtemp == null){
 %>
-<%=updateCustomer70mtemp %>
+<%=updateCustomer73mtemp %>
 <%
 }else{
-        String tempResultreturnp71 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateCustomer70mtemp));
+        String tempResultreturnp74 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateCustomer73mtemp));
         %>
-        <%= tempResultreturnp71 %>
-        <%
-}
-break;
-case 89:
-        gotMethod = true;
-        webservice_layer.Customer[] findCustomerArray89mtemp = sampleCustomerWebserviceProxyid.findCustomerArray();
-if(findCustomerArray89mtemp == null){
-%>
-<%=findCustomerArray89mtemp %>
-<%
-}else{
-        String tempreturnp90 = null;
-        if(findCustomerArray89mtemp != null){
-        java.util.List listreturnp90= java.util.Arrays.asList(findCustomerArray89mtemp);
-        tempreturnp90 = listreturnp90.toString();
-        }
-        %>
-        <%=tempreturnp90%>
+        <%= tempResultreturnp74 %>
         <%
 }
 break;

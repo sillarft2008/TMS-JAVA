@@ -6,7 +6,8 @@ public class CompetencyArray {
 	private int counter;
 	
 	public CompetencyArray() {
-		
+		competencyArray = new Competency[0];
+		counter = 0;
 	}
 	public CompetencyArray(int size){
 		competencyArray = new Competency[size];
@@ -31,9 +32,9 @@ public class CompetencyArray {
 	
   	public String toString(){
   		String returnString = "CompetencyArray:\n";
-  		for (Competency competency : competencyArray) {
-			returnString = returnString + competency.toString() + "\n";
+  		for (int i = 0 ; i< competencyArray.length;i++) {
+			returnString = returnString + competencyArray[i].toString() + "\n";
 		}
   		return returnString;
-  	}
+  	} 
 }

@@ -10,6 +10,8 @@ package webservice_layer;
 public class Job  implements java.io.Serializable {
     private java.lang.String address;
 
+    private webservice_layer.Competency[] arrayOFCompetency;
+
     private webservice_layer.Customer customer;
 
     private java.util.Calendar endDate;
@@ -23,11 +25,13 @@ public class Job  implements java.io.Serializable {
 
     public Job(
            java.lang.String address,
+           webservice_layer.Competency[] arrayOFCompetency,
            webservice_layer.Customer customer,
            java.util.Calendar endDate,
            int id,
            java.util.Calendar startDate) {
            this.address = address;
+           this.arrayOFCompetency = arrayOFCompetency;
            this.customer = customer;
            this.endDate = endDate;
            this.id = id;
@@ -52,6 +56,26 @@ public class Job  implements java.io.Serializable {
      */
     public void setAddress(java.lang.String address) {
         this.address = address;
+    }
+
+
+    /**
+     * Gets the arrayOFCompetency value for this Job.
+     * 
+     * @return arrayOFCompetency
+     */
+    public webservice_layer.Competency[] getArrayOFCompetency() {
+        return arrayOFCompetency;
+    }
+
+
+    /**
+     * Sets the arrayOFCompetency value for this Job.
+     * 
+     * @param arrayOFCompetency
+     */
+    public void setArrayOFCompetency(webservice_layer.Competency[] arrayOFCompetency) {
+        this.arrayOFCompetency = arrayOFCompetency;
     }
 
 
@@ -149,6 +173,9 @@ public class Job  implements java.io.Serializable {
             ((this.address==null && other.getAddress()==null) || 
              (this.address!=null &&
               this.address.equals(other.getAddress()))) &&
+            ((this.arrayOFCompetency==null && other.getArrayOFCompetency()==null) || 
+             (this.arrayOFCompetency!=null &&
+              java.util.Arrays.equals(this.arrayOFCompetency, other.getArrayOFCompetency()))) &&
             ((this.customer==null && other.getCustomer()==null) || 
              (this.customer!=null &&
               this.customer.equals(other.getCustomer()))) &&
@@ -172,6 +199,17 @@ public class Job  implements java.io.Serializable {
         int _hashCode = 1;
         if (getAddress() != null) {
             _hashCode += getAddress().hashCode();
+        }
+        if (getArrayOFCompetency() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getArrayOFCompetency());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getArrayOFCompetency(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
         }
         if (getCustomer() != null) {
             _hashCode += getCustomer().hashCode();
@@ -198,6 +236,13 @@ public class Job  implements java.io.Serializable {
         elemField.setXmlName(new javax.xml.namespace.QName("http://webservice_layer", "address"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("arrayOFCompetency");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://webservice_layer", "arrayOFCompetency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://webservice_layer", "Competency"));
+        elemField.setNillable(true);
+        elemField.setItemQName(new javax.xml.namespace.QName("http://webservice_layer", "item"));
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("customer");
