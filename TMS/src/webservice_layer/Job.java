@@ -57,10 +57,17 @@ public class Job {
 		this.ArrayOfCompetency = competencyArray;
 	}
 	public String toString(){
-		String returnString = "";
-		returnString = "Customer:\n" + customer.toString() + "\n";
-		returnString += "Job: " + Id + ";" + address + ";" + startDate + ";" + endDate + "\n";
-		returnString += ArrayOfCompetency.toString() ;
+		String returnString = "Job [Id=" + getId();
+		returnString += ", customer=" + customer.toString();
+		returnString += ", address=" + getAddress();
+		returnString += ", startDate=" + getStartDate();
+		returnString += ", endDate=" + getEndDate();
+		Competency[] competencyArray = ArrayOfCompetency.getCompetencyArray();
+		for (int i=0;i<competencyArray.length;i++){
+			returnString += ", competency=" + competencyArray[i].toString();
+		}
+		returnString += "]";
+		//returnString += ArrayOfCompetency.toString() ;
 		return returnString;
 	}	
 

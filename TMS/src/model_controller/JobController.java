@@ -9,6 +9,7 @@ public class JobController {
 	
 	private JobSQL JS = new JobSQL();
 	private JobCompetencySQL JCS = new JobCompetencySQL();
+	private CustomerController CC = new CustomerController();
 	
 	public void createJob(Job job){
 		JS.CreateJob(job);
@@ -31,7 +32,9 @@ public class JobController {
 	}
 	
 	public Job findJob(int jobId){
-		return JS.FindJobById(jobId);
+		Job job = JS.FindJobById(jobId);
+		job.setCustomer(CC.findCustomer(job.getCustomer().getId()));
+		return job;
 	}
 	
 	public String deleteJob(Job job){

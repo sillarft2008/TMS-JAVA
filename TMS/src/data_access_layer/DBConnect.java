@@ -18,6 +18,7 @@ public class DBConnect {
 	private Statement stmnt;
 	private ResultSet rs;
 	private DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+	private DateFormat df2 = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss");
 	
 	public DBConnect(){}
 	
@@ -83,9 +84,23 @@ public class DBConnect {
 		System.out.println(df.format(date));
 		return df.format(date);
 	}
+	public String convertDateTime(Date date){
+		System.out.println(date.toString());
+		System.out.println(df2.format(date));
+		return df2.format(date);
+	}
 	public Date convertDate(String date){
 		try {
 			return df.parse(date);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public Date convertDateTime(String date){
+		try {
+			return df2.parse(date);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

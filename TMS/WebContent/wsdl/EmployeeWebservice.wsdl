@@ -4,13 +4,10 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://webservice_layer" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="getAllEmployees">
-    <complexType/>
-   </element>
-   <element name="getAllEmployeesResponse">
+   <element name="updateEmployee">
     <complexType>
      <sequence>
-      <element maxOccurs="unbounded" name="getAllEmployeesReturn" type="impl:Employee"/>
+      <element name="employee" type="impl:Employee"/>
      </sequence>
     </complexType>
    </element>
@@ -25,31 +22,34 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="telefone" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
-   <element name="deleteEmployee">
-    <complexType>
-     <sequence>
-      <element name="employee" type="impl:Employee"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="deleteEmployeeResponse">
-    <complexType>
-     <sequence>
-      <element name="deleteEmployeeReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="updateEmployee">
-    <complexType>
-     <sequence>
-      <element name="employee" type="impl:Employee"/>
-     </sequence>
-    </complexType>
-   </element>
    <element name="updateEmployeeResponse">
     <complexType>
      <sequence>
       <element name="updateEmployeeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllEmployees">
+    <complexType/>
+   </element>
+   <element name="getAllEmployeesResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllEmployeesReturn" type="impl:Employee"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findEmployee">
+    <complexType>
+     <sequence>
+      <element name="Id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findEmployeeResponse">
+    <complexType>
+     <sequence>
+      <element name="findEmployeeReturn" type="impl:Employee"/>
      </sequence>
     </complexType>
    </element>
@@ -67,17 +67,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="findEmployee">
+   <element name="deleteEmployee">
     <complexType>
      <sequence>
-      <element name="Id" type="xsd:int"/>
+      <element name="employee" type="impl:Employee"/>
      </sequence>
     </complexType>
    </element>
-   <element name="findEmployeeResponse">
+   <element name="deleteEmployeeResponse">
     <complexType>
      <sequence>
-      <element name="findEmployeeReturn" type="impl:Employee"/>
+      <element name="deleteEmployeeReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -148,14 +148,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="deleteEmployeeRequest">
-
-      <wsdl:part element="impl:deleteEmployee" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
    <wsdl:message name="findEmployeeResponse">
 
       <wsdl:part element="impl:findEmployeeResponse" name="parameters">
@@ -164,31 +156,15 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+   <wsdl:message name="deleteEmployeeRequest">
+
+      <wsdl:part element="impl:deleteEmployee" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:portType name="EmployeeWebservice">
-
-      <wsdl:operation name="getAllEmployees">
-
-         <wsdl:input message="impl:getAllEmployeesRequest" name="getAllEmployeesRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getAllEmployeesResponse" name="getAllEmployeesResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="deleteEmployee">
-
-         <wsdl:input message="impl:deleteEmployeeRequest" name="deleteEmployeeRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:deleteEmployeeResponse" name="deleteEmployeeResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
 
       <wsdl:operation name="updateEmployee">
 
@@ -202,13 +178,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="createEmployee">
+      <wsdl:operation name="getAllEmployees">
 
-         <wsdl:input message="impl:createEmployeeRequest" name="createEmployeeRequest">
+         <wsdl:input message="impl:getAllEmployeesRequest" name="getAllEmployeesRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:createEmployeeResponse" name="createEmployeeResponse">
+         <wsdl:output message="impl:getAllEmployeesResponse" name="getAllEmployeesResponse">
 
        </wsdl:output>
 
@@ -226,47 +202,35 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-   </wsdl:portType>
+      <wsdl:operation name="createEmployee">
 
-   <wsdl:binding name="EmployeeWebserviceSoapBinding" type="impl:EmployeeWebservice">
+         <wsdl:input message="impl:createEmployeeRequest" name="createEmployeeRequest">
 
-      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+       </wsdl:input>
 
-      <wsdl:operation name="getAllEmployees">
+         <wsdl:output message="impl:createEmployeeResponse" name="createEmployeeResponse">
 
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getAllEmployeesRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getAllEmployeesResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
+       </wsdl:output>
 
       </wsdl:operation>
 
       <wsdl:operation name="deleteEmployee">
 
-         <wsdlsoap:operation soapAction=""/>
+         <wsdl:input message="impl:deleteEmployeeRequest" name="deleteEmployeeRequest">
 
-         <wsdl:input name="deleteEmployeeRequest">
+       </wsdl:input>
 
-            <wsdlsoap:body use="literal"/>
+         <wsdl:output message="impl:deleteEmployeeResponse" name="deleteEmployeeResponse">
 
-         </wsdl:input>
-
-         <wsdl:output name="deleteEmployeeResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
+       </wsdl:output>
 
       </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="EmployeeWebserviceSoapBinding" type="impl:EmployeeWebservice">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
       <wsdl:operation name="updateEmployee">
 
@@ -286,17 +250,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="createEmployee">
+      <wsdl:operation name="getAllEmployees">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="createEmployeeRequest">
+         <wsdl:input name="getAllEmployeesRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="createEmployeeResponse">
+         <wsdl:output name="getAllEmployeesResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -322,13 +286,49 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="createEmployee">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createEmployeeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createEmployeeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteEmployee">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteEmployeeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteEmployeeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:binding>
 
    <wsdl:service name="EmployeeWebserviceService">
 
       <wsdl:port binding="impl:EmployeeWebserviceSoapBinding" name="EmployeeWebservice">
 
-         <wsdlsoap:address location="http://localhost:8080/TMS/services/EmployeeWebservice"/>
+         <wsdlsoap:address location="http://localhost:12131/TMS/services/EmployeeWebservice"/>
 
       </wsdl:port>
 

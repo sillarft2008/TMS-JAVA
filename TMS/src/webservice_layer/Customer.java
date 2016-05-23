@@ -68,7 +68,17 @@ public class Customer {
 	}
 
 	public String toString(){
-		return "Customer: " + Id + ";" + firstName + ";" + lastName + ";" + companyName + ";" + cvr + ";" + address + ";" + telefone;
+		String returnString = "Customer [Id=" + getId();
+		returnString += ", firstName=" + getFirstName();
+		returnString += ", lastName=" + getLastName();
+		returnString += ", companyName=" + getCompanyName();
+		returnString += ", cvr=" + getCvr();
+		returnString += ", address=" + getAddress();
+		returnString += ", telefone=" + getTelefone();
+		returnString += "]";
+		
+		return returnString;
+				//"Customer: " + Id + ";" + firstName + ";" + lastName + ";" + companyName + ";" + cvr + ";" + address + ";" + telefone;
 	}	
 	
 	

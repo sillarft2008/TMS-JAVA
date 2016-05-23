@@ -61,14 +61,14 @@ java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy");
 		try {
 			dbconn.connect();
 			
-			ResultSet rs = dbconn.select("SELECT Id,firstName,lastName,email,address,telefone,birthdate FROM employee WHERE id = " + Id);
+			ResultSet rs = dbconn.select("SELECT Id,firstName,lastName,email,telefone,birthdate FROM employee WHERE id = " + Id);
 			rs.next();
 			System.out.println("Id=" + rs.getInt("Id"));
 			System.out.println("firstName=" + rs.getString("firstName"));
 			System.out.println("lastName=" + rs.getString("lastName"));
 			//System.out.println("ItemId=" + rs.getString("itemId"));
 			System.out.println("email=" + rs.getString("email"));
-			System.out.println("address=" + rs.getString("address"));
+			//System.out.println("address=" + rs.getString("address"));
 			System.out.println("telefone=" + rs.getString("telefone"));
 			java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
 			String currentTime = sdf.format(rs.getDate("birthdate"));
@@ -78,7 +78,7 @@ java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy");
 			employee.setFirstName(rs.getString("firstName"));
 			employee.setLastName(rs.getString("lastName"));
 			employee.setEmail(rs.getString("email"));
-			employee.setAddress(rs.getString("address"));
+			//employee.setAddress(rs.getString("address"));
 			employee.setTelefone(rs.getString("telefone"));
 			String date = sdf.format(rs.getDate("birthdate"));
 			employee.setBirthdate(date);
