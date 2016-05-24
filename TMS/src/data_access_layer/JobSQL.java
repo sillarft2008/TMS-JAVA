@@ -39,6 +39,7 @@ public class JobSQL {
 				job.setCustomer(cust);
 				jobArray.addJob(job);
 			}	
+			dbconn.close();
 			return jobArray;
 			} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -78,6 +79,7 @@ public class JobSQL {
 				job = JCS.FindJobCompetencies(job);
 				jobArray.addJob(job);
 			}	
+			dbconn.close();
 			return jobArray;
 			} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -107,6 +109,7 @@ public class JobSQL {
 			Customer cust = new Customer();
 			cust.setId(rs.getInt("customerId"));
 			job.setCustomer(cust);
+			dbconn.close();
 			return job;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -121,6 +124,7 @@ public class JobSQL {
 		try {
 			dbconn.connect();
 			dbconn.insert("INSERT INTO JOB (Id,address,startdate,enddate,customerId) VALUES (" + job.getId() + ",'" + job.getAddress() + "','" + dbconn.convertDate(job.getStartDate()) + "','" + dbconn.convertDate(job.getEndDate()) + "'," + job.getCustomer().getId() + ")");
+			dbconn.close();
 			return "Job Created";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -134,6 +138,7 @@ public class JobSQL {
 		try {
 			dbconn.connect();
 			dbconn.delete("DELETE FROM job WHERE Id =" + job.getId());
+			dbconn.close();
 			return "Job Deleted";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -147,6 +152,7 @@ public class JobSQL {
 		try {
 			dbconn.connect();
 			dbconn.update("UPDATE job SET address = '" + job.getAddress() +  "',startdate = '" + dbconn.convertDate(job.getStartDate()) +  "',enddate = '" + dbconn.convertDate(job.getEndDate()) +  "',customerid = " + job.getCustomer().getId() + " WHERE Id = " + job.getId());
+			dbconn.close();
 			return "Job Updated";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

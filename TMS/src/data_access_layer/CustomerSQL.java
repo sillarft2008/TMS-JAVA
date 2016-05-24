@@ -39,6 +39,7 @@ public class CustomerSQL {
 				cust.setTelefone(rs2.getString("telefone"));
 		        customerArray.addCustomer(cust);
 			}	
+			dbconn.close();
 			return customerArray;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -69,6 +70,7 @@ public class CustomerSQL {
 			cust.setCvr(rs.getInt("cvr"));
 			cust.setAddress(rs.getString("address"));
 			cust.setTelefone(rs.getString("telefone"));
+			dbconn.close();
 			return cust;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -83,6 +85,7 @@ public class CustomerSQL {
 		try {
 			dbconn.connect();
 			dbconn.insert("INSERT INTO CUSTOMER (Id,firstName,lastName,companyName,cvr,address,telefone) VALUES (" + cust.getId() + ",'" + cust.getFirstName() + "','" + cust.getLastName() + "','" + cust.getCompanyName() + "'," + cust.getCvr() + ",'" + cust.getAddress() + "'," + cust.getTelefone() + ")");
+			dbconn.close();
 			return "Customer Created";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -96,6 +99,7 @@ public class CustomerSQL {
 		try {
 			dbconn.connect();
 			dbconn.delete("DELETE FROM customer WHERE Id =" + cust.getId());
+			dbconn.close();
 			return "Customer Deleted";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -109,6 +113,7 @@ public class CustomerSQL {
 		try {
 			dbconn.connect();
 			dbconn.update("UPDATE customer SET firstName = '" + cust.getFirstName() +  "',lastName = '" + cust.getLastName() +  "',companyName = '" + cust.getCompanyName() +  "',cvr = " + cust.getCvr() +  ",address = '" + cust.getAddress() +  "',telefone = '" + cust.getTelefone() +  "' WHERE Id = " + cust.getId());
+			dbconn.close();
 			return "Customer Updated";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

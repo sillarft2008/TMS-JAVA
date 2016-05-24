@@ -31,6 +31,7 @@ public class CompetencySQL {
 			
 		        competencyArray.addCompetency(competency);
 			}	
+			dbconn.close();
 			return competencyArray;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -53,6 +54,7 @@ public class CompetencySQL {
 			competency.setId(rs.getInt("Id"));
 			competency.setCompetency(rs.getString("competency"));
 			
+			dbconn.close();
 			return competency;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -67,6 +69,7 @@ public class CompetencySQL {
 		try {
 			dbconn.connect();
 			dbconn.insert("INSERT INTO COMPETENCY (Id,competency) VALUES (" + competency.getId() + ",'" + competency.getCompetency() + "')");
+			dbconn.close();
 			return "Competency Created";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -80,6 +83,7 @@ public class CompetencySQL {
 		try {
 			dbconn.connect();
 			dbconn.delete("DELETE FROM competency WHERE Id =" + competency.getId());
+			dbconn.close();
 			return "Competency Deleted";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -93,6 +97,7 @@ public class CompetencySQL {
 		try {
 			dbconn.connect();
 			dbconn.update("UPDATE competency SET competency = '" + competency.getCompetency() + "' WHERE Id = " + competency.getId());
+			dbconn.close();
 			return "Competency Updated";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

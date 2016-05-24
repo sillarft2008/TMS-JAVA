@@ -33,6 +33,7 @@ DBConnect dbconn = new DBConnect();
 
 		        ecArray.addEmployeeCompetency(ec);
 			}	
+			dbconn.close();
 			return ecArray;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -65,6 +66,7 @@ DBConnect dbconn = new DBConnect();
 
 		        ecArray.addEmployeeCompetency(ec);
 			}	
+			dbconn.close();
 			return ecArray;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -88,6 +90,7 @@ DBConnect dbconn = new DBConnect();
 			ec.setEmployeeId(rs.getInt("employeeId"));
 			ec.setCompetencyId(rs.getInt("competencyId"));
 			
+			dbconn.close();
 			return ec;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -103,6 +106,7 @@ DBConnect dbconn = new DBConnect();
 			dbconn.connect();
 			dbconn.insert("INSERT INTO EMPLOYEE_COMPETENCY (Id,employeeId,competencyId) "
 					+ "VALUES (" + ec.getId() + "," + ec.getEmployeeId() + ","+ ec.getCompetencyId() + ")");
+			dbconn.close();
 			return "Employee_Competency Created";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -116,6 +120,7 @@ DBConnect dbconn = new DBConnect();
 		try {
 			dbconn.connect();
 			dbconn.delete("DELETE FROM employee_competency WHERE Id =" + ec.getId());
+			dbconn.close();
 			return "Employee_Competency Deleted";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -130,6 +135,7 @@ DBConnect dbconn = new DBConnect();
 		try {
 			dbconn.connect();
 			dbconn.update("UPDATE employee_competency SET employeeId = " + ec.getEmployeeId() + ", competencyId = " + ec.getCompetencyId() + ", WHERE Id = " + ec.getId());
+			dbconn.close();
 			return "Employee_Competency Updated";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

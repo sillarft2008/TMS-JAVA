@@ -32,6 +32,7 @@ public class JobCompetencySQL {
 				competencyArray.addCompetency(competency);
 			}	
 			job.setArrayOFCompetency(competencyArray);
+			dbconn.close();
 			return job;
 			
 			} catch (SQLException e) {
@@ -47,6 +48,7 @@ public class JobCompetencySQL {
 		try {
 			dbconn.connect();
 			dbconn.insert("INSERT INTO job_competency (jobId,competencyId) VALUES (" + job.getId() + "," + competency.getId() + ")");
+			dbconn.close();
 			return "JobCompetency Created";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -61,6 +63,7 @@ public class JobCompetencySQL {
 		try {
 			dbconn.connect();
 			dbconn.delete("DELETE FROM job_competency WHERE jobId = " + job.getId() + "AND competencyId = " + competency.getId());
+			dbconn.close();
 			return "JobCompetency Deleted";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

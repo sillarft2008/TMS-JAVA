@@ -9,6 +9,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class DBConnect {
 	private static String password = "root";
@@ -20,7 +21,9 @@ public class DBConnect {
 	private DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 	private DateFormat df2 = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss");
 	
-	public DBConnect(){}
+	public DBConnect(){
+		TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+	}
 	
 	public void connect() throws SQLException{
 		try {
@@ -33,6 +36,11 @@ public class DBConnect {
 			throw e;
 		}	
 	}
+	
+	public void close() throws SQLException{
+		conn.close();
+	}
+	
 	
 	public ResultSet select(String sqlString) throws SQLException{
 		try {

@@ -4,6 +4,26 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://webservice_layer" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="deleteCompetency">
+    <complexType>
+     <sequence>
+      <element name="competency" type="impl:Competency"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Competency">
+    <sequence>
+     <element name="competency" nillable="true" type="xsd:string"/>
+     <element name="id" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <element name="deleteCompetencyResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteCompetencyReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="findCompetency">
     <complexType>
      <sequence>
@@ -15,26 +35,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="findCompetencyReturn" type="impl:Competency"/>
-     </sequence>
-    </complexType>
-   </element>
-   <complexType name="Competency">
-    <sequence>
-     <element name="competency" nillable="true" type="xsd:string"/>
-     <element name="id" type="xsd:int"/>
-    </sequence>
-   </complexType>
-   <element name="updateCompetency">
-    <complexType>
-     <sequence>
-      <element name="competency" type="impl:Competency"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="updateCompetencyResponse">
-    <complexType>
-     <sequence>
-      <element name="updateCompetencyReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -52,17 +52,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="deleteCompetency">
+   <element name="updateCompetency">
     <complexType>
      <sequence>
       <element name="competency" type="impl:Competency"/>
      </sequence>
     </complexType>
    </element>
-   <element name="deleteCompetencyResponse">
+   <element name="updateCompetencyResponse">
     <complexType>
      <sequence>
-      <element name="deleteCompetencyReturn" type="xsd:string"/>
+      <element name="updateCompetencyReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -127,17 +127,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="findCompetencyResponse">
+   <wsdl:message name="deleteCompetencyResponse">
 
-      <wsdl:part element="impl:findCompetencyResponse" name="parameters">
+      <wsdl:part element="impl:deleteCompetencyResponse" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="deleteCompetencyResponse">
+   <wsdl:message name="findCompetencyResponse">
 
-      <wsdl:part element="impl:deleteCompetencyResponse" name="parameters">
+      <wsdl:part element="impl:findCompetencyResponse" name="parameters">
 
       </wsdl:part>
 
@@ -161,6 +161,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="CompetencyWebservice">
 
+      <wsdl:operation name="deleteCompetency">
+
+         <wsdl:input message="impl:deleteCompetencyRequest" name="deleteCompetencyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteCompetencyResponse" name="deleteCompetencyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="findCompetency">
 
          <wsdl:input message="impl:findCompetencyRequest" name="findCompetencyRequest">
@@ -168,18 +180,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:findCompetencyResponse" name="findCompetencyResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="updateCompetency">
-
-         <wsdl:input message="impl:updateCompetencyRequest" name="updateCompetencyRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:updateCompetencyResponse" name="updateCompetencyResponse">
 
        </wsdl:output>
 
@@ -197,13 +197,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="deleteCompetency">
+      <wsdl:operation name="updateCompetency">
 
-         <wsdl:input message="impl:deleteCompetencyRequest" name="deleteCompetencyRequest">
+         <wsdl:input message="impl:updateCompetencyRequest" name="updateCompetencyRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:deleteCompetencyResponse" name="deleteCompetencyResponse">
+         <wsdl:output message="impl:updateCompetencyResponse" name="updateCompetencyResponse">
 
        </wsdl:output>
 
@@ -227,6 +227,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
+      <wsdl:operation name="deleteCompetency">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteCompetencyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteCompetencyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="findCompetency">
 
          <wsdlsoap:operation soapAction=""/>
@@ -238,24 +256,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="findCompetencyResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="updateCompetency">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="updateCompetencyRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="updateCompetencyResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -281,17 +281,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="deleteCompetency">
+      <wsdl:operation name="updateCompetency">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="deleteCompetencyRequest">
+         <wsdl:input name="updateCompetencyRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="deleteCompetencyResponse">
+         <wsdl:output name="updateCompetencyResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -323,7 +323,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdl:port binding="impl:CompetencyWebserviceSoapBinding" name="CompetencyWebservice">
 
-         <wsdlsoap:address location="http://localhost:8080/TMS/services/CompetencyWebservice"/>
+         <wsdlsoap:address location="http://localhost:12131/TMS/services/CompetencyWebservice"/>
 
       </wsdl:port>
 

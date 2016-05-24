@@ -46,6 +46,7 @@ java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy");
 
 		        employeeArray.addEmployee(employee);
 			}	
+			dbconn.close();
 			return employeeArray;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -83,6 +84,7 @@ java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy");
 			String date = sdf.format(rs.getDate("birthdate"));
 			employee.setBirthdate(date);
 			
+			dbconn.close();
 			return employee;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -98,6 +100,7 @@ java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy");
 			dbconn.connect();
 			dbconn.insert("INSERT INTO employee (Id,firstName,lastName,email,address,telefone,birthdate)"
 					+ " VALUES (" + employee.getId() + ",'" + employee.getFirstName() + "','" + employee.getLastName() + "','" + employee.getEmail() + "','" + employee.getAddress() + "','" + employee.getTelefone() + "','" + employee.getBirthdate() + "')");
+			dbconn.close();
 			return "Employee Created";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -111,6 +114,7 @@ java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy");
 		try {
 			dbconn.connect();
 			dbconn.delete("DELETE FROM employee WHERE Id =" + employee.getId());
+			dbconn.close();
 			return "Employee Deleted";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -124,6 +128,7 @@ java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy");
 		try {
 			dbconn.connect();
 			dbconn.update("UPDATE employee SET firstName = '" + employee.getFirstName() + "',lastName = '" + employee.getLastName() +  "',email = '" + employee.getEmail() +  "',address = '" + employee.getAddress() +  "',telefone = '" + employee.getTelefone() +  "',birthdate = '" + employee.getBirthdate() +  "' WHERE Id = " + employee.getId());
+			dbconn.close();
 			return "Employee Updated";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
