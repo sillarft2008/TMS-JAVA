@@ -44,22 +44,16 @@ public class JobWebserviceProxy implements webservice_layer.JobWebservice {
     return jobWebservice;
   }
   
-  public void createJob(webservice_layer.Job job) throws java.rmi.RemoteException{
+  public webservice_layer.Job[] findCustomerJobArray(int customerId) throws java.rmi.RemoteException{
     if (jobWebservice == null)
       _initJobWebserviceProxy();
-    jobWebservice.createJob(job);
+    return jobWebservice.findCustomerJobArray(customerId);
   }
   
-  public webservice_layer.Job[] findJobArray() throws java.rmi.RemoteException{
+  public java.lang.String updateJob(webservice_layer.Job job) throws java.rmi.RemoteException{
     if (jobWebservice == null)
       _initJobWebserviceProxy();
-    return jobWebservice.findJobArray();
-  }
-  
-  public webservice_layer.Job findJob(int jobId) throws java.rmi.RemoteException{
-    if (jobWebservice == null)
-      _initJobWebserviceProxy();
-    return jobWebservice.findJob(jobId);
+    return jobWebservice.updateJob(job);
   }
   
   public void addCompetency(webservice_layer.Job job, webservice_layer.Competency competency) throws java.rmi.RemoteException{
@@ -74,16 +68,22 @@ public class JobWebserviceProxy implements webservice_layer.JobWebservice {
     return jobWebservice.deleteJob(job);
   }
   
-  public java.lang.String updateJob(webservice_layer.Job job) throws java.rmi.RemoteException{
+  public webservice_layer.Job[] findJobArray() throws java.rmi.RemoteException{
     if (jobWebservice == null)
       _initJobWebserviceProxy();
-    return jobWebservice.updateJob(job);
+    return jobWebservice.findJobArray();
   }
   
-  public webservice_layer.Job[] findCustomerJobArray(int customerId) throws java.rmi.RemoteException{
+  public webservice_layer.Job findJob(int jobId) throws java.rmi.RemoteException{
     if (jobWebservice == null)
       _initJobWebserviceProxy();
-    return jobWebservice.findCustomerJobArray(customerId);
+    return jobWebservice.findJob(jobId);
+  }
+  
+  public void createJob(webservice_layer.Job job) throws java.rmi.RemoteException{
+    if (jobWebservice == null)
+      _initJobWebserviceProxy();
+    jobWebservice.createJob(job);
   }
   
   

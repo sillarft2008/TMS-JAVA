@@ -22,7 +22,7 @@ public class EmployeeWebserviceServiceLocator extends org.apache.axis.client.Ser
     }
 
     // Use to get a proxy class for EmployeeWebservice
-    private java.lang.String EmployeeWebservice_address = "http://localhost:8080/TMS/services/EmployeeWebservice";
+    private java.lang.String EmployeeWebservice_address = "http://localhost:12131/TMS/services/EmployeeWebservice";
 
     public java.lang.String getEmployeeWebserviceAddress() {
         return EmployeeWebservice_address;

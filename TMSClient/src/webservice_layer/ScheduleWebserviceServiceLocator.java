@@ -1,5 +1,5 @@
 /**
- * JobWebserviceServiceLocator.java
+ * ScheduleWebserviceServiceLocator.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -7,53 +7,53 @@
 
 package webservice_layer;
 
-public class JobWebserviceServiceLocator extends org.apache.axis.client.Service implements webservice_layer.JobWebserviceService {
+public class ScheduleWebserviceServiceLocator extends org.apache.axis.client.Service implements webservice_layer.ScheduleWebserviceService {
 
-    public JobWebserviceServiceLocator() {
+    public ScheduleWebserviceServiceLocator() {
     }
 
 
-    public JobWebserviceServiceLocator(org.apache.axis.EngineConfiguration config) {
+    public ScheduleWebserviceServiceLocator(org.apache.axis.EngineConfiguration config) {
         super(config);
     }
 
-    public JobWebserviceServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
+    public ScheduleWebserviceServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
         super(wsdlLoc, sName);
     }
 
-    // Use to get a proxy class for JobWebservice
-    private java.lang.String JobWebservice_address = "http://localhost:12131/TMS/services/JobWebservice";
+    // Use to get a proxy class for ScheduleWebservice
+    private java.lang.String ScheduleWebservice_address = "http://localhost:12131/TMS/services/ScheduleWebservice";
 
-    public java.lang.String getJobWebserviceAddress() {
-        return JobWebservice_address;
+    public java.lang.String getScheduleWebserviceAddress() {
+        return ScheduleWebservice_address;
     }
 
     // The WSDD service name defaults to the port name.
-    private java.lang.String JobWebserviceWSDDServiceName = "JobWebservice";
+    private java.lang.String ScheduleWebserviceWSDDServiceName = "ScheduleWebservice";
 
-    public java.lang.String getJobWebserviceWSDDServiceName() {
-        return JobWebserviceWSDDServiceName;
+    public java.lang.String getScheduleWebserviceWSDDServiceName() {
+        return ScheduleWebserviceWSDDServiceName;
     }
 
-    public void setJobWebserviceWSDDServiceName(java.lang.String name) {
-        JobWebserviceWSDDServiceName = name;
+    public void setScheduleWebserviceWSDDServiceName(java.lang.String name) {
+        ScheduleWebserviceWSDDServiceName = name;
     }
 
-    public webservice_layer.JobWebservice getJobWebservice() throws javax.xml.rpc.ServiceException {
+    public webservice_layer.ScheduleWebservice getScheduleWebservice() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
-            endpoint = new java.net.URL(JobWebservice_address);
+            endpoint = new java.net.URL(ScheduleWebservice_address);
         }
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getJobWebservice(endpoint);
+        return getScheduleWebservice(endpoint);
     }
 
-    public webservice_layer.JobWebservice getJobWebservice(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public webservice_layer.ScheduleWebservice getScheduleWebservice(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            webservice_layer.JobWebserviceSoapBindingStub _stub = new webservice_layer.JobWebserviceSoapBindingStub(portAddress, this);
-            _stub.setPortName(getJobWebserviceWSDDServiceName());
+            webservice_layer.ScheduleWebserviceSoapBindingStub _stub = new webservice_layer.ScheduleWebserviceSoapBindingStub(portAddress, this);
+            _stub.setPortName(getScheduleWebserviceWSDDServiceName());
             return _stub;
         }
         catch (org.apache.axis.AxisFault e) {
@@ -61,8 +61,8 @@ public class JobWebserviceServiceLocator extends org.apache.axis.client.Service 
         }
     }
 
-    public void setJobWebserviceEndpointAddress(java.lang.String address) {
-        JobWebservice_address = address;
+    public void setScheduleWebserviceEndpointAddress(java.lang.String address) {
+        ScheduleWebservice_address = address;
     }
 
     /**
@@ -72,9 +72,9 @@ public class JobWebserviceServiceLocator extends org.apache.axis.client.Service 
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (webservice_layer.JobWebservice.class.isAssignableFrom(serviceEndpointInterface)) {
-                webservice_layer.JobWebserviceSoapBindingStub _stub = new webservice_layer.JobWebserviceSoapBindingStub(new java.net.URL(JobWebservice_address), this);
-                _stub.setPortName(getJobWebserviceWSDDServiceName());
+            if (webservice_layer.ScheduleWebservice.class.isAssignableFrom(serviceEndpointInterface)) {
+                webservice_layer.ScheduleWebserviceSoapBindingStub _stub = new webservice_layer.ScheduleWebserviceSoapBindingStub(new java.net.URL(ScheduleWebservice_address), this);
+                _stub.setPortName(getScheduleWebserviceWSDDServiceName());
                 return _stub;
             }
         }
@@ -94,8 +94,8 @@ public class JobWebserviceServiceLocator extends org.apache.axis.client.Service 
             return getPort(serviceEndpointInterface);
         }
         java.lang.String inputPortName = portName.getLocalPart();
-        if ("JobWebservice".equals(inputPortName)) {
-            return getJobWebservice();
+        if ("ScheduleWebservice".equals(inputPortName)) {
+            return getScheduleWebservice();
         }
         else  {
             java.rmi.Remote _stub = getPort(serviceEndpointInterface);
@@ -105,7 +105,7 @@ public class JobWebserviceServiceLocator extends org.apache.axis.client.Service 
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("http://webservice_layer", "JobWebserviceService");
+        return new javax.xml.namespace.QName("http://webservice_layer", "ScheduleWebserviceService");
     }
 
     private java.util.HashSet ports = null;
@@ -113,7 +113,7 @@ public class JobWebserviceServiceLocator extends org.apache.axis.client.Service 
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("http://webservice_layer", "JobWebservice"));
+            ports.add(new javax.xml.namespace.QName("http://webservice_layer", "ScheduleWebservice"));
         }
         return ports.iterator();
     }
@@ -123,8 +123,8 @@ public class JobWebserviceServiceLocator extends org.apache.axis.client.Service 
     */
     public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
         
-if ("JobWebservice".equals(portName)) {
-            setJobWebserviceEndpointAddress(address);
+if ("ScheduleWebservice".equals(portName)) {
+            setScheduleWebserviceEndpointAddress(address);
         }
         else 
 { // Unknown Port Name

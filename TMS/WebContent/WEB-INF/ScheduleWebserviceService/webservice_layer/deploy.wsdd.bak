@@ -1,0 +1,107 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ScheduleWebserviceService WSDL service -->
+
+  <service name="ScheduleWebservice" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice_layer"/>
+      <parameter name="wsdlServiceElement" value="ScheduleWebserviceService"/>
+      <parameter name="schemaQualified" value="http://webservice_layer"/>
+      <parameter name="wsdlServicePort" value="ScheduleWebservice"/>
+      <parameter name="className" value="webservice_layer.ScheduleWebserviceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ScheduleWebservice"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="deleteSchedule" qname="operNS:deleteSchedule" xmlns:operNS="http://webservice_layer" returnQName="retNS:deleteScheduleReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:schedule" xmlns:pns="http://webservice_layer" type="tns:Schedule" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="updateSchedule" qname="operNS:updateSchedule" xmlns:operNS="http://webservice_layer" returnQName="retNS:updateScheduleReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:schedule" xmlns:pns="http://webservice_layer" type="tns:Schedule" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="findSchedule" qname="operNS:findSchedule" xmlns:operNS="http://webservice_layer" returnQName="retNS:findScheduleReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Schedule" xmlns:rtns="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:scheduleId" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="createSchedule" qname="operNS:createSchedule" xmlns:operNS="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:schedule" xmlns:pns="http://webservice_layer" type="tns:Schedule" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="findScheduleArrayByEmployeeDate" qname="operNS:findScheduleArrayByEmployeeDate" xmlns:operNS="http://webservice_layer" returnQName="retNS:findScheduleArrayByEmployeeDateReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Schedule" xmlns:rtns="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:employeeId" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:startTimeDate" xmlns:pns="http://webservice_layer" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="findScheduleArray" qname="operNS:findScheduleArray" xmlns:operNS="http://webservice_layer" returnQName="retNS:findScheduleArrayReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Schedule" xmlns:rtns="http://webservice_layer" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="findSchedule createSchedule updateSchedule deleteSchedule findScheduleArrayByEmployeeDate findScheduleArray"/>
+
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:Product"
+        type="java:webservice_layer.Product"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:Customer"
+        type="java:webservice_layer.Customer"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:Job"
+        type="java:webservice_layer.Job"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:Item"
+        type="java:webservice_layer.Item"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:Competency"
+        type="java:webservice_layer.Competency"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:Employee"
+        type="java:webservice_layer.Employee"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:ArrayOfCompetency"
+        type="java:webservice_layer.Competency[]"
+        innerType="cmp-ns:Competency" xmlns:cmp-ns="http://webservice_layer"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:Schedule"
+        type="java:webservice_layer.Schedule"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
