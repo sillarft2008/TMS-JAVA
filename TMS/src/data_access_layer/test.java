@@ -84,7 +84,7 @@ public class test {
 	
 	@SuppressWarnings({ "deprecation", "static-access" })
 	public static void testScheduleWebservice(){
-		int scheduleId = 3;
+		int scheduleId = 6;
 		int employeeId = 5;
 		int jobId = 2;
 		int competencyId = 3;
@@ -117,19 +117,19 @@ public class test {
 		schedule.setStartTimeDate(startTimeDate);
 		schedule.setDuration(duration);
 		
-		//SW.createSchedule(schedule);
+		SW.createSchedule(schedule);
 		
 		//System.out.println(SW.deleteSchedule(schedule));
 		
 		//employee.setId(2);
 		//schedule.setEmployee(employee);
 		//SW.updateSchedule(schedule);
-		Date date = DBC.convertDate("2016-01-01");
+		/*Date date = DBC.convertDate("2016-01-01");
 		Schedule[] scheduleArray = SW.findScheduleArrayByEmployeeDate(3, date);
 		System.out.println("findScheduleArray()");
 		for (int i= 0;i<scheduleArray.length;i++){
 			System.out.println(scheduleArray[i].toString());
-		}
+		}*/
 	}
 	
 }

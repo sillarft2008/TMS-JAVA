@@ -68,7 +68,7 @@ public class ScheduleSQL {
 			int count = rs.getInt("result");
 			Schedule[] scheduleArray = new Schedule[count];
 			
-			ResultSet rs2 = dbconn.select("SELECT Id,employeeId,jobId,itemId,competencyId,startTimeDate,duration FROM schedule WHERE employeeId = " + employeeId + " AND Date(startTimeDate) = '" + dbconn.convertDate(startTimeDate) + "'");
+			ResultSet rs2 = dbconn.select("SELECT Id,employeeId,jobId,itemId,competencyId,startTimeDate,duration FROM schedule WHERE employeeId = " + employeeId + " AND Date(startTimeDate) = '" + dbconn.convertDate(startTimeDate) + "' ORDER BY startTimeDate");
 			int i = 0;
 			while (rs2.next()){
 				Schedule schedule = new Schedule();
@@ -245,7 +245,15 @@ public class ScheduleSQL {
 	public String CreateSchedule(Schedule schedule){
 		System.out.println("CreateSchedule");
 		try {
+			if (schedule.getId() == 0){
+			
 			dbconn.connect();
+			ResultSet rs = dbconn.select("SELECT MAX(Id) as result FROM schedule");
+			rs.next();
+			int count = rs.getInt("result");
+			schedule.setId(count + 1);
+			}
+			
 			dbconn.insert("INSERT INTO schedule (Id,employeeId,jobId,itemId,competencyId,startTimeDate,duration) VALUES (" + schedule.getId() + "," + schedule.getEmployee().getId() + "," + schedule.getJob().getId() + "," + schedule.getItem().getId() + "," + schedule.getCompetency().getId() + ",'" + dbconn.convertDateTime(schedule.getStartTimeDate()) + "','" + dbconn.convertDateTime(schedule.getDuration()) + "')");
 			dbconn.close();
 			return "Schedule Created";
