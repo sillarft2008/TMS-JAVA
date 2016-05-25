@@ -44,6 +44,12 @@ public class ScheduleWebserviceProxy implements webservice_layer.ScheduleWebserv
     return scheduleWebservice;
   }
   
+  public void createSchedule(webservice_layer.Schedule schedule) throws java.rmi.RemoteException{
+    if (scheduleWebservice == null)
+      _initScheduleWebserviceProxy();
+    scheduleWebservice.createSchedule(schedule);
+  }
+  
   public java.lang.String deleteSchedule(webservice_layer.Schedule schedule) throws java.rmi.RemoteException{
     if (scheduleWebservice == null)
       _initScheduleWebserviceProxy();
@@ -62,22 +68,16 @@ public class ScheduleWebserviceProxy implements webservice_layer.ScheduleWebserv
     return scheduleWebservice.findSchedule(scheduleId);
   }
   
-  public void createSchedule(webservice_layer.Schedule schedule) throws java.rmi.RemoteException{
+  public webservice_layer.Schedule[] findScheduleArray() throws java.rmi.RemoteException{
     if (scheduleWebservice == null)
       _initScheduleWebserviceProxy();
-    scheduleWebservice.createSchedule(schedule);
+    return scheduleWebservice.findScheduleArray();
   }
   
   public webservice_layer.Schedule[] findScheduleArrayByEmployeeDate(int employeeId, java.util.Calendar startTimeDate) throws java.rmi.RemoteException{
     if (scheduleWebservice == null)
       _initScheduleWebserviceProxy();
     return scheduleWebservice.findScheduleArrayByEmployeeDate(employeeId, startTimeDate);
-  }
-  
-  public webservice_layer.Schedule[] findScheduleArray() throws java.rmi.RemoteException{
-    if (scheduleWebservice == null)
-      _initScheduleWebserviceProxy();
-    return scheduleWebservice.findScheduleArray();
   }
   
   

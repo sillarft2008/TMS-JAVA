@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -44,11 +44,11 @@
    <ns1:parameter qname="ns7:job" type="ns7:Job"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="findJob addCompetency updateJob findCustomerJobArray findJobArray createJob deleteJob"/>
-  <ns1:parameter name="wsdlPortType" value="JobWebservice"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://webservice_layer"/>
-  <ns1:parameter name="wsdlServicePort" value="JobWebservice"/>
+  <ns1:parameter name="wsdlPortType" value="JobWebservice"/>
   <ns1:parameter name="className" value="webservice_layer.JobWebservice"/>
+  <ns1:parameter name="wsdlServicePort" value="JobWebservice"/>
+  <ns1:parameter name="schemaQualified" value="http://webservice_layer"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://webservice_layer"/>
   <ns1:parameter name="wsdlServiceElement" value="JobWebserviceService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns8:Customer" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:webservice_layer.Customer" xmlns:ns8="http://webservice_layer"/>
@@ -77,11 +77,11 @@
   </ns1:operation>
   <ns1:operation name="getAllEmployees" qname="ns16:getAllEmployees" returnQName="ns16:getAllEmployeesReturn" returnType="ns16:Employee" soapAction="" xmlns:ns16="http://webservice_layer"/>
   <ns1:parameter name="allowedMethods" value="updateEmployee createEmployee findEmployee deleteEmployee getAllEmployees"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="EmployeeWebservice"/>
-  <ns1:parameter name="className" value="webservice_layer.EmployeeWebservice"/>
-  <ns1:parameter name="wsdlServicePort" value="EmployeeWebservice"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://webservice_layer"/>
+  <ns1:parameter name="wsdlServicePort" value="EmployeeWebservice"/>
+  <ns1:parameter name="className" value="webservice_layer.EmployeeWebservice"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://webservice_layer"/>
   <ns1:parameter name="wsdlServiceElement" value="EmployeeWebserviceService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns17:Employee" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:webservice_layer.Employee" xmlns:ns17="http://webservice_layer"/>
@@ -91,24 +91,24 @@
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
  </ns1:service>
  <ns1:service name="ScheduleWebservice" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="deleteSchedule" qname="ns18:deleteSchedule" returnQName="ns18:deleteScheduleReturn" returnType="xsd:string" soapAction="" xmlns:ns18="http://webservice_layer" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="createSchedule" qname="ns18:createSchedule" soapAction="" xmlns:ns18="http://webservice_layer">
    <ns1:parameter qname="ns18:schedule" type="ns18:Schedule"/>
   </ns1:operation>
-  <ns1:operation name="updateSchedule" qname="ns19:updateSchedule" returnQName="ns19:updateScheduleReturn" returnType="xsd:string" soapAction="" xmlns:ns19="http://webservice_layer" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="deleteSchedule" qname="ns19:deleteSchedule" returnQName="ns19:deleteScheduleReturn" returnType="xsd:string" soapAction="" xmlns:ns19="http://webservice_layer" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns19:schedule" type="ns19:Schedule"/>
   </ns1:operation>
-  <ns1:operation name="findSchedule" qname="ns20:findSchedule" returnQName="ns20:findScheduleReturn" returnType="ns20:Schedule" soapAction="" xmlns:ns20="http://webservice_layer">
-   <ns1:parameter qname="ns20:scheduleId" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="updateSchedule" qname="ns20:updateSchedule" returnQName="ns20:updateScheduleReturn" returnType="xsd:string" soapAction="" xmlns:ns20="http://webservice_layer" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns20:schedule" type="ns20:Schedule"/>
   </ns1:operation>
-  <ns1:operation name="createSchedule" qname="ns21:createSchedule" soapAction="" xmlns:ns21="http://webservice_layer">
-   <ns1:parameter qname="ns21:schedule" type="ns21:Schedule"/>
+  <ns1:operation name="findSchedule" qname="ns21:findSchedule" returnQName="ns21:findScheduleReturn" returnType="ns21:Schedule" soapAction="" xmlns:ns21="http://webservice_layer">
+   <ns1:parameter qname="ns21:scheduleId" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:operation name="findScheduleArrayByEmployeeDate" qname="ns22:findScheduleArrayByEmployeeDate" returnQName="ns22:findScheduleArrayByEmployeeDateReturn" returnType="ns22:Schedule" soapAction="" xmlns:ns22="http://webservice_layer">
-   <ns1:parameter qname="ns22:employeeId" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-   <ns1:parameter qname="ns22:startTimeDate" type="xsd:dateTime" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="findScheduleArray" qname="ns22:findScheduleArray" returnQName="ns22:findScheduleArrayReturn" returnType="ns22:Schedule" soapAction="" xmlns:ns22="http://webservice_layer"/>
+  <ns1:operation name="findScheduleArrayByEmployeeDate" qname="ns23:findScheduleArrayByEmployeeDate" returnQName="ns23:findScheduleArrayByEmployeeDateReturn" returnType="ns23:Schedule" soapAction="" xmlns:ns23="http://webservice_layer">
+   <ns1:parameter qname="ns23:employeeId" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns23:startTimeDate" type="xsd:dateTime" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:operation name="findScheduleArray" qname="ns23:findScheduleArray" returnQName="ns23:findScheduleArrayReturn" returnType="ns23:Schedule" soapAction="" xmlns:ns23="http://webservice_layer"/>
-  <ns1:parameter name="allowedMethods" value="findSchedule createSchedule updateSchedule deleteSchedule findScheduleArrayByEmployeeDate findScheduleArray"/>
+  <ns1:parameter name="allowedMethods" value="createSchedule findSchedule updateSchedule deleteSchedule findScheduleArrayByEmployeeDate findScheduleArray"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="ScheduleWebservice"/>
   <ns1:parameter name="className" value="webservice_layer.ScheduleWebservice"/>
@@ -140,11 +140,11 @@
   </ns1:operation>
   <ns1:operation name="getAllCompetencies" qname="ns36:getAllCompetencies" returnQName="ns36:getAllCompetenciesReturn" returnType="ns36:Competency" soapAction="" xmlns:ns36="http://webservice_layer"/>
   <ns1:parameter name="allowedMethods" value="createCompetency updateCompetency findCompetency deleteCompetency getAllCompetencies"/>
-  <ns1:parameter name="wsdlPortType" value="CompetencyWebservice"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://webservice_layer"/>
-  <ns1:parameter name="wsdlServicePort" value="CompetencyWebservice"/>
+  <ns1:parameter name="wsdlPortType" value="CompetencyWebservice"/>
   <ns1:parameter name="className" value="webservice_layer.CompetencyWebservice"/>
+  <ns1:parameter name="wsdlServicePort" value="CompetencyWebservice"/>
+  <ns1:parameter name="schemaQualified" value="http://webservice_layer"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://webservice_layer"/>
   <ns1:parameter name="wsdlServiceElement" value="CompetencyWebserviceService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns37:Competency" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:webservice_layer.Competency" xmlns:ns37="http://webservice_layer"/>
@@ -167,11 +167,11 @@
    <ns1:parameter qname="ns43:Id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="updateEmployeeCompetency findAllEmployeeCompetencies createEmployeeCompetency getAllEmployeeCompetencies findEmployeeCompetency deleteEmployeeCompetency"/>
-  <ns1:parameter name="wsdlPortType" value="EmployeeCompetencyWebservice"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://webservice_layer"/>
-  <ns1:parameter name="wsdlServicePort" value="EmployeeCompetencyWebservice"/>
+  <ns1:parameter name="wsdlPortType" value="EmployeeCompetencyWebservice"/>
   <ns1:parameter name="className" value="webservice_layer.EmployeeCompetencyWebservice"/>
+  <ns1:parameter name="wsdlServicePort" value="EmployeeCompetencyWebservice"/>
+  <ns1:parameter name="schemaQualified" value="http://webservice_layer"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://webservice_layer"/>
   <ns1:parameter name="wsdlServiceElement" value="EmployeeCompetencyWebserviceService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns44:EmployeeCompetency" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:webservice_layer.EmployeeCompetency" xmlns:ns44="http://webservice_layer"/>
@@ -191,11 +191,11 @@
   </ns1:operation>
   <ns1:operation name="findCustomerArray" qname="ns49:findCustomerArray" returnQName="ns49:findCustomerArrayReturn" returnType="ns49:Customer" soapAction="" xmlns:ns49="http://webservice_layer"/>
   <ns1:parameter name="allowedMethods" value="createCustomer updateCustomer deleteCustomer findCustomer findCustomerArray"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="CustomerWebservice"/>
-  <ns1:parameter name="className" value="webservice_layer.CustomerWebservice"/>
-  <ns1:parameter name="wsdlServicePort" value="CustomerWebservice"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://webservice_layer"/>
+  <ns1:parameter name="wsdlServicePort" value="CustomerWebservice"/>
+  <ns1:parameter name="className" value="webservice_layer.CustomerWebservice"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://webservice_layer"/>
   <ns1:parameter name="wsdlServiceElement" value="CustomerWebserviceService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns50:Customer" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:webservice_layer.Customer" xmlns:ns50="http://webservice_layer"/>
