@@ -1,5 +1,4 @@
 package model_controller;
-import data_access_layer.JobCompetencySQL;
 import data_access_layer.JobSQL;
 import webservice_layer.Competency;
 import webservice_layer.Job;
@@ -8,17 +7,12 @@ import webservice_layer.JobArray;
 public class JobController {
 	
 	private JobSQL JS = new JobSQL();
-	private JobCompetencySQL JCS = new JobCompetencySQL();
 	private CustomerController CC = new CustomerController();
 	
 	public void createJob(Job job){
 		JS.CreateJob(job);
 	}
-	
-	public void addCompetency(Job job, Competency competency){
-		JCS.CreateJobCompetency(job, competency);
-	}
-	
+		
 	public JobArray findCustomerJobArray(int customerId){
 		JobArray jobarray = JS.FindJobByCustomerArray(customerId);
 		//for(int i = 0;i < jobarray.getNumberOfRows();i++){

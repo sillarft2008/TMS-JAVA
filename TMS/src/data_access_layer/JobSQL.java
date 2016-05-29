@@ -75,8 +75,6 @@ public class JobSQL {
 				Customer cust = new Customer();
 				cust.setId(rs2.getInt("customerId"));
 				job.setCustomer(cust);
-				JobCompetencySQL JCS = new JobCompetencySQL();
-				job = JCS.FindJobCompetencies(job);
 				jobArray.addJob(job);
 			}	
 			dbconn.close();

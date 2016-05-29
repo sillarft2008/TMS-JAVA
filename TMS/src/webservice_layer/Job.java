@@ -8,11 +8,8 @@ public class Job {
 	private Date startDate;
 	private Date endDate;
 	private Customer customer;
-	private CompetencyArray ArrayOfCompetency;
-
-	public Job(){
-		ArrayOfCompetency = new CompetencyArray();
-	}
+	
+	public Job(){}
 	
 	public int getId() {
 		return Id;
@@ -44,28 +41,12 @@ public class Job {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	public Competency[] getArrayOFCompetency() {
-		return ArrayOfCompetency.getCompetencyArray();
-	}
-	//public CompetencyArray getCompetencyArray() {
-	//		return competencyArray;
-	//}
-	//public void setCompetencyArray(CompetencyArray competencyArray) {
-	//	this.competencyArray = competencyArray;
-	//}
-	public void setArrayOFCompetency(CompetencyArray competencyArray) {
-		this.ArrayOfCompetency = competencyArray;
-	}
 	public String toString(){
 		String returnString = "Job [Id=" + getId();
 		returnString += ", customer=" + customer.toString();
 		returnString += ", address=" + getAddress();
 		returnString += ", startDate=" + getStartDate();
 		returnString += ", endDate=" + getEndDate();
-		Competency[] competencyArray = ArrayOfCompetency.getCompetencyArray();
-		for (int i=0;i<competencyArray.length;i++){
-			returnString += ", competency=" + competencyArray[i].toString();
-		}
 		returnString += "]";
 		//returnString += ArrayOfCompetency.toString() ;
 		return returnString;

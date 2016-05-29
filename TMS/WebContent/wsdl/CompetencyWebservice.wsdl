@@ -24,17 +24,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="findCompetency">
+   <element name="updateCompetency">
     <complexType>
      <sequence>
-      <element name="Id" type="xsd:int"/>
+      <element name="competency" type="impl:Competency"/>
      </sequence>
     </complexType>
    </element>
-   <element name="findCompetencyResponse">
+   <element name="updateCompetencyResponse">
     <complexType>
      <sequence>
-      <element name="findCompetencyReturn" type="impl:Competency"/>
+      <element name="updateCompetencyReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -52,17 +52,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="updateCompetency">
+   <element name="findCompetency">
     <complexType>
      <sequence>
-      <element name="competency" type="impl:Competency"/>
+      <element name="Id" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>
-   <element name="updateCompetencyResponse">
+   <element name="findCompetencyResponse">
     <complexType>
      <sequence>
-      <element name="updateCompetencyReturn" type="xsd:string"/>
+      <element name="findCompetencyReturn" type="impl:Competency"/>
      </sequence>
     </complexType>
    </element>
@@ -173,13 +173,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="findCompetency">
+      <wsdl:operation name="updateCompetency">
 
-         <wsdl:input message="impl:findCompetencyRequest" name="findCompetencyRequest">
+         <wsdl:input message="impl:updateCompetencyRequest" name="updateCompetencyRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:findCompetencyResponse" name="findCompetencyResponse">
+         <wsdl:output message="impl:updateCompetencyResponse" name="updateCompetencyResponse">
 
        </wsdl:output>
 
@@ -197,13 +197,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="updateCompetency">
+      <wsdl:operation name="findCompetency">
 
-         <wsdl:input message="impl:updateCompetencyRequest" name="updateCompetencyRequest">
+         <wsdl:input message="impl:findCompetencyRequest" name="findCompetencyRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:updateCompetencyResponse" name="updateCompetencyResponse">
+         <wsdl:output message="impl:findCompetencyResponse" name="findCompetencyResponse">
 
        </wsdl:output>
 
@@ -245,17 +245,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="findCompetency">
+      <wsdl:operation name="updateCompetency">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="findCompetencyRequest">
+         <wsdl:input name="updateCompetencyRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="findCompetencyResponse">
+         <wsdl:output name="updateCompetencyResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -281,17 +281,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="updateCompetency">
+      <wsdl:operation name="findCompetency">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="updateCompetencyRequest">
+         <wsdl:input name="findCompetencyRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="updateCompetencyResponse">
+         <wsdl:output name="findCompetencyResponse">
 
             <wsdlsoap:body use="literal"/>
 

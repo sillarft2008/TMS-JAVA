@@ -10,10 +10,6 @@ public class JobWebservice {
 		JC.createJob(job);
 	}
 	
-	public void addCompetency(Job job, Competency competency){		
-		JC.addCompetency(job, competency);
-	}
-	
 	public Job[] findJobArray(){
 		return JC.findJobArray().getJobArray();
 	}

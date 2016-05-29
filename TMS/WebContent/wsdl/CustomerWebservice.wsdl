@@ -4,17 +4,10 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://webservice_layer" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="findCustomer">
+   <element name="deleteCustomer">
     <complexType>
      <sequence>
-      <element name="customerNo" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="findCustomerResponse">
-    <complexType>
-     <sequence>
-      <element name="findCustomerReturn" type="impl:Customer"/>
+      <element name="cust" type="impl:Customer"/>
      </sequence>
     </complexType>
    </element>
@@ -29,6 +22,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="telefone" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
+   <element name="deleteCustomerResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteCustomerReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="updateCustomer">
     <complexType>
      <sequence>
@@ -43,17 +43,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="deleteCustomer">
+   <element name="findCustomer">
     <complexType>
      <sequence>
-      <element name="cust" type="impl:Customer"/>
+      <element name="customerNo" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>
-   <element name="deleteCustomerResponse">
+   <element name="findCustomerResponse">
     <complexType>
      <sequence>
-      <element name="deleteCustomerReturn" type="xsd:string"/>
+      <element name="findCustomerReturn" type="impl:Customer"/>
      </sequence>
     </complexType>
    </element>
@@ -92,6 +92,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+   <wsdl:message name="deleteCustomerRequest">
+
+      <wsdl:part element="impl:deleteCustomer" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:message name="updateCustomerRequest">
 
       <wsdl:part element="impl:updateCustomer" name="parameters">
@@ -103,14 +111,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:message name="updateCustomerResponse">
 
       <wsdl:part element="impl:updateCustomerResponse" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="deleteCustomerRequest">
-
-      <wsdl:part element="impl:deleteCustomer" name="parameters">
 
       </wsdl:part>
 
@@ -166,13 +166,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="CustomerWebservice">
 
-      <wsdl:operation name="findCustomer">
+      <wsdl:operation name="deleteCustomer">
 
-         <wsdl:input message="impl:findCustomerRequest" name="findCustomerRequest">
+         <wsdl:input message="impl:deleteCustomerRequest" name="deleteCustomerRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:findCustomerResponse" name="findCustomerResponse">
+         <wsdl:output message="impl:deleteCustomerResponse" name="deleteCustomerResponse">
 
        </wsdl:output>
 
@@ -190,13 +190,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="deleteCustomer">
+      <wsdl:operation name="findCustomer">
 
-         <wsdl:input message="impl:deleteCustomerRequest" name="deleteCustomerRequest">
+         <wsdl:input message="impl:findCustomerRequest" name="findCustomerRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:deleteCustomerResponse" name="deleteCustomerResponse">
+         <wsdl:output message="impl:findCustomerResponse" name="findCustomerResponse">
 
        </wsdl:output>
 
@@ -232,17 +232,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="findCustomer">
+      <wsdl:operation name="deleteCustomer">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="findCustomerRequest">
+         <wsdl:input name="deleteCustomerRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="findCustomerResponse">
+         <wsdl:output name="deleteCustomerResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -268,17 +268,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="deleteCustomer">
+      <wsdl:operation name="findCustomer">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="deleteCustomerRequest">
+         <wsdl:input name="findCustomerRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="deleteCustomerResponse">
+         <wsdl:output name="findCustomerResponse">
 
             <wsdlsoap:body use="literal"/>
 
