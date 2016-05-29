@@ -61,60 +61,43 @@ valid = false;
 <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <TABLE>
 <TR>
-<TD COLSPAN="1" ALIGN="LEFT">customerId:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="customerId16" SIZE=20></TD>
-</TR>
-</TABLE>
-<BR>
-<INPUT TYPE="SUBMIT" VALUE="Invoke">
-<INPUT TYPE="RESET" VALUE="Clear">
-</FORM>
-<%
-break;
-case 18:
-valid = false;
-%>
-<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
-<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
-<TABLE>
-<TR>
 <TD COLSPAN="3" ALIGN="LEFT">job:</TD>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">startDate:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="startDate23" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="startDate18" SIZE=20></TD>
 <%
-java.text.DateFormat dateFormatstartDate23 = java.text.DateFormat.getDateInstance();
-java.util.GregorianCalendar gcExampstartDate23  = new java.util.GregorianCalendar();
-java.util.Date datestartDate23 = gcExampstartDate23.getTime();
-String tempResultstartDate23 = dateFormatstartDate23.format(datestartDate23);
+java.text.DateFormat dateFormatstartDate18 = java.text.DateFormat.getDateInstance();
+java.util.GregorianCalendar gcExampstartDate18  = new java.util.GregorianCalendar();
+java.util.Date datestartDate18 = gcExampstartDate18.getTime();
+String tempResultstartDate18 = dateFormatstartDate18.format(datestartDate18);
 %>
 <TD ALIGN="left">
 </TR>
 <TR>
 <TD> </TD>
-<TD ALIGN="left"> eg. <%= tempResultstartDate23 %> </TD>
+<TD ALIGN="left"> eg. <%= tempResultstartDate18 %> </TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">address:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address25" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address20" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">endDate:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="endDate27" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="endDate22" SIZE=20></TD>
 <%
-java.text.DateFormat dateFormatendDate27 = java.text.DateFormat.getDateInstance();
-java.util.GregorianCalendar gcExampendDate27  = new java.util.GregorianCalendar();
-java.util.Date dateendDate27 = gcExampendDate27.getTime();
-String tempResultendDate27 = dateFormatendDate27.format(dateendDate27);
+java.text.DateFormat dateFormatendDate22 = java.text.DateFormat.getDateInstance();
+java.util.GregorianCalendar gcExampendDate22  = new java.util.GregorianCalendar();
+java.util.Date dateendDate22 = gcExampendDate22.getTime();
+String tempResultendDate22 = dateFormatendDate22.format(dateendDate22);
 %>
 <TD ALIGN="left">
 </TR>
 <TR>
 <TD> </TD>
-<TD ALIGN="left"> eg. <%= tempResultendDate27 %> </TD>
+<TD ALIGN="left"> eg. <%= tempResultendDate22 %> </TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
@@ -123,48 +106,65 @@ String tempResultendDate27 = dateFormatendDate27.format(dateendDate27);
 <TD WIDTH="5%"></TD>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="1" ALIGN="LEFT">telefone:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone31" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone26" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="1" ALIGN="LEFT">cvr:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr33" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr28" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="1" ALIGN="LEFT">address:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address35" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address30" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="1" ALIGN="LEFT">lastName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName37" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName32" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="1" ALIGN="LEFT">firstName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName39" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName34" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="1" ALIGN="LEFT">companyName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName41" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName36" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="1" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id43" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id38" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id45" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id40" SIZE=20></TD>
+</TR>
+</TABLE>
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
+case 42:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">customerId:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="customerId45" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -180,237 +180,8 @@ valid = false;
 <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <TABLE>
 <TR>
-<TD COLSPAN="3" ALIGN="LEFT">job:</TD>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">startDate:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="startDate52" SIZE=20></TD>
-<%
-java.text.DateFormat dateFormatstartDate52 = java.text.DateFormat.getDateInstance();
-java.util.GregorianCalendar gcExampstartDate52  = new java.util.GregorianCalendar();
-java.util.Date datestartDate52 = gcExampstartDate52.getTime();
-String tempResultstartDate52 = dateFormatstartDate52.format(datestartDate52);
-%>
-<TD ALIGN="left">
-</TR>
-<TR>
-<TD> </TD>
-<TD ALIGN="left"> eg. <%= tempResultstartDate52 %> </TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">address:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address54" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">endDate:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="endDate56" SIZE=20></TD>
-<%
-java.text.DateFormat dateFormatendDate56 = java.text.DateFormat.getDateInstance();
-java.util.GregorianCalendar gcExampendDate56  = new java.util.GregorianCalendar();
-java.util.Date dateendDate56 = gcExampendDate56.getTime();
-String tempResultendDate56 = dateFormatendDate56.format(dateendDate56);
-%>
-<TD ALIGN="left">
-</TR>
-<TR>
-<TD> </TD>
-<TD ALIGN="left"> eg. <%= tempResultendDate56 %> </TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">customer:</TD>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="1" ALIGN="LEFT">telefone:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone60" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="1" ALIGN="LEFT">cvr:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr62" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="1" ALIGN="LEFT">address:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address64" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="1" ALIGN="LEFT">lastName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName66" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="1" ALIGN="LEFT">firstName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName68" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="1" ALIGN="LEFT">companyName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName70" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="1" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id72" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id74" SIZE=20></TD>
-</TR>
-</TABLE>
-<TABLE>
-<TR>
-<TD COLSPAN="3" ALIGN="LEFT">competency:</TD>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">competency:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="competency78" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id80" SIZE=20></TD>
-</TR>
-</TABLE>
-<BR>
-<INPUT TYPE="SUBMIT" VALUE="Invoke">
-<INPUT TYPE="RESET" VALUE="Clear">
-</FORM>
-<%
-break;
-case 82:
-valid = false;
-%>
-<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
-<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
-<TABLE>
-<TR>
-<TD COLSPAN="3" ALIGN="LEFT">job:</TD>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">startDate:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="startDate87" SIZE=20></TD>
-<%
-java.text.DateFormat dateFormatstartDate87 = java.text.DateFormat.getDateInstance();
-java.util.GregorianCalendar gcExampstartDate87  = new java.util.GregorianCalendar();
-java.util.Date datestartDate87 = gcExampstartDate87.getTime();
-String tempResultstartDate87 = dateFormatstartDate87.format(datestartDate87);
-%>
-<TD ALIGN="left">
-</TR>
-<TR>
-<TD> </TD>
-<TD ALIGN="left"> eg. <%= tempResultstartDate87 %> </TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">address:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address89" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">endDate:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="endDate91" SIZE=20></TD>
-<%
-java.text.DateFormat dateFormatendDate91 = java.text.DateFormat.getDateInstance();
-java.util.GregorianCalendar gcExampendDate91  = new java.util.GregorianCalendar();
-java.util.Date dateendDate91 = gcExampendDate91.getTime();
-String tempResultendDate91 = dateFormatendDate91.format(dateendDate91);
-%>
-<TD ALIGN="left">
-</TR>
-<TR>
-<TD> </TD>
-<TD ALIGN="left"> eg. <%= tempResultendDate91 %> </TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">customer:</TD>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="1" ALIGN="LEFT">telefone:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone95" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="1" ALIGN="LEFT">cvr:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr97" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="1" ALIGN="LEFT">address:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address99" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="1" ALIGN="LEFT">lastName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName101" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="1" ALIGN="LEFT">firstName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName103" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="1" ALIGN="LEFT">companyName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName105" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="1" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id107" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id109" SIZE=20></TD>
-</TR>
-</TABLE>
-<BR>
-<INPUT TYPE="SUBMIT" VALUE="Invoke">
-<INPUT TYPE="RESET" VALUE="Clear">
-</FORM>
-<%
-break;
-case 111:
-valid = false;
-%>
-<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
-<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
-<BR>
-<INPUT TYPE="SUBMIT" VALUE="Invoke">
-<INPUT TYPE="RESET" VALUE="Clear">
-</FORM>
-<%
-break;
-case 114:
-valid = false;
-%>
-<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
-<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
-<TABLE>
-<TR>
 <TD COLSPAN="1" ALIGN="LEFT">jobId:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="jobId143" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="jobId74" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -419,7 +190,18 @@ valid = false;
 </FORM>
 <%
 break;
-case 145:
+case 76:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
+case 79:
 valid = false;
 %>
 <FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
@@ -430,39 +212,39 @@ valid = false;
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">startDate:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="startDate150" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="startDate84" SIZE=20></TD>
 <%
-java.text.DateFormat dateFormatstartDate150 = java.text.DateFormat.getDateInstance();
-java.util.GregorianCalendar gcExampstartDate150  = new java.util.GregorianCalendar();
-java.util.Date datestartDate150 = gcExampstartDate150.getTime();
-String tempResultstartDate150 = dateFormatstartDate150.format(datestartDate150);
+java.text.DateFormat dateFormatstartDate84 = java.text.DateFormat.getDateInstance();
+java.util.GregorianCalendar gcExampstartDate84  = new java.util.GregorianCalendar();
+java.util.Date datestartDate84 = gcExampstartDate84.getTime();
+String tempResultstartDate84 = dateFormatstartDate84.format(datestartDate84);
 %>
 <TD ALIGN="left">
 </TR>
 <TR>
 <TD> </TD>
-<TD ALIGN="left"> eg. <%= tempResultstartDate150 %> </TD>
+<TD ALIGN="left"> eg. <%= tempResultstartDate84 %> </TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">address:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address152" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address86" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">endDate:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="endDate154" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="endDate88" SIZE=20></TD>
 <%
-java.text.DateFormat dateFormatendDate154 = java.text.DateFormat.getDateInstance();
-java.util.GregorianCalendar gcExampendDate154  = new java.util.GregorianCalendar();
-java.util.Date dateendDate154 = gcExampendDate154.getTime();
-String tempResultendDate154 = dateFormatendDate154.format(dateendDate154);
+java.text.DateFormat dateFormatendDate88 = java.text.DateFormat.getDateInstance();
+java.util.GregorianCalendar gcExampendDate88  = new java.util.GregorianCalendar();
+java.util.Date dateendDate88 = gcExampendDate88.getTime();
+String tempResultendDate88 = dateFormatendDate88.format(dateendDate88);
 %>
 <TD ALIGN="left">
 </TR>
 <TR>
 <TD> </TD>
-<TD ALIGN="left"> eg. <%= tempResultendDate154 %> </TD>
+<TD ALIGN="left"> eg. <%= tempResultendDate88 %> </TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
@@ -471,48 +253,150 @@ String tempResultendDate154 = dateFormatendDate154.format(dateendDate154);
 <TD WIDTH="5%"></TD>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="1" ALIGN="LEFT">telefone:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone158" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone92" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="1" ALIGN="LEFT">cvr:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr160" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr94" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="1" ALIGN="LEFT">address:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address162" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address96" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="1" ALIGN="LEFT">lastName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName164" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName98" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="1" ALIGN="LEFT">firstName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName166" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName100" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="1" ALIGN="LEFT">companyName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName168" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName102" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="1" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id170" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id104" SIZE=20></TD>
 </TR>
 <TR>
 <TD WIDTH="5%"></TD>
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id172" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id106" SIZE=20></TD>
+</TR>
+</TABLE>
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
+case 108:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
+<TABLE>
+<TR>
+<TD COLSPAN="3" ALIGN="LEFT">job:</TD>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">startDate:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="startDate113" SIZE=20></TD>
+<%
+java.text.DateFormat dateFormatstartDate113 = java.text.DateFormat.getDateInstance();
+java.util.GregorianCalendar gcExampstartDate113  = new java.util.GregorianCalendar();
+java.util.Date datestartDate113 = gcExampstartDate113.getTime();
+String tempResultstartDate113 = dateFormatstartDate113.format(datestartDate113);
+%>
+<TD ALIGN="left">
+</TR>
+<TR>
+<TD> </TD>
+<TD ALIGN="left"> eg. <%= tempResultstartDate113 %> </TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">address:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address115" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">endDate:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="endDate117" SIZE=20></TD>
+<%
+java.text.DateFormat dateFormatendDate117 = java.text.DateFormat.getDateInstance();
+java.util.GregorianCalendar gcExampendDate117  = new java.util.GregorianCalendar();
+java.util.Date dateendDate117 = gcExampendDate117.getTime();
+String tempResultendDate117 = dateFormatendDate117.format(dateendDate117);
+%>
+<TD ALIGN="left">
+</TR>
+<TR>
+<TD> </TD>
+<TD ALIGN="left"> eg. <%= tempResultendDate117 %> </TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">customer:</TD>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="1" ALIGN="LEFT">telefone:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="telefone121" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="1" ALIGN="LEFT">cvr:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cvr123" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="1" ALIGN="LEFT">address:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="address125" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="1" ALIGN="LEFT">lastName:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="lastName127" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="1" ALIGN="LEFT">firstName:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="firstName129" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="1" ALIGN="LEFT">companyName:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="companyName131" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="1" ALIGN="LEFT">id:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id133" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">id:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id135" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>

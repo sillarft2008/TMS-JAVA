@@ -15,7 +15,7 @@ public class DBConnect {
 	private static String password = "root";
 	private static String username = "root";
 	private static String url = "jdbc:mysql://localhost/tms";
-	private Connection conn;
+	private static Connection conn;
 	private Statement stmnt;
 	private ResultSet rs;
 	private DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -23,6 +23,35 @@ public class DBConnect {
 	
 	public DBConnect(){
 		TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+	}
+	
+	public static Connection getConn() throws SQLException
+	{
+		//setConn();
+		setConn();
+		return conn;
+	}
+	
+	private static void setConn() throws SQLException
+	{
+		
+		conn = DriverManager.getConnection("jdbc:mysql://localhost/tms?user=root&password=root");		
+
+	}
+
+	public static void connClose()
+	{
+		if (conn != null)
+		{
+			try
+			{
+				conn.close();
+			}
+			catch (SQLException e)
+			{
+				System.err.println(e);
+			}
+		}
 	}
 	
 	public void connect() throws SQLException{

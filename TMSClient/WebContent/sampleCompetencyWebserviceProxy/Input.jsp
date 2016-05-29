@@ -86,7 +86,15 @@ valid = false;
 <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <TABLE>
 <TR>
-<TD COLSPAN="1" ALIGN="LEFT">id:</TD>
+<TD COLSPAN="3" ALIGN="LEFT">competency:</TD>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">competency:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="competency29" SIZE=20></TD>
+</TR>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">id:</TD>
 <TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id31" SIZE=20></TD>
 </TR>
 </TABLE>
@@ -128,15 +136,7 @@ valid = false;
 <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <TABLE>
 <TR>
-<TD COLSPAN="3" ALIGN="LEFT">competency:</TD>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">competency:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="competency47" SIZE=20></TD>
-</TR>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">id:</TD>
+<TD COLSPAN="1" ALIGN="LEFT">id:</TD>
 <TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id49" SIZE=20></TD>
 </TR>
 </TABLE>

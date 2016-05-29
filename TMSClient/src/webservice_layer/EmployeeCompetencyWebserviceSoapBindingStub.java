@@ -35,21 +35,21 @@ public class EmployeeCompetencyWebserviceSoapBindingStub extends org.apache.axis
         _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("deleteEmployeeCompetency");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "ec"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservice_layer", "EmployeeCompetency"), webservice_layer.EmployeeCompetency.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        oper.setReturnClass(java.lang.String.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "deleteEmployeeCompetencyReturn"));
+        oper.setName("getAllEmployeeCompetencies");
+        oper.setReturnType(new javax.xml.namespace.QName("http://webservice_layer", "EmployeeCompetency"));
+        oper.setReturnClass(webservice_layer.EmployeeCompetency[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "getAllEmployeeCompetenciesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getAllEmployeeCompetencies");
+        oper.setName("findAllEmployeeCompetencies");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "Id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://webservice_layer", "EmployeeCompetency"));
         oper.setReturnClass(webservice_layer.EmployeeCompetency[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "getAllEmployeeCompetenciesReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "findAllEmployeeCompetenciesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[2] = oper;
@@ -66,12 +66,12 @@ public class EmployeeCompetencyWebserviceSoapBindingStub extends org.apache.axis
         _operations[3] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("findAllEmployeeCompetencies");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "Id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("deleteEmployeeCompetency");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "ec"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservice_layer", "EmployeeCompetency"), webservice_layer.EmployeeCompetency.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://webservice_layer", "EmployeeCompetency"));
-        oper.setReturnClass(webservice_layer.EmployeeCompetency[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "findAllEmployeeCompetenciesReturn"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "deleteEmployeeCompetencyReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[4] = oper;
@@ -225,7 +225,7 @@ public class EmployeeCompetencyWebserviceSoapBindingStub extends org.apache.axis
 }
     }
 
-    public java.lang.String deleteEmployeeCompetency(webservice_layer.EmployeeCompetency ec) throws java.rmi.RemoteException {
+    public webservice_layer.EmployeeCompetency[] getAllEmployeeCompetencies() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -237,11 +237,11 @@ public class EmployeeCompetencyWebserviceSoapBindingStub extends org.apache.axis
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "deleteEmployeeCompetency"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "getAllEmployeeCompetencies"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {ec});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -249,9 +249,9 @@ public class EmployeeCompetencyWebserviceSoapBindingStub extends org.apache.axis
         else {
             extractAttachments(_call);
             try {
-                return (java.lang.String) _resp;
+                return (webservice_layer.EmployeeCompetency[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
+                return (webservice_layer.EmployeeCompetency[]) org.apache.axis.utils.JavaUtils.convert(_resp, webservice_layer.EmployeeCompetency[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -259,7 +259,7 @@ public class EmployeeCompetencyWebserviceSoapBindingStub extends org.apache.axis
 }
     }
 
-    public webservice_layer.EmployeeCompetency[] getAllEmployeeCompetencies() throws java.rmi.RemoteException {
+    public webservice_layer.EmployeeCompetency[] findAllEmployeeCompetencies(int id) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -271,11 +271,11 @@ public class EmployeeCompetencyWebserviceSoapBindingStub extends org.apache.axis
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "getAllEmployeeCompetencies"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "findAllEmployeeCompetencies"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(id)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -327,7 +327,7 @@ public class EmployeeCompetencyWebserviceSoapBindingStub extends org.apache.axis
 }
     }
 
-    public webservice_layer.EmployeeCompetency[] findAllEmployeeCompetencies(int id) throws java.rmi.RemoteException {
+    public java.lang.String deleteEmployeeCompetency(webservice_layer.EmployeeCompetency ec) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -339,11 +339,11 @@ public class EmployeeCompetencyWebserviceSoapBindingStub extends org.apache.axis
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "findAllEmployeeCompetencies"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "deleteEmployeeCompetency"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(id)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {ec});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -351,9 +351,9 @@ public class EmployeeCompetencyWebserviceSoapBindingStub extends org.apache.axis
         else {
             extractAttachments(_call);
             try {
-                return (webservice_layer.EmployeeCompetency[]) _resp;
+                return (java.lang.String) _resp;
             } catch (java.lang.Exception _exception) {
-                return (webservice_layer.EmployeeCompetency[]) org.apache.axis.utils.JavaUtils.convert(_resp, webservice_layer.EmployeeCompetency[].class);
+                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

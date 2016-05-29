@@ -35,12 +35,12 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
         _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("findCompetency");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "Id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("updateCompetency");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "competency"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservice_layer", "Competency"), webservice_layer.Competency.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://webservice_layer", "Competency"));
-        oper.setReturnClass(webservice_layer.Competency.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "findCompetencyReturn"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "updateCompetencyReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[1] = oper;
@@ -57,12 +57,12 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
         _operations[2] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("updateCompetency");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "competency"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservice_layer", "Competency"), webservice_layer.Competency.class, false, false);
+        oper.setName("findCompetency");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "Id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        oper.setReturnClass(java.lang.String.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "updateCompetencyReturn"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://webservice_layer", "Competency"));
+        oper.setReturnClass(webservice_layer.Competency.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "findCompetencyReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[3] = oper;
@@ -214,7 +214,7 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
 }
     }
 
-    public webservice_layer.Competency findCompetency(int id) throws java.rmi.RemoteException {
+    public java.lang.String updateCompetency(webservice_layer.Competency competency) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -226,11 +226,11 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "findCompetency"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "updateCompetency"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(id)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {competency});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -238,9 +238,9 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
         else {
             extractAttachments(_call);
             try {
-                return (webservice_layer.Competency) _resp;
+                return (java.lang.String) _resp;
             } catch (java.lang.Exception _exception) {
-                return (webservice_layer.Competency) org.apache.axis.utils.JavaUtils.convert(_resp, webservice_layer.Competency.class);
+                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -282,7 +282,7 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
 }
     }
 
-    public java.lang.String updateCompetency(webservice_layer.Competency competency) throws java.rmi.RemoteException {
+    public webservice_layer.Competency findCompetency(int id) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -294,11 +294,11 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "updateCompetency"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "findCompetency"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {competency});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(id)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -306,9 +306,9 @@ public class CompetencyWebserviceSoapBindingStub extends org.apache.axis.client.
         else {
             extractAttachments(_call);
             try {
-                return (java.lang.String) _resp;
+                return (webservice_layer.Competency) _resp;
             } catch (java.lang.Exception _exception) {
-                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
+                return (webservice_layer.Competency) org.apache.axis.utils.JavaUtils.convert(_resp, webservice_layer.Competency.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

@@ -24,21 +24,21 @@ public class ScheduleWebserviceSoapBindingStub extends org.apache.axis.client.St
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("createSchedule");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "schedule"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservice_layer", "Schedule"), webservice_layer.Schedule.class, false, false);
+        oper.setName("findSchedule");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "scheduleId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setReturnType(new javax.xml.namespace.QName("http://webservice_layer", "Schedule"));
+        oper.setReturnClass(webservice_layer.Schedule.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "findScheduleReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("deleteSchedule");
+        oper.setName("createSchedule");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "schedule"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservice_layer", "Schedule"), webservice_layer.Schedule.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        oper.setReturnClass(java.lang.String.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "deleteScheduleReturn"));
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[1] = oper;
@@ -55,24 +55,15 @@ public class ScheduleWebserviceSoapBindingStub extends org.apache.axis.client.St
         _operations[2] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("findSchedule");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "scheduleId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("deleteSchedule");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservice_layer", "schedule"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservice_layer", "Schedule"), webservice_layer.Schedule.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://webservice_layer", "Schedule"));
-        oper.setReturnClass(webservice_layer.Schedule.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "findScheduleReturn"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "deleteScheduleReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[3] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("findScheduleArray");
-        oper.setReturnType(new javax.xml.namespace.QName("http://webservice_layer", "Schedule"));
-        oper.setReturnClass(webservice_layer.Schedule[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "findScheduleArrayReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[4] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("findScheduleArrayByEmployeeDate");
@@ -83,6 +74,15 @@ public class ScheduleWebserviceSoapBindingStub extends org.apache.axis.client.St
         oper.setReturnType(new javax.xml.namespace.QName("http://webservice_layer", "Schedule"));
         oper.setReturnClass(webservice_layer.Schedule[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "findScheduleArrayByEmployeeDateReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[4] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("findScheduleArray");
+        oper.setReturnType(new javax.xml.namespace.QName("http://webservice_layer", "Schedule"));
+        oper.setReturnClass(webservice_layer.Schedule[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://webservice_layer", "findScheduleArrayReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[5] = oper;
@@ -118,15 +118,6 @@ public class ScheduleWebserviceSoapBindingStub extends org.apache.axis.client.St
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("http://webservice_layer", "ArrayOfCompetency");
-            cachedSerQNames.add(qName);
-            cls = webservice_layer.Competency[].class;
-            cachedSerClasses.add(cls);
-            qName = new javax.xml.namespace.QName("http://webservice_layer", "Competency");
-            qName2 = new javax.xml.namespace.QName("http://webservice_layer", "item");
-            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
-            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
-
             qName = new javax.xml.namespace.QName("http://webservice_layer", "Competency");
             cachedSerQNames.add(qName);
             cls = webservice_layer.Competency.class;
@@ -242,12 +233,46 @@ public class ScheduleWebserviceSoapBindingStub extends org.apache.axis.client.St
         }
     }
 
-    public void createSchedule(webservice_layer.Schedule schedule) throws java.rmi.RemoteException {
+    public webservice_layer.Schedule findSchedule(int scheduleId) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[0]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "findSchedule"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(scheduleId)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (webservice_layer.Schedule) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (webservice_layer.Schedule) org.apache.axis.utils.JavaUtils.convert(_resp, webservice_layer.Schedule.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public void createSchedule(webservice_layer.Schedule schedule) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[1]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -264,40 +289,6 @@ public class ScheduleWebserviceSoapBindingStub extends org.apache.axis.client.St
             throw (java.rmi.RemoteException)_resp;
         }
         extractAttachments(_call);
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.lang.String deleteSchedule(webservice_layer.Schedule schedule) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[1]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "deleteSchedule"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {schedule});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.lang.String) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
-            }
-        }
   } catch (org.apache.axis.AxisFault axisFaultException) {
   throw axisFaultException;
 }
@@ -337,7 +328,7 @@ public class ScheduleWebserviceSoapBindingStub extends org.apache.axis.client.St
 }
     }
 
-    public webservice_layer.Schedule findSchedule(int scheduleId) throws java.rmi.RemoteException {
+    public java.lang.String deleteSchedule(webservice_layer.Schedule schedule) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -349,11 +340,11 @@ public class ScheduleWebserviceSoapBindingStub extends org.apache.axis.client.St
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "findSchedule"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "deleteSchedule"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(scheduleId)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {schedule});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -361,9 +352,9 @@ public class ScheduleWebserviceSoapBindingStub extends org.apache.axis.client.St
         else {
             extractAttachments(_call);
             try {
-                return (webservice_layer.Schedule) _resp;
+                return (java.lang.String) _resp;
             } catch (java.lang.Exception _exception) {
-                return (webservice_layer.Schedule) org.apache.axis.utils.JavaUtils.convert(_resp, webservice_layer.Schedule.class);
+                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -371,7 +362,7 @@ public class ScheduleWebserviceSoapBindingStub extends org.apache.axis.client.St
 }
     }
 
-    public webservice_layer.Schedule[] findScheduleArray() throws java.rmi.RemoteException {
+    public webservice_layer.Schedule[] findScheduleArrayByEmployeeDate(int employeeId, java.util.Calendar startTimeDate) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -383,11 +374,11 @@ public class ScheduleWebserviceSoapBindingStub extends org.apache.axis.client.St
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "findScheduleArray"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "findScheduleArrayByEmployeeDate"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(employeeId), startTimeDate});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -405,7 +396,7 @@ public class ScheduleWebserviceSoapBindingStub extends org.apache.axis.client.St
 }
     }
 
-    public webservice_layer.Schedule[] findScheduleArrayByEmployeeDate(int employeeId, java.util.Calendar startTimeDate) throws java.rmi.RemoteException {
+    public webservice_layer.Schedule[] findScheduleArray() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -417,11 +408,11 @@ public class ScheduleWebserviceSoapBindingStub extends org.apache.axis.client.St
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "findScheduleArrayByEmployeeDate"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://webservice_layer", "findScheduleArray"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(employeeId), startTimeDate});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

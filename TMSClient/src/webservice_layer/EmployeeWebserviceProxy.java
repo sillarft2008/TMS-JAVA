@@ -50,6 +50,12 @@ public class EmployeeWebserviceProxy implements webservice_layer.EmployeeWebserv
     return employeeWebservice.deleteEmployee(employee);
   }
   
+  public java.lang.String updateEmployee(webservice_layer.Employee employee) throws java.rmi.RemoteException{
+    if (employeeWebservice == null)
+      _initEmployeeWebserviceProxy();
+    return employeeWebservice.updateEmployee(employee);
+  }
+  
   public java.lang.String createEmployee(webservice_layer.Employee employee) throws java.rmi.RemoteException{
     if (employeeWebservice == null)
       _initEmployeeWebserviceProxy();
@@ -60,12 +66,6 @@ public class EmployeeWebserviceProxy implements webservice_layer.EmployeeWebserv
     if (employeeWebservice == null)
       _initEmployeeWebserviceProxy();
     return employeeWebservice.findEmployee(id);
-  }
-  
-  public java.lang.String updateEmployee(webservice_layer.Employee employee) throws java.rmi.RemoteException{
-    if (employeeWebservice == null)
-      _initEmployeeWebserviceProxy();
-    return employeeWebservice.updateEmployee(employee);
   }
   
   public webservice_layer.Employee[] getAllEmployees() throws java.rmi.RemoteException{
