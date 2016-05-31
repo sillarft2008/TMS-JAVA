@@ -1,18 +1,18 @@
 package webservice_layer;
 
 public class Role {
-	private int Id;
+	private String Id;
 	private String role_name;
 	
 	public Role() {
 		
 	}
 
-	public int getId() {
+	public String getId() {
 		return Id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		Id = id;
 	}
 

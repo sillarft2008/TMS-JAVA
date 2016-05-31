@@ -28,12 +28,43 @@ public class UserRoleSQL {
 				Role role= new Role();
 				System.out.println("Id=" + rs2.getInt("Id"));
 				System.out.println("role=" + rs2.getString("role"));
-				role.setId(rs2.getInt("Id"));
+				role.setId(rs2.getString("Id"));
 				role.setRole_name(rs2.getString("roleName"));
 				roleArray.addRole(role);
 			}	
 		
 			return user;
+			
+			} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("error");
+			return null;
+		}
+	}	
+	
+	public Role[] FindRoleByUserId(String userId){
+		
+		System.out.println("FindUserRole");
+		try {
+			dbconn.connect();
+			ResultSet rs = dbconn.select("SELECT count(*) as result FROM user_role,role WHERE Id = roleId AND userId = '" + userId + "'");
+			rs.next();
+			int count = rs.getInt("result");
+			Role[] roleArray = new Role[count];
+			
+			ResultSet rs2 = dbconn.select("SELECT userId,roleId,Id,roleName FROM user_role,role WHERE Id = roleId AND userId = '" + userId + "'");
+			
+			int i = 0;
+			while (rs2.next()){
+				Role role= new Role();
+				role.setId(rs2.getString("Id"));
+				role.setRole_name(rs2.getString("roleName"));
+				roleArray[i] = role;
+				i++;
+			}	
+		
+			return roleArray;
 			
 			} catch (SQLException e) {
 			// TODO Auto-generated catch block

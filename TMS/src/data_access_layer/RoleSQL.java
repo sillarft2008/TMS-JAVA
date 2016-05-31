@@ -27,7 +27,7 @@ DBConnect dbconn = new DBConnect();
 				System.out.println("Id=" + rs2.getInt("Id"));
 				System.out.println("roleName=" + rs2.getString("roleName"));
 		
-				role.setId(rs2.getInt("Id"));
+				role.setId(rs2.getString("Id"));
 				role.setRole_name(rs2.getString("roleName"));
 			
 				roleArray.addRole(role);
@@ -51,7 +51,7 @@ DBConnect dbconn = new DBConnect();
 			System.out.println("Id=" + rs.getInt("Id"));
 			System.out.println("roleName=" + rs.getString("roleName"));
 			
-			role.setId(rs.getInt("Id"));
+			role.setId(rs.getString("Id"));
 			role.setRole_name(rs.getString("roleName"));
 			
 			return role;

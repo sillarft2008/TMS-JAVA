@@ -81,16 +81,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="startTimeString" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
-   <element name="createSchedule">
-    <complexType>
-     <sequence>
-      <element name="schedule" type="impl:Schedule"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="createScheduleResponse">
-    <complexType/>
-   </element>
    <element name="updateSchedule">
     <complexType>
      <sequence>
@@ -104,6 +94,16 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
       <element name="updateScheduleReturn" type="xsd:string"/>
      </sequence>
     </complexType>
+   </element>
+   <element name="createSchedule">
+    <complexType>
+     <sequence>
+      <element name="schedule" type="impl:Schedule"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createScheduleResponse">
+    <complexType/>
    </element>
    <element name="deleteSchedule">
     <complexType>
@@ -119,6 +119,16 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="findScheduleArray">
+    <complexType/>
+   </element>
+   <element name="findScheduleArrayResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="findScheduleArrayReturn" type="impl:Schedule"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="findScheduleArrayByEmployeeDate">
     <complexType>
      <sequence>
@@ -131,16 +141,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element maxOccurs="unbounded" name="findScheduleArrayByEmployeeDateReturn" type="impl:Schedule"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="findScheduleArray">
-    <complexType/>
-   </element>
-   <element name="findScheduleArrayResponse">
-    <complexType>
-     <sequence>
-      <element maxOccurs="unbounded" name="findScheduleArrayReturn" type="impl:Schedule"/>
      </sequence>
     </complexType>
    </element>
@@ -257,18 +257,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="createSchedule">
-
-         <wsdl:input message="impl:createScheduleRequest" name="createScheduleRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:createScheduleResponse" name="createScheduleResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="updateSchedule">
 
          <wsdl:input message="impl:updateScheduleRequest" name="updateScheduleRequest">
@@ -276,6 +264,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:updateScheduleResponse" name="updateScheduleResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createSchedule">
+
+         <wsdl:input message="impl:createScheduleRequest" name="createScheduleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createScheduleResponse" name="createScheduleResponse">
 
        </wsdl:output>
 
@@ -293,18 +293,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="findScheduleArrayByEmployeeDate">
-
-         <wsdl:input message="impl:findScheduleArrayByEmployeeDateRequest" name="findScheduleArrayByEmployeeDateRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:findScheduleArrayByEmployeeDateResponse" name="findScheduleArrayByEmployeeDateResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="findScheduleArray">
 
          <wsdl:input message="impl:findScheduleArrayRequest" name="findScheduleArrayRequest">
@@ -312,6 +300,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:findScheduleArrayResponse" name="findScheduleArrayResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findScheduleArrayByEmployeeDate">
+
+         <wsdl:input message="impl:findScheduleArrayByEmployeeDateRequest" name="findScheduleArrayByEmployeeDateRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findScheduleArrayByEmployeeDateResponse" name="findScheduleArrayByEmployeeDateResponse">
 
        </wsdl:output>
 
@@ -341,24 +341,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="createSchedule">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="createScheduleRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="createScheduleResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="updateSchedule">
 
          <wsdlsoap:operation soapAction=""/>
@@ -370,6 +352,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="updateScheduleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createSchedule">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createScheduleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createScheduleResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -395,24 +395,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="findScheduleArrayByEmployeeDate">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="findScheduleArrayByEmployeeDateRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="findScheduleArrayByEmployeeDateResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="findScheduleArray">
 
          <wsdlsoap:operation soapAction=""/>
@@ -424,6 +406,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="findScheduleArrayResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findScheduleArrayByEmployeeDate">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findScheduleArrayByEmployeeDateRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findScheduleArrayByEmployeeDateResponse">
 
             <wsdlsoap:body use="literal"/>
 

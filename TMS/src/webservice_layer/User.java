@@ -1,32 +1,42 @@
 package webservice_layer;
 
 public class User {
-	private int id;
+	private String id;
 	private String username;
 	private String password;
+	private String securitystamp;
 	
+	public User() {
+		
+	}
+
 	public User(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
 	}
 
-	public User() {
-		
-	}
-
-	public User(int id, String username, String password) {
+	public User(String id, String username, String password) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
 	}
 
-	public int getId() {
+
+	public User(String id, String username, String password, String securitystamp ) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.securitystamp = securitystamp;
+	}
+
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -46,11 +56,19 @@ public class User {
 		this.password = password;
 	}
 
+	public String getSecurityStamp() {
+		return securitystamp;
+	}
+
+	public void setSecurityStamp(String securitystamp) {
+		this.securitystamp = securitystamp;
+	}
+
 	
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" 
-	            + password + "]";
+	            + password + ", securitystamp=" + securitystamp + "]";
 	}
 	
 	

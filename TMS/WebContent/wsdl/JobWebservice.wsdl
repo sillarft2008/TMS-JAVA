@@ -4,10 +4,17 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://webservice_layer" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="deleteJob">
+   <element name="findCustomerJobArray">
     <complexType>
      <sequence>
-      <element name="job" type="impl:Job"/>
+      <element name="customerId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findCustomerJobArrayResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="findCustomerJobArrayReturn" type="impl:Job"/>
      </sequence>
     </complexType>
    </element>
@@ -31,48 +38,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="startDate" nillable="true" type="xsd:dateTime"/>
     </sequence>
    </complexType>
+   <element name="deleteJob">
+    <complexType>
+     <sequence>
+      <element name="job" type="impl:Job"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="deleteJobResponse">
     <complexType>
      <sequence>
       <element name="deleteJobReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="findCustomerJobArray">
-    <complexType>
-     <sequence>
-      <element name="customerId" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="findCustomerJobArrayResponse">
-    <complexType>
-     <sequence>
-      <element maxOccurs="unbounded" name="findCustomerJobArrayReturn" type="impl:Job"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="findJob">
-    <complexType>
-     <sequence>
-      <element name="jobId" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="findJobResponse">
-    <complexType>
-     <sequence>
-      <element name="findJobReturn" type="impl:Job"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="findJobArray">
-    <complexType/>
-   </element>
-   <element name="findJobArrayResponse">
-    <complexType>
-     <sequence>
-      <element maxOccurs="unbounded" name="findJobArrayReturn" type="impl:Job"/>
      </sequence>
     </complexType>
    </element>
@@ -99,6 +75,30 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    </element>
    <element name="createJobResponse">
     <complexType/>
+   </element>
+   <element name="findJob">
+    <complexType>
+     <sequence>
+      <element name="jobId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findJobResponse">
+    <complexType>
+     <sequence>
+      <element name="findJobReturn" type="impl:Job"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findJobArray">
+    <complexType/>
+   </element>
+   <element name="findJobArrayResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="findJobArrayReturn" type="impl:Job"/>
+     </sequence>
+    </complexType>
    </element>
   </schema>
  </wsdl:types>
@@ -143,14 +143,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="findJobArrayRequest">
-
-      <wsdl:part element="impl:findJobArray" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
    <wsdl:message name="createJobRequest">
 
       <wsdl:part element="impl:createJob" name="parameters">
@@ -159,9 +151,9 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="deleteJobResponse">
+   <wsdl:message name="findJobArrayRequest">
 
-      <wsdl:part element="impl:deleteJobResponse" name="parameters">
+      <wsdl:part element="impl:findJobArray" name="parameters">
 
       </wsdl:part>
 
@@ -175,9 +167,9 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="findJobArrayResponse">
+   <wsdl:message name="deleteJobResponse">
 
-      <wsdl:part element="impl:findJobArrayResponse" name="parameters">
+      <wsdl:part element="impl:deleteJobResponse" name="parameters">
 
       </wsdl:part>
 
@@ -186,6 +178,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:message name="updateJobRequest">
 
       <wsdl:part element="impl:updateJob" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findJobArrayResponse">
+
+      <wsdl:part element="impl:findJobArrayResponse" name="parameters">
 
       </wsdl:part>
 
@@ -201,18 +201,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="JobWebservice">
 
-      <wsdl:operation name="deleteJob">
-
-         <wsdl:input message="impl:deleteJobRequest" name="deleteJobRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:deleteJobResponse" name="deleteJobResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="findCustomerJobArray">
 
          <wsdl:input message="impl:findCustomerJobArrayRequest" name="findCustomerJobArrayRequest">
@@ -225,25 +213,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="findJob">
+      <wsdl:operation name="deleteJob">
 
-         <wsdl:input message="impl:findJobRequest" name="findJobRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:findJobResponse" name="findJobResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="findJobArray">
-
-         <wsdl:input message="impl:findJobArrayRequest" name="findJobArrayRequest">
+         <wsdl:input message="impl:deleteJobRequest" name="deleteJobRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:findJobArrayResponse" name="findJobArrayResponse">
+         <wsdl:output message="impl:deleteJobResponse" name="deleteJobResponse">
 
        </wsdl:output>
 
@@ -273,29 +249,35 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="findJob">
+
+         <wsdl:input message="impl:findJobRequest" name="findJobRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findJobResponse" name="findJobResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findJobArray">
+
+         <wsdl:input message="impl:findJobArrayRequest" name="findJobArrayRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findJobArrayResponse" name="findJobArrayResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="JobWebserviceSoapBinding" type="impl:JobWebservice">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-
-      <wsdl:operation name="deleteJob">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="deleteJobRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="deleteJobResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
 
       <wsdl:operation name="findCustomerJobArray">
 
@@ -315,35 +297,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="findJob">
+      <wsdl:operation name="deleteJob">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="findJobRequest">
+         <wsdl:input name="deleteJobRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="findJobResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="findJobArray">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="findJobArrayRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="findJobArrayResponse">
+         <wsdl:output name="deleteJobResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -380,6 +344,42 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="createJobResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findJob">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findJobRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findJobResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findJobArray">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findJobArrayRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findJobArrayResponse">
 
             <wsdlsoap:body use="literal"/>
 

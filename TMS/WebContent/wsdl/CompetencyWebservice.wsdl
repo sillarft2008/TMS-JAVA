@@ -4,7 +4,7 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://webservice_layer" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="deleteCompetency">
+   <element name="createCompetency">
     <complexType>
      <sequence>
       <element name="competency" type="impl:Competency"/>
@@ -17,6 +17,20 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="id" type="xsd:int"/>
     </sequence>
    </complexType>
+   <element name="createCompetencyResponse">
+    <complexType>
+     <sequence>
+      <element name="createCompetencyReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteCompetency">
+    <complexType>
+     <sequence>
+      <element name="competency" type="impl:Competency"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="deleteCompetencyResponse">
     <complexType>
      <sequence>
@@ -35,20 +49,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="updateCompetencyReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="createCompetency">
-    <complexType>
-     <sequence>
-      <element name="competency" type="impl:Competency"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="createCompetencyResponse">
-    <complexType>
-     <sequence>
-      <element name="createCompetencyReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -161,6 +161,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="CompetencyWebservice">
 
+      <wsdl:operation name="createCompetency">
+
+         <wsdl:input message="impl:createCompetencyRequest" name="createCompetencyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createCompetencyResponse" name="createCompetencyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="deleteCompetency">
 
          <wsdl:input message="impl:deleteCompetencyRequest" name="deleteCompetencyRequest">
@@ -180,18 +192,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:updateCompetencyResponse" name="updateCompetencyResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="createCompetency">
-
-         <wsdl:input message="impl:createCompetencyRequest" name="createCompetencyRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:createCompetencyResponse" name="createCompetencyResponse">
 
        </wsdl:output>
 
@@ -227,6 +227,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
+      <wsdl:operation name="createCompetency">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createCompetencyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createCompetencyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="deleteCompetency">
 
          <wsdlsoap:operation soapAction=""/>
@@ -256,24 +274,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="updateCompetencyResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="createCompetency">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="createCompetencyRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="createCompetencyResponse">
 
             <wsdlsoap:body use="literal"/>
 
