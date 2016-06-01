@@ -44,16 +44,16 @@ public class JobWebserviceProxy implements webservice_layer.JobWebservice {
     return jobWebservice;
   }
   
-  public java.lang.String updateJob(webservice_layer.Job job) throws java.rmi.RemoteException{
-    if (jobWebservice == null)
-      _initJobWebserviceProxy();
-    return jobWebservice.updateJob(job);
-  }
-  
   public java.lang.String deleteJob(webservice_layer.Job job) throws java.rmi.RemoteException{
     if (jobWebservice == null)
       _initJobWebserviceProxy();
     return jobWebservice.deleteJob(job);
+  }
+  
+  public java.lang.String updateJob(webservice_layer.Job job) throws java.rmi.RemoteException{
+    if (jobWebservice == null)
+      _initJobWebserviceProxy();
+    return jobWebservice.updateJob(job);
   }
   
   public void createJob(webservice_layer.Job job) throws java.rmi.RemoteException{
@@ -62,16 +62,16 @@ public class JobWebserviceProxy implements webservice_layer.JobWebservice {
     jobWebservice.createJob(job);
   }
   
-  public webservice_layer.Job findJob(int jobId) throws java.rmi.RemoteException{
-    if (jobWebservice == null)
-      _initJobWebserviceProxy();
-    return jobWebservice.findJob(jobId);
-  }
-  
   public webservice_layer.Job[] findJobArray() throws java.rmi.RemoteException{
     if (jobWebservice == null)
       _initJobWebserviceProxy();
     return jobWebservice.findJobArray();
+  }
+  
+  public webservice_layer.Job findJob(int jobId) throws java.rmi.RemoteException{
+    if (jobWebservice == null)
+      _initJobWebserviceProxy();
+    return jobWebservice.findJob(jobId);
   }
   
   public webservice_layer.Job[] findCustomerJobArray(int customerId) throws java.rmi.RemoteException{

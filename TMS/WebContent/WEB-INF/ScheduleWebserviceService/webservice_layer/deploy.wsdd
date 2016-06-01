@@ -10,10 +10,16 @@
       <parameter name="className" value="webservice_layer.ScheduleWebservice"/>
       <parameter name="wsdlPortType" value="ScheduleWebservice"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteSchedule" qname="operNS:deleteSchedule" returnQName="retNS:deleteScheduleReturn" returnType="rtns:string" soapAction="">
-        <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://webservice_layer" qname="pns:schedule" type="tns:Schedule"/>
+      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findScheduleArrayByEmployeeDate" qname="operNS:findScheduleArrayByEmployeeDate" returnQName="retNS:findScheduleArrayByEmployeeDateReturn" returnType="rtns:Schedule" soapAction="">
+        <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:employeeId" type="tns:int"/>
+        <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:startTimeDate" type="tns:dateTime"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findScheduleArray" qname="operNS:findScheduleArray" returnQName="retNS:findScheduleArrayReturn" returnType="rtns:Schedule" soapAction="">
       </operation>
       <operation xmlns:operNS="http://webservice_layer" name="createSchedule" qname="operNS:createSchedule" soapAction="">
+        <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://webservice_layer" qname="pns:schedule" type="tns:Schedule"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteSchedule" qname="operNS:deleteSchedule" returnQName="retNS:deleteScheduleReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://webservice_layer" qname="pns:schedule" type="tns:Schedule"/>
       </operation>
       <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateSchedule" qname="operNS:updateSchedule" returnQName="retNS:updateScheduleReturn" returnType="rtns:string" soapAction="">
@@ -21,12 +27,6 @@
       </operation>
       <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findSchedule" qname="operNS:findSchedule" returnQName="retNS:findScheduleReturn" returnType="rtns:Schedule" soapAction="">
         <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:scheduleId" type="tns:int"/>
-      </operation>
-      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findScheduleArray" qname="operNS:findScheduleArray" returnQName="retNS:findScheduleArrayReturn" returnType="rtns:Schedule" soapAction="">
-      </operation>
-      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findScheduleArrayByEmployeeDate" qname="operNS:findScheduleArrayByEmployeeDate" returnQName="retNS:findScheduleArrayByEmployeeDateReturn" returnType="rtns:Schedule" soapAction="">
-        <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:employeeId" type="tns:int"/>
-        <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:startTimeDate" type="tns:dateTime"/>
       </operation>
       <parameter name="allowedMethods" value="createSchedule findSchedule updateSchedule deleteSchedule findScheduleArrayByEmployeeDate findScheduleArray"/>
 

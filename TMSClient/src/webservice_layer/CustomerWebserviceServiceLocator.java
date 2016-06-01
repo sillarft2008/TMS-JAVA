@@ -22,7 +22,7 @@ public class CustomerWebserviceServiceLocator extends org.apache.axis.client.Ser
     }
 
     // Use to get a proxy class for CustomerWebservice
-    private java.lang.String CustomerWebservice_address = "http://localhost:12131/TMS/services/CustomerWebservice";
+    private java.lang.String CustomerWebservice_address = "http://localhost:8080/TMS/services/CustomerWebservice";
 
     public java.lang.String getCustomerWebserviceAddress() {
         return CustomerWebservice_address;

@@ -22,7 +22,7 @@ public class JobWebserviceServiceLocator extends org.apache.axis.client.Service 
     }
 
     // Use to get a proxy class for JobWebservice
-    private java.lang.String JobWebservice_address = "http://localhost:12131/TMS/services/JobWebservice";
+    private java.lang.String JobWebservice_address = "http://localhost:8080/TMS/services/JobWebservice";
 
     public java.lang.String getJobWebserviceAddress() {
         return JobWebservice_address;

@@ -328,7 +328,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdl:port binding="impl:CustomerWebserviceSoapBinding" name="CustomerWebservice">
 
-         <wsdlsoap:address location="http://localhost:12131/TMS/services/CustomerWebservice"/>
+         <wsdlsoap:address location="http://localhost:8080/TMS/services/CustomerWebservice"/>
 
       </wsdl:port>
 

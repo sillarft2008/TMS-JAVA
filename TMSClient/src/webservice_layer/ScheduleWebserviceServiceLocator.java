@@ -22,7 +22,7 @@ public class ScheduleWebserviceServiceLocator extends org.apache.axis.client.Ser
     }
 
     // Use to get a proxy class for ScheduleWebservice
-    private java.lang.String ScheduleWebservice_address = "http://localhost:12131/TMS/services/ScheduleWebservice";
+    private java.lang.String ScheduleWebservice_address = "http://localhost:8080/TMS/services/ScheduleWebservice";
 
     public java.lang.String getScheduleWebserviceAddress() {
         return ScheduleWebservice_address;

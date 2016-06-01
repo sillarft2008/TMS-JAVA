@@ -20,19 +20,19 @@
       <parameter name="className" value="webservice_layer.EmployeeWebserviceSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="EmployeeWebservice"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="updateEmployee" qname="operNS:updateEmployee" xmlns:operNS="http://webservice_layer" returnQName="retNS:updateEmployeeReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:employee" xmlns:pns="http://webservice_layer" type="tns:Employee" xmlns:tns="http://webservice_layer"/>
-      </operation>
       <operation name="findEmployee" qname="operNS:findEmployee" xmlns:operNS="http://webservice_layer" returnQName="retNS:findEmployeeReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Employee" xmlns:rtns="http://webservice_layer" soapAction="" >
         <parameter qname="pns:Id" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <operation name="getAllEmployees" qname="operNS:getAllEmployees" xmlns:operNS="http://webservice_layer" returnQName="retNS:getAllEmployeesReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Employee" xmlns:rtns="http://webservice_layer" soapAction="" >
       </operation>
       <operation name="deleteEmployee" qname="operNS:deleteEmployee" xmlns:operNS="http://webservice_layer" returnQName="retNS:deleteEmployeeReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:employee" xmlns:pns="http://webservice_layer" type="tns:Employee" xmlns:tns="http://webservice_layer"/>
       </operation>
+      <operation name="updateEmployee" qname="operNS:updateEmployee" xmlns:operNS="http://webservice_layer" returnQName="retNS:updateEmployeeReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:employee" xmlns:pns="http://webservice_layer" type="tns:Employee" xmlns:tns="http://webservice_layer"/>
+      </operation>
       <operation name="createEmployee" qname="operNS:createEmployee" xmlns:operNS="http://webservice_layer" returnQName="retNS:createEmployeeReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:employee" xmlns:pns="http://webservice_layer" type="tns:Employee" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="getAllEmployees" qname="operNS:getAllEmployees" xmlns:operNS="http://webservice_layer" returnQName="retNS:getAllEmployeesReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Employee" xmlns:rtns="http://webservice_layer" soapAction="" >
       </operation>
       <parameter name="allowedMethods" value="updateEmployee createEmployee findEmployee deleteEmployee getAllEmployees"/>
 

@@ -64,68 +64,12 @@ if(getEmployeeWebservice10mtemp == null){
 break;
 case 15:
         gotMethod = true;
-        String telefone_2id=  request.getParameter("telefone20");
-            java.lang.String telefone_2idTemp = null;
-        if(!telefone_2id.equals("")){
-         telefone_2idTemp  = telefone_2id;
-        }
-        String address_3id=  request.getParameter("address22");
-            java.lang.String address_3idTemp = null;
-        if(!address_3id.equals("")){
-         address_3idTemp  = address_3id;
-        }
-        String lastName_4id=  request.getParameter("lastName24");
-            java.lang.String lastName_4idTemp = null;
-        if(!lastName_4id.equals("")){
-         lastName_4idTemp  = lastName_4id;
-        }
-        String email_5id=  request.getParameter("email26");
-            java.lang.String email_5idTemp = null;
-        if(!email_5id.equals("")){
-         email_5idTemp  = email_5id;
-        }
-        String birthdate_6id=  request.getParameter("birthdate28");
-            java.lang.String birthdate_6idTemp = null;
-        if(!birthdate_6id.equals("")){
-         birthdate_6idTemp  = birthdate_6id;
-        }
-        String firstName_7id=  request.getParameter("firstName30");
-            java.lang.String firstName_7idTemp = null;
-        if(!firstName_7id.equals("")){
-         firstName_7idTemp  = firstName_7id;
-        }
-        String id_8id=  request.getParameter("id32");
-        int id_8idTemp  = Integer.parseInt(id_8id);
-        %>
-        <jsp:useBean id="webservice_layer1Employee_1id" scope="session" class="webservice_layer.Employee" />
-        <%
-        webservice_layer1Employee_1id.setTelefone(telefone_2idTemp);
-        webservice_layer1Employee_1id.setAddress(address_3idTemp);
-        webservice_layer1Employee_1id.setLastName(lastName_4idTemp);
-        webservice_layer1Employee_1id.setEmail(email_5idTemp);
-        webservice_layer1Employee_1id.setBirthdate(birthdate_6idTemp);
-        webservice_layer1Employee_1id.setFirstName(firstName_7idTemp);
-        webservice_layer1Employee_1id.setId(id_8idTemp);
-        java.lang.String updateEmployee15mtemp = sampleEmployeeWebserviceProxyid.updateEmployee(webservice_layer1Employee_1id);
-if(updateEmployee15mtemp == null){
+        String id_1id=  request.getParameter("id32");
+        int id_1idTemp  = Integer.parseInt(id_1id);
+        webservice_layer.Employee findEmployee15mtemp = sampleEmployeeWebserviceProxyid.findEmployee(id_1idTemp);
+if(findEmployee15mtemp == null){
 %>
-<%=updateEmployee15mtemp %>
-<%
-}else{
-        String tempResultreturnp16 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateEmployee15mtemp));
-        %>
-        <%= tempResultreturnp16 %>
-        <%
-}
-break;
-case 34:
-        gotMethod = true;
-        String id_9id=  request.getParameter("id51");
-        int id_9idTemp  = Integer.parseInt(id_9id);
-        webservice_layer.Employee findEmployee34mtemp = sampleEmployeeWebserviceProxyid.findEmployee(id_9idTemp);
-if(findEmployee34mtemp == null){
-%>
-<%=findEmployee34mtemp %>
+<%=findEmployee15mtemp %>
 <%
 }else{
 %>
@@ -137,11 +81,11 @@ if(findEmployee34mtemp == null){
 <TD COLSPAN="2" ALIGN="LEFT">telefone:</TD>
 <TD>
 <%
-if(findEmployee34mtemp != null){
-java.lang.String typetelefone37 = findEmployee34mtemp.getTelefone();
-        String tempResulttelefone37 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typetelefone37));
+if(findEmployee15mtemp != null){
+java.lang.String typetelefone18 = findEmployee15mtemp.getTelefone();
+        String tempResulttelefone18 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typetelefone18));
         %>
-        <%= tempResulttelefone37 %>
+        <%= tempResulttelefone18 %>
         <%
 }%>
 </TD>
@@ -150,11 +94,11 @@ java.lang.String typetelefone37 = findEmployee34mtemp.getTelefone();
 <TD COLSPAN="2" ALIGN="LEFT">address:</TD>
 <TD>
 <%
-if(findEmployee34mtemp != null){
-java.lang.String typeaddress39 = findEmployee34mtemp.getAddress();
-        String tempResultaddress39 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress39));
+if(findEmployee15mtemp != null){
+java.lang.String typeaddress20 = findEmployee15mtemp.getAddress();
+        String tempResultaddress20 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress20));
         %>
-        <%= tempResultaddress39 %>
+        <%= tempResultaddress20 %>
         <%
 }%>
 </TD>
@@ -163,11 +107,11 @@ java.lang.String typeaddress39 = findEmployee34mtemp.getAddress();
 <TD COLSPAN="2" ALIGN="LEFT">lastName:</TD>
 <TD>
 <%
-if(findEmployee34mtemp != null){
-java.lang.String typelastName41 = findEmployee34mtemp.getLastName();
-        String tempResultlastName41 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typelastName41));
+if(findEmployee15mtemp != null){
+java.lang.String typelastName22 = findEmployee15mtemp.getLastName();
+        String tempResultlastName22 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typelastName22));
         %>
-        <%= tempResultlastName41 %>
+        <%= tempResultlastName22 %>
         <%
 }%>
 </TD>
@@ -176,11 +120,11 @@ java.lang.String typelastName41 = findEmployee34mtemp.getLastName();
 <TD COLSPAN="2" ALIGN="LEFT">email:</TD>
 <TD>
 <%
-if(findEmployee34mtemp != null){
-java.lang.String typeemail43 = findEmployee34mtemp.getEmail();
-        String tempResultemail43 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeemail43));
+if(findEmployee15mtemp != null){
+java.lang.String typeemail24 = findEmployee15mtemp.getEmail();
+        String tempResultemail24 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeemail24));
         %>
-        <%= tempResultemail43 %>
+        <%= tempResultemail24 %>
         <%
 }%>
 </TD>
@@ -189,11 +133,11 @@ java.lang.String typeemail43 = findEmployee34mtemp.getEmail();
 <TD COLSPAN="2" ALIGN="LEFT">birthdate:</TD>
 <TD>
 <%
-if(findEmployee34mtemp != null){
-java.lang.String typebirthdate45 = findEmployee34mtemp.getBirthdate();
-        String tempResultbirthdate45 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typebirthdate45));
+if(findEmployee15mtemp != null){
+java.lang.String typebirthdate26 = findEmployee15mtemp.getBirthdate();
+        String tempResultbirthdate26 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typebirthdate26));
         %>
-        <%= tempResultbirthdate45 %>
+        <%= tempResultbirthdate26 %>
         <%
 }%>
 </TD>
@@ -202,11 +146,11 @@ java.lang.String typebirthdate45 = findEmployee34mtemp.getBirthdate();
 <TD COLSPAN="2" ALIGN="LEFT">firstName:</TD>
 <TD>
 <%
-if(findEmployee34mtemp != null){
-java.lang.String typefirstName47 = findEmployee34mtemp.getFirstName();
-        String tempResultfirstName47 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typefirstName47));
+if(findEmployee15mtemp != null){
+java.lang.String typefirstName28 = findEmployee15mtemp.getFirstName();
+        String tempResultfirstName28 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typefirstName28));
         %>
-        <%= tempResultfirstName47 %>
+        <%= tempResultfirstName28 %>
         <%
 }%>
 </TD>
@@ -215,66 +159,104 @@ java.lang.String typefirstName47 = findEmployee34mtemp.getFirstName();
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findEmployee34mtemp != null){
+if(findEmployee15mtemp != null){
 %>
-<%=findEmployee34mtemp.getId()
+<%=findEmployee15mtemp.getId()
 %><%}%>
 </TD>
 </TABLE>
 <%
 }
 break;
-case 53:
+case 34:
         gotMethod = true;
-        webservice_layer.Employee[] getAllEmployees53mtemp = sampleEmployeeWebserviceProxyid.getAllEmployees();
-if(getAllEmployees53mtemp == null){
+        String telefone_3id=  request.getParameter("telefone39");
+            java.lang.String telefone_3idTemp = null;
+        if(!telefone_3id.equals("")){
+         telefone_3idTemp  = telefone_3id;
+        }
+        String address_4id=  request.getParameter("address41");
+            java.lang.String address_4idTemp = null;
+        if(!address_4id.equals("")){
+         address_4idTemp  = address_4id;
+        }
+        String lastName_5id=  request.getParameter("lastName43");
+            java.lang.String lastName_5idTemp = null;
+        if(!lastName_5id.equals("")){
+         lastName_5idTemp  = lastName_5id;
+        }
+        String email_6id=  request.getParameter("email45");
+            java.lang.String email_6idTemp = null;
+        if(!email_6id.equals("")){
+         email_6idTemp  = email_6id;
+        }
+        String birthdate_7id=  request.getParameter("birthdate47");
+            java.lang.String birthdate_7idTemp = null;
+        if(!birthdate_7id.equals("")){
+         birthdate_7idTemp  = birthdate_7id;
+        }
+        String firstName_8id=  request.getParameter("firstName49");
+            java.lang.String firstName_8idTemp = null;
+        if(!firstName_8id.equals("")){
+         firstName_8idTemp  = firstName_8id;
+        }
+        String id_9id=  request.getParameter("id51");
+        int id_9idTemp  = Integer.parseInt(id_9id);
+        %>
+        <jsp:useBean id="webservice_layer1Employee_2id" scope="session" class="webservice_layer.Employee" />
+        <%
+        webservice_layer1Employee_2id.setTelefone(telefone_3idTemp);
+        webservice_layer1Employee_2id.setAddress(address_4idTemp);
+        webservice_layer1Employee_2id.setLastName(lastName_5idTemp);
+        webservice_layer1Employee_2id.setEmail(email_6idTemp);
+        webservice_layer1Employee_2id.setBirthdate(birthdate_7idTemp);
+        webservice_layer1Employee_2id.setFirstName(firstName_8idTemp);
+        webservice_layer1Employee_2id.setId(id_9idTemp);
+        java.lang.String deleteEmployee34mtemp = sampleEmployeeWebserviceProxyid.deleteEmployee(webservice_layer1Employee_2id);
+if(deleteEmployee34mtemp == null){
 %>
-<%=getAllEmployees53mtemp %>
+<%=deleteEmployee34mtemp %>
 <%
 }else{
-        String tempreturnp54 = null;
-        if(getAllEmployees53mtemp != null){
-        java.util.List listreturnp54= java.util.Arrays.asList(getAllEmployees53mtemp);
-        tempreturnp54 = listreturnp54.toString();
-        }
+        String tempResultreturnp35 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteEmployee34mtemp));
         %>
-        <%=tempreturnp54%>
+        <%= tempResultreturnp35 %>
         <%
 }
 break;
-case 56:
+case 53:
         gotMethod = true;
-        String telefone_11id=  request.getParameter("telefone61");
+        String telefone_11id=  request.getParameter("telefone58");
             java.lang.String telefone_11idTemp = null;
         if(!telefone_11id.equals("")){
          telefone_11idTemp  = telefone_11id;
         }
-        String address_12id=  request.getParameter("address63");
+        String address_12id=  request.getParameter("address60");
             java.lang.String address_12idTemp = null;
         if(!address_12id.equals("")){
          address_12idTemp  = address_12id;
         }
-        String lastName_13id=  request.getParameter("lastName65");
+        String lastName_13id=  request.getParameter("lastName62");
             java.lang.String lastName_13idTemp = null;
         if(!lastName_13id.equals("")){
          lastName_13idTemp  = lastName_13id;
         }
-        String email_14id=  request.getParameter("email67");
+        String email_14id=  request.getParameter("email64");
             java.lang.String email_14idTemp = null;
         if(!email_14id.equals("")){
          email_14idTemp  = email_14id;
         }
-        String birthdate_15id=  request.getParameter("birthdate69");
+        String birthdate_15id=  request.getParameter("birthdate66");
             java.lang.String birthdate_15idTemp = null;
         if(!birthdate_15id.equals("")){
          birthdate_15idTemp  = birthdate_15id;
         }
-        String firstName_16id=  request.getParameter("firstName71");
+        String firstName_16id=  request.getParameter("firstName68");
             java.lang.String firstName_16idTemp = null;
         if(!firstName_16id.equals("")){
          firstName_16idTemp  = firstName_16id;
         }
-        String id_17id=  request.getParameter("id73");
+        String id_17id=  request.getParameter("id70");
         int id_17idTemp  = Integer.parseInt(id_17id);
         %>
         <jsp:useBean id="webservice_layer1Employee_10id" scope="session" class="webservice_layer.Employee" />
@@ -286,51 +268,51 @@ case 56:
         webservice_layer1Employee_10id.setBirthdate(birthdate_15idTemp);
         webservice_layer1Employee_10id.setFirstName(firstName_16idTemp);
         webservice_layer1Employee_10id.setId(id_17idTemp);
-        java.lang.String deleteEmployee56mtemp = sampleEmployeeWebserviceProxyid.deleteEmployee(webservice_layer1Employee_10id);
-if(deleteEmployee56mtemp == null){
+        java.lang.String updateEmployee53mtemp = sampleEmployeeWebserviceProxyid.updateEmployee(webservice_layer1Employee_10id);
+if(updateEmployee53mtemp == null){
 %>
-<%=deleteEmployee56mtemp %>
+<%=updateEmployee53mtemp %>
 <%
 }else{
-        String tempResultreturnp57 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteEmployee56mtemp));
+        String tempResultreturnp54 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateEmployee53mtemp));
         %>
-        <%= tempResultreturnp57 %>
+        <%= tempResultreturnp54 %>
         <%
 }
 break;
-case 75:
+case 72:
         gotMethod = true;
-        String telefone_19id=  request.getParameter("telefone80");
+        String telefone_19id=  request.getParameter("telefone77");
             java.lang.String telefone_19idTemp = null;
         if(!telefone_19id.equals("")){
          telefone_19idTemp  = telefone_19id;
         }
-        String address_20id=  request.getParameter("address82");
+        String address_20id=  request.getParameter("address79");
             java.lang.String address_20idTemp = null;
         if(!address_20id.equals("")){
          address_20idTemp  = address_20id;
         }
-        String lastName_21id=  request.getParameter("lastName84");
+        String lastName_21id=  request.getParameter("lastName81");
             java.lang.String lastName_21idTemp = null;
         if(!lastName_21id.equals("")){
          lastName_21idTemp  = lastName_21id;
         }
-        String email_22id=  request.getParameter("email86");
+        String email_22id=  request.getParameter("email83");
             java.lang.String email_22idTemp = null;
         if(!email_22id.equals("")){
          email_22idTemp  = email_22id;
         }
-        String birthdate_23id=  request.getParameter("birthdate88");
+        String birthdate_23id=  request.getParameter("birthdate85");
             java.lang.String birthdate_23idTemp = null;
         if(!birthdate_23id.equals("")){
          birthdate_23idTemp  = birthdate_23id;
         }
-        String firstName_24id=  request.getParameter("firstName90");
+        String firstName_24id=  request.getParameter("firstName87");
             java.lang.String firstName_24idTemp = null;
         if(!firstName_24id.equals("")){
          firstName_24idTemp  = firstName_24id;
         }
-        String id_25id=  request.getParameter("id92");
+        String id_25id=  request.getParameter("id89");
         int id_25idTemp  = Integer.parseInt(id_25id);
         %>
         <jsp:useBean id="webservice_layer1Employee_18id" scope="session" class="webservice_layer.Employee" />
@@ -342,15 +324,33 @@ case 75:
         webservice_layer1Employee_18id.setBirthdate(birthdate_23idTemp);
         webservice_layer1Employee_18id.setFirstName(firstName_24idTemp);
         webservice_layer1Employee_18id.setId(id_25idTemp);
-        java.lang.String createEmployee75mtemp = sampleEmployeeWebserviceProxyid.createEmployee(webservice_layer1Employee_18id);
-if(createEmployee75mtemp == null){
+        java.lang.String createEmployee72mtemp = sampleEmployeeWebserviceProxyid.createEmployee(webservice_layer1Employee_18id);
+if(createEmployee72mtemp == null){
 %>
-<%=createEmployee75mtemp %>
+<%=createEmployee72mtemp %>
 <%
 }else{
-        String tempResultreturnp76 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(createEmployee75mtemp));
+        String tempResultreturnp73 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(createEmployee72mtemp));
         %>
-        <%= tempResultreturnp76 %>
+        <%= tempResultreturnp73 %>
+        <%
+}
+break;
+case 91:
+        gotMethod = true;
+        webservice_layer.Employee[] getAllEmployees91mtemp = sampleEmployeeWebserviceProxyid.getAllEmployees();
+if(getAllEmployees91mtemp == null){
+%>
+<%=getAllEmployees91mtemp %>
+<%
+}else{
+        String tempreturnp92 = null;
+        if(getAllEmployees91mtemp != null){
+        java.util.List listreturnp92= java.util.Arrays.asList(getAllEmployees91mtemp);
+        tempreturnp92 = listreturnp92.toString();
+        }
+        %>
+        <%=tempreturnp92%>
         <%
 }
 break;

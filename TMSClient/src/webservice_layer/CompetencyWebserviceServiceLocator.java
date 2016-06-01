@@ -22,7 +22,7 @@ public class CompetencyWebserviceServiceLocator extends org.apache.axis.client.S
     }
 
     // Use to get a proxy class for CompetencyWebservice
-    private java.lang.String CompetencyWebservice_address = "http://localhost:12131/TMS/services/CompetencyWebservice";
+    private java.lang.String CompetencyWebservice_address = "http://localhost:8080/TMS/services/CompetencyWebservice";
 
     public java.lang.String getCompetencyWebserviceAddress() {
         return CompetencyWebservice_address;

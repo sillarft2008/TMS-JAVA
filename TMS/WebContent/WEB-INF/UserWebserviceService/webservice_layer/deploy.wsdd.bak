@@ -1,0 +1,81 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from UserWebserviceService WSDL service -->
+
+  <service name="UserWebservice" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice_layer"/>
+      <parameter name="wsdlServiceElement" value="UserWebserviceService"/>
+      <parameter name="schemaQualified" value="http://webservice_layer"/>
+      <parameter name="wsdlServicePort" value="UserWebservice"/>
+      <parameter name="className" value="webservice_layer.UserWebserviceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="UserWebservice"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="createUser" qname="operNS:createUser" xmlns:operNS="http://webservice_layer" returnQName="retNS:createUserReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:user" xmlns:pns="http://webservice_layer" type="tns:User" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="findUserArray" qname="operNS:findUserArray" xmlns:operNS="http://webservice_layer" returnQName="retNS:findUserArrayReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:User" xmlns:rtns="http://webservice_layer" soapAction="" >
+      </operation>
+      <operation name="findRoleByUserId" qname="operNS:findRoleByUserId" xmlns:operNS="http://webservice_layer" returnQName="retNS:findRoleByUserIdReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Role" xmlns:rtns="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:userId" xmlns:pns="http://webservice_layer" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="addRole" qname="operNS:addRole" xmlns:operNS="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:ur" xmlns:pns="http://webservice_layer" type="tns:UserRole" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="selectUserByName" qname="operNS:selectUserByName" xmlns:operNS="http://webservice_layer" returnQName="retNS:selectUserByNameReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:User" xmlns:rtns="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:name" xmlns:pns="http://webservice_layer" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="createUserRole" qname="operNS:createUserRole" xmlns:operNS="http://webservice_layer" returnQName="retNS:createUserRoleReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:ur" xmlns:pns="http://webservice_layer" type="tns:UserRole" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="deleteUser" qname="operNS:deleteUser" xmlns:operNS="http://webservice_layer" returnQName="retNS:deleteUserReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://webservice_layer" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="deleteUserRoles" qname="operNS:deleteUserRoles" xmlns:operNS="http://webservice_layer" returnQName="retNS:deleteUserRolesReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:userId" xmlns:pns="http://webservice_layer" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="selectUserById" qname="operNS:selectUserById" xmlns:operNS="http://webservice_layer" returnQName="retNS:selectUserByIdReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:User" xmlns:rtns="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://webservice_layer" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getAllRoles" qname="operNS:getAllRoles" xmlns:operNS="http://webservice_layer" returnQName="retNS:getAllRolesReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Role" xmlns:rtns="http://webservice_layer" soapAction="" >
+      </operation>
+      <operation name="updateUser" qname="operNS:updateUser" xmlns:operNS="http://webservice_layer" returnQName="retNS:updateUserReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:user" xmlns:pns="http://webservice_layer" type="tns:User" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <parameter name="allowedMethods" value="selectUserByName selectUserById getAllRoles deleteUserRoles createUserRole findUserArray deleteUser updateUser createUser addRole findRoleByUserId"/>
+
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:User"
+        type="java:webservice_layer.User"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:Role"
+        type="java:webservice_layer.Role"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://webservice_layer"
+        qname="ns:UserRole"
+        type="java:webservice_layer.UserRole"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

@@ -133,13 +133,13 @@ case 13:
         webservice_layer1Job_1id.setEndDate(endDate_4idTemp);
         webservice_layer1Job_1id.setCustomer(webservice_layer1Customer_5id);
         webservice_layer1Job_1id.setId(id_13idTemp);
-        java.lang.String updateJob13mtemp = sampleJobWebserviceProxyid.updateJob(webservice_layer1Job_1id);
-if(updateJob13mtemp == null){
+        java.lang.String deleteJob13mtemp = sampleJobWebserviceProxyid.deleteJob(webservice_layer1Job_1id);
+if(deleteJob13mtemp == null){
 %>
-<%=updateJob13mtemp %>
+<%=deleteJob13mtemp %>
 <%
 }else{
-        String tempResultreturnp14 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateJob13mtemp));
+        String tempResultreturnp14 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteJob13mtemp));
         %>
         <%= tempResultreturnp14 %>
         <%
@@ -217,13 +217,13 @@ case 42:
         webservice_layer1Job_14id.setEndDate(endDate_17idTemp);
         webservice_layer1Job_14id.setCustomer(webservice_layer1Customer_18id);
         webservice_layer1Job_14id.setId(id_26idTemp);
-        java.lang.String deleteJob42mtemp = sampleJobWebserviceProxyid.deleteJob(webservice_layer1Job_14id);
-if(deleteJob42mtemp == null){
+        java.lang.String updateJob42mtemp = sampleJobWebserviceProxyid.updateJob(webservice_layer1Job_14id);
+if(updateJob42mtemp == null){
 %>
-<%=deleteJob42mtemp %>
+<%=updateJob42mtemp %>
 <%
 }else{
-        String tempResultreturnp43 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteJob42mtemp));
+        String tempResultreturnp43 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateJob42mtemp));
         %>
         <%= tempResultreturnp43 %>
         <%
@@ -305,12 +305,30 @@ case 71:
 break;
 case 100:
         gotMethod = true;
-        String jobId_40id=  request.getParameter("jobId127");
-        int jobId_40idTemp  = Integer.parseInt(jobId_40id);
-        webservice_layer.Job findJob100mtemp = sampleJobWebserviceProxyid.findJob(jobId_40idTemp);
-if(findJob100mtemp == null){
+        webservice_layer.Job[] findJobArray100mtemp = sampleJobWebserviceProxyid.findJobArray();
+if(findJobArray100mtemp == null){
 %>
-<%=findJob100mtemp %>
+<%=findJobArray100mtemp %>
+<%
+}else{
+        String tempreturnp101 = null;
+        if(findJobArray100mtemp != null){
+        java.util.List listreturnp101= java.util.Arrays.asList(findJobArray100mtemp);
+        tempreturnp101 = listreturnp101.toString();
+        }
+        %>
+        <%=tempreturnp101%>
+        <%
+}
+break;
+case 103:
+        gotMethod = true;
+        String jobId_40id=  request.getParameter("jobId130");
+        int jobId_40idTemp  = Integer.parseInt(jobId_40id);
+        webservice_layer.Job findJob103mtemp = sampleJobWebserviceProxyid.findJob(jobId_40idTemp);
+if(findJob103mtemp == null){
+%>
+<%=findJob103mtemp %>
 <%
 }else{
 %>
@@ -322,13 +340,13 @@ if(findJob100mtemp == null){
 <TD COLSPAN="2" ALIGN="LEFT">startDate:</TD>
 <TD>
 <%
-if(findJob100mtemp != null){
-java.util.Calendar typestartDate103 = findJob100mtemp.getStartDate();
-        java.text.DateFormat dateFormatstartDate103 = java.text.DateFormat.getDateInstance();
-        java.util.Date datestartDate103 = typestartDate103.getTime();
-        String tempResultstartDate103 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatstartDate103.format(datestartDate103));
+if(findJob103mtemp != null){
+java.util.Calendar typestartDate106 = findJob103mtemp.getStartDate();
+        java.text.DateFormat dateFormatstartDate106 = java.text.DateFormat.getDateInstance();
+        java.util.Date datestartDate106 = typestartDate106.getTime();
+        String tempResultstartDate106 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatstartDate106.format(datestartDate106));
         %>
-        <%= tempResultstartDate103 %>
+        <%= tempResultstartDate106 %>
         <%
 }%>
 </TD>
@@ -337,11 +355,11 @@ java.util.Calendar typestartDate103 = findJob100mtemp.getStartDate();
 <TD COLSPAN="2" ALIGN="LEFT">address:</TD>
 <TD>
 <%
-if(findJob100mtemp != null){
-java.lang.String typeaddress105 = findJob100mtemp.getAddress();
-        String tempResultaddress105 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress105));
+if(findJob103mtemp != null){
+java.lang.String typeaddress108 = findJob103mtemp.getAddress();
+        String tempResultaddress108 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress108));
         %>
-        <%= tempResultaddress105 %>
+        <%= tempResultaddress108 %>
         <%
 }%>
 </TD>
@@ -350,13 +368,13 @@ java.lang.String typeaddress105 = findJob100mtemp.getAddress();
 <TD COLSPAN="2" ALIGN="LEFT">endDate:</TD>
 <TD>
 <%
-if(findJob100mtemp != null){
-java.util.Calendar typeendDate107 = findJob100mtemp.getEndDate();
-        java.text.DateFormat dateFormatendDate107 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateendDate107 = typeendDate107.getTime();
-        String tempResultendDate107 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatendDate107.format(dateendDate107));
+if(findJob103mtemp != null){
+java.util.Calendar typeendDate110 = findJob103mtemp.getEndDate();
+        java.text.DateFormat dateFormatendDate110 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateendDate110 = typeendDate110.getTime();
+        String tempResultendDate110 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatendDate110.format(dateendDate110));
         %>
-        <%= tempResultendDate107 %>
+        <%= tempResultendDate110 %>
         <%
 }%>
 </TD>
@@ -369,13 +387,13 @@ java.util.Calendar typeendDate107 = findJob100mtemp.getEndDate();
 <TD COLSPAN="1" ALIGN="LEFT">telefone:</TD>
 <TD>
 <%
-if(findJob100mtemp != null){
-webservice_layer.Customer tebece0=findJob100mtemp.getCustomer();
+if(findJob103mtemp != null){
+webservice_layer.Customer tebece0=findJob103mtemp.getCustomer();
 if(tebece0 != null){
-java.lang.String typetelefone111 = tebece0.getTelefone();
-        String tempResulttelefone111 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typetelefone111));
+java.lang.String typetelefone114 = tebece0.getTelefone();
+        String tempResulttelefone114 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typetelefone114));
         %>
-        <%= tempResulttelefone111 %>
+        <%= tempResulttelefone114 %>
         <%
 }}%>
 </TD>
@@ -385,8 +403,8 @@ java.lang.String typetelefone111 = tebece0.getTelefone();
 <TD COLSPAN="1" ALIGN="LEFT">cvr:</TD>
 <TD>
 <%
-if(findJob100mtemp != null){
-webservice_layer.Customer tebece0=findJob100mtemp.getCustomer();
+if(findJob103mtemp != null){
+webservice_layer.Customer tebece0=findJob103mtemp.getCustomer();
 if(tebece0 != null){
 %>
 <%=tebece0.getCvr()
@@ -398,13 +416,13 @@ if(tebece0 != null){
 <TD COLSPAN="1" ALIGN="LEFT">address:</TD>
 <TD>
 <%
-if(findJob100mtemp != null){
-webservice_layer.Customer tebece0=findJob100mtemp.getCustomer();
+if(findJob103mtemp != null){
+webservice_layer.Customer tebece0=findJob103mtemp.getCustomer();
 if(tebece0 != null){
-java.lang.String typeaddress115 = tebece0.getAddress();
-        String tempResultaddress115 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress115));
+java.lang.String typeaddress118 = tebece0.getAddress();
+        String tempResultaddress118 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress118));
         %>
-        <%= tempResultaddress115 %>
+        <%= tempResultaddress118 %>
         <%
 }}%>
 </TD>
@@ -414,13 +432,13 @@ java.lang.String typeaddress115 = tebece0.getAddress();
 <TD COLSPAN="1" ALIGN="LEFT">lastName:</TD>
 <TD>
 <%
-if(findJob100mtemp != null){
-webservice_layer.Customer tebece0=findJob100mtemp.getCustomer();
+if(findJob103mtemp != null){
+webservice_layer.Customer tebece0=findJob103mtemp.getCustomer();
 if(tebece0 != null){
-java.lang.String typelastName117 = tebece0.getLastName();
-        String tempResultlastName117 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typelastName117));
+java.lang.String typelastName120 = tebece0.getLastName();
+        String tempResultlastName120 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typelastName120));
         %>
-        <%= tempResultlastName117 %>
+        <%= tempResultlastName120 %>
         <%
 }}%>
 </TD>
@@ -430,13 +448,13 @@ java.lang.String typelastName117 = tebece0.getLastName();
 <TD COLSPAN="1" ALIGN="LEFT">firstName:</TD>
 <TD>
 <%
-if(findJob100mtemp != null){
-webservice_layer.Customer tebece0=findJob100mtemp.getCustomer();
+if(findJob103mtemp != null){
+webservice_layer.Customer tebece0=findJob103mtemp.getCustomer();
 if(tebece0 != null){
-java.lang.String typefirstName119 = tebece0.getFirstName();
-        String tempResultfirstName119 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typefirstName119));
+java.lang.String typefirstName122 = tebece0.getFirstName();
+        String tempResultfirstName122 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typefirstName122));
         %>
-        <%= tempResultfirstName119 %>
+        <%= tempResultfirstName122 %>
         <%
 }}%>
 </TD>
@@ -446,13 +464,13 @@ java.lang.String typefirstName119 = tebece0.getFirstName();
 <TD COLSPAN="1" ALIGN="LEFT">companyName:</TD>
 <TD>
 <%
-if(findJob100mtemp != null){
-webservice_layer.Customer tebece0=findJob100mtemp.getCustomer();
+if(findJob103mtemp != null){
+webservice_layer.Customer tebece0=findJob103mtemp.getCustomer();
 if(tebece0 != null){
-java.lang.String typecompanyName121 = tebece0.getCompanyName();
-        String tempResultcompanyName121 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecompanyName121));
+java.lang.String typecompanyName124 = tebece0.getCompanyName();
+        String tempResultcompanyName124 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecompanyName124));
         %>
-        <%= tempResultcompanyName121 %>
+        <%= tempResultcompanyName124 %>
         <%
 }}%>
 </TD>
@@ -462,8 +480,8 @@ java.lang.String typecompanyName121 = tebece0.getCompanyName();
 <TD COLSPAN="1" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findJob100mtemp != null){
-webservice_layer.Customer tebece0=findJob100mtemp.getCustomer();
+if(findJob103mtemp != null){
+webservice_layer.Customer tebece0=findJob103mtemp.getCustomer();
 if(tebece0 != null){
 %>
 <%=tebece0.getId()
@@ -474,31 +492,13 @@ if(tebece0 != null){
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findJob100mtemp != null){
+if(findJob103mtemp != null){
 %>
-<%=findJob100mtemp.getId()
+<%=findJob103mtemp.getId()
 %><%}%>
 </TD>
 </TABLE>
 <%
-}
-break;
-case 129:
-        gotMethod = true;
-        webservice_layer.Job[] findJobArray129mtemp = sampleJobWebserviceProxyid.findJobArray();
-if(findJobArray129mtemp == null){
-%>
-<%=findJobArray129mtemp %>
-<%
-}else{
-        String tempreturnp130 = null;
-        if(findJobArray129mtemp != null){
-        java.util.List listreturnp130= java.util.Arrays.asList(findJobArray129mtemp);
-        tempreturnp130 = listreturnp130.toString();
-        }
-        %>
-        <%=tempreturnp130%>
-        <%
 }
 break;
 case 132:

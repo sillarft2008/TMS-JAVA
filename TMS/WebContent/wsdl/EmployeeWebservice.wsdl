@@ -4,31 +4,6 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://webservice_layer" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="updateEmployee">
-    <complexType>
-     <sequence>
-      <element name="employee" type="impl:Employee"/>
-     </sequence>
-    </complexType>
-   </element>
-   <complexType name="Employee">
-    <sequence>
-     <element name="address" nillable="true" type="xsd:string"/>
-     <element name="birthdate" nillable="true" type="xsd:string"/>
-     <element name="email" nillable="true" type="xsd:string"/>
-     <element name="firstName" nillable="true" type="xsd:string"/>
-     <element name="id" type="xsd:int"/>
-     <element name="lastName" nillable="true" type="xsd:string"/>
-     <element name="telefone" nillable="true" type="xsd:string"/>
-    </sequence>
-   </complexType>
-   <element name="updateEmployeeResponse">
-    <complexType>
-     <sequence>
-      <element name="updateEmployeeReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
    <element name="findEmployee">
     <complexType>
      <sequence>
@@ -43,16 +18,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="getAllEmployees">
-    <complexType/>
-   </element>
-   <element name="getAllEmployeesResponse">
-    <complexType>
-     <sequence>
-      <element maxOccurs="unbounded" name="getAllEmployeesReturn" type="impl:Employee"/>
-     </sequence>
-    </complexType>
-   </element>
+   <complexType name="Employee">
+    <sequence>
+     <element name="address" nillable="true" type="xsd:string"/>
+     <element name="birthdate" nillable="true" type="xsd:string"/>
+     <element name="email" nillable="true" type="xsd:string"/>
+     <element name="firstName" nillable="true" type="xsd:string"/>
+     <element name="id" type="xsd:int"/>
+     <element name="lastName" nillable="true" type="xsd:string"/>
+     <element name="telefone" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
    <element name="deleteEmployee">
     <complexType>
      <sequence>
@@ -64,6 +40,20 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="deleteEmployeeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateEmployee">
+    <complexType>
+     <sequence>
+      <element name="employee" type="impl:Employee"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateEmployeeResponse">
+    <complexType>
+     <sequence>
+      <element name="updateEmployeeReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -81,12 +71,30 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="getAllEmployees">
+    <complexType/>
+   </element>
+   <element name="getAllEmployeesResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllEmployeesReturn" type="impl:Employee"/>
+     </sequence>
+    </complexType>
+   </element>
   </schema>
  </wsdl:types>
 
    <wsdl:message name="createEmployeeResponse">
 
       <wsdl:part element="impl:createEmployeeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findEmployeeRequest">
+
+      <wsdl:part element="impl:findEmployee" name="parameters">
 
       </wsdl:part>
 
@@ -108,14 +116,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="findEmployeeRequest">
-
-      <wsdl:part element="impl:findEmployee" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
    <wsdl:message name="getAllEmployeesRequest">
 
       <wsdl:part element="impl:getAllEmployees" name="parameters">
@@ -124,17 +124,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="getAllEmployeesResponse">
+   <wsdl:message name="deleteEmployeeResponse">
 
-      <wsdl:part element="impl:getAllEmployeesResponse" name="parameters">
+      <wsdl:part element="impl:deleteEmployeeResponse" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="deleteEmployeeResponse">
+   <wsdl:message name="getAllEmployeesResponse">
 
-      <wsdl:part element="impl:deleteEmployeeResponse" name="parameters">
+      <wsdl:part element="impl:getAllEmployeesResponse" name="parameters">
 
       </wsdl:part>
 
@@ -166,18 +166,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="EmployeeWebservice">
 
-      <wsdl:operation name="updateEmployee">
-
-         <wsdl:input message="impl:updateEmployeeRequest" name="updateEmployeeRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:updateEmployeeResponse" name="updateEmployeeResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="findEmployee">
 
          <wsdl:input message="impl:findEmployeeRequest" name="findEmployeeRequest">
@@ -185,18 +173,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:findEmployeeResponse" name="findEmployeeResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getAllEmployees">
-
-         <wsdl:input message="impl:getAllEmployeesRequest" name="getAllEmployeesRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getAllEmployeesResponse" name="getAllEmployeesResponse">
 
        </wsdl:output>
 
@@ -214,6 +190,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="updateEmployee">
+
+         <wsdl:input message="impl:updateEmployeeRequest" name="updateEmployeeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateEmployeeResponse" name="updateEmployeeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="createEmployee">
 
          <wsdl:input message="impl:createEmployeeRequest" name="createEmployeeRequest">
@@ -226,29 +214,23 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="getAllEmployees">
+
+         <wsdl:input message="impl:getAllEmployeesRequest" name="getAllEmployeesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllEmployeesResponse" name="getAllEmployeesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="EmployeeWebserviceSoapBinding" type="impl:EmployeeWebservice">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-
-      <wsdl:operation name="updateEmployee">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="updateEmployeeRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="updateEmployeeResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
 
       <wsdl:operation name="findEmployee">
 
@@ -261,24 +243,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="findEmployeeResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getAllEmployees">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getAllEmployeesRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getAllEmployeesResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -304,6 +268,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="updateEmployee">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateEmployeeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateEmployeeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="createEmployee">
 
          <wsdlsoap:operation soapAction=""/>
@@ -322,13 +304,31 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="getAllEmployees">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllEmployeesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllEmployeesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:binding>
 
    <wsdl:service name="EmployeeWebserviceService">
 
       <wsdl:port binding="impl:EmployeeWebserviceSoapBinding" name="EmployeeWebservice">
 
-         <wsdlsoap:address location="http://localhost:12131/TMS/services/EmployeeWebservice"/>
+         <wsdlsoap:address location="http://localhost:8080/TMS/services/EmployeeWebservice"/>
 
       </wsdl:port>
 

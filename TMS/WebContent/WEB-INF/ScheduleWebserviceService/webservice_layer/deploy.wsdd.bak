@@ -20,10 +20,16 @@
       <parameter name="className" value="webservice_layer.ScheduleWebserviceSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="ScheduleWebservice"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="deleteSchedule" qname="operNS:deleteSchedule" xmlns:operNS="http://webservice_layer" returnQName="retNS:deleteScheduleReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:schedule" xmlns:pns="http://webservice_layer" type="tns:Schedule" xmlns:tns="http://webservice_layer"/>
+      <operation name="findScheduleArrayByEmployeeDate" qname="operNS:findScheduleArrayByEmployeeDate" xmlns:operNS="http://webservice_layer" returnQName="retNS:findScheduleArrayByEmployeeDateReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Schedule" xmlns:rtns="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:employeeId" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:startTimeDate" xmlns:pns="http://webservice_layer" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="findScheduleArray" qname="operNS:findScheduleArray" xmlns:operNS="http://webservice_layer" returnQName="retNS:findScheduleArrayReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Schedule" xmlns:rtns="http://webservice_layer" soapAction="" >
       </operation>
       <operation name="createSchedule" qname="operNS:createSchedule" xmlns:operNS="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:schedule" xmlns:pns="http://webservice_layer" type="tns:Schedule" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="deleteSchedule" qname="operNS:deleteSchedule" xmlns:operNS="http://webservice_layer" returnQName="retNS:deleteScheduleReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:schedule" xmlns:pns="http://webservice_layer" type="tns:Schedule" xmlns:tns="http://webservice_layer"/>
       </operation>
       <operation name="updateSchedule" qname="operNS:updateSchedule" xmlns:operNS="http://webservice_layer" returnQName="retNS:updateScheduleReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
@@ -31,12 +37,6 @@
       </operation>
       <operation name="findSchedule" qname="operNS:findSchedule" xmlns:operNS="http://webservice_layer" returnQName="retNS:findScheduleReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Schedule" xmlns:rtns="http://webservice_layer" soapAction="" >
         <parameter qname="pns:scheduleId" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <operation name="findScheduleArray" qname="operNS:findScheduleArray" xmlns:operNS="http://webservice_layer" returnQName="retNS:findScheduleArrayReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Schedule" xmlns:rtns="http://webservice_layer" soapAction="" >
-      </operation>
-      <operation name="findScheduleArrayByEmployeeDate" qname="operNS:findScheduleArrayByEmployeeDate" xmlns:operNS="http://webservice_layer" returnQName="retNS:findScheduleArrayByEmployeeDateReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:Schedule" xmlns:rtns="http://webservice_layer" soapAction="" >
-        <parameter qname="pns:employeeId" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:startTimeDate" xmlns:pns="http://webservice_layer" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="createSchedule findSchedule updateSchedule deleteSchedule findScheduleArrayByEmployeeDate findScheduleArray"/>
 

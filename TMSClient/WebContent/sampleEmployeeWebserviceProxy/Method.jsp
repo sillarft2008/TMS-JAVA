@@ -8,11 +8,11 @@
 <LI><A HREF="Input.jsp?method=2" TARGET="inputs"> getEndpoint()</A></LI>
 <LI><A HREF="Input.jsp?method=5" TARGET="inputs"> setEndpoint(java.lang.String)</A></LI>
 <LI><A HREF="Input.jsp?method=10" TARGET="inputs"> getEmployeeWebservice()</A></LI>
-<LI><A HREF="Input.jsp?method=15" TARGET="inputs"> updateEmployee(webservice_layer.Employee)</A></LI>
-<LI><A HREF="Input.jsp?method=34" TARGET="inputs"> findEmployee(int)</A></LI>
-<LI><A HREF="Input.jsp?method=53" TARGET="inputs"> getAllEmployees()</A></LI>
-<LI><A HREF="Input.jsp?method=56" TARGET="inputs"> deleteEmployee(webservice_layer.Employee)</A></LI>
-<LI><A HREF="Input.jsp?method=75" TARGET="inputs"> createEmployee(webservice_layer.Employee)</A></LI>
+<LI><A HREF="Input.jsp?method=15" TARGET="inputs"> findEmployee(int)</A></LI>
+<LI><A HREF="Input.jsp?method=34" TARGET="inputs"> deleteEmployee(webservice_layer.Employee)</A></LI>
+<LI><A HREF="Input.jsp?method=53" TARGET="inputs"> updateEmployee(webservice_layer.Employee)</A></LI>
+<LI><A HREF="Input.jsp?method=72" TARGET="inputs"> createEmployee(webservice_layer.Employee)</A></LI>
+<LI><A HREF="Input.jsp?method=91" TARGET="inputs"> getAllEmployees()</A></LI>
 </UL>
 </BODY>
 </HTML>

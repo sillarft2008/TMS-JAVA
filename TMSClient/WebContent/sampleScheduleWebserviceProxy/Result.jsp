@@ -63,611 +63,657 @@ if(getScheduleWebservice10mtemp == null){
 break;
 case 13:
         gotMethod = true;
-        String startTimeString_2id=  request.getParameter("startTimeString18");
-            java.lang.String startTimeString_2idTemp = null;
-        if(!startTimeString_2id.equals("")){
-         startTimeString_2idTemp  = startTimeString_2id;
+        String employeeId_1id=  request.getParameter("employeeId16");
+        int employeeId_1idTemp  = Integer.parseInt(employeeId_1id);
+        String startTimeDate_2id=  request.getParameter("startTimeDate18");
+            java.util.Calendar startTimeDate_2idTemp = null;
+        if(!startTimeDate_2id.equals("")){
+        java.text.DateFormat dateFormatstartTimeDate18 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempstartTimeDate18  = dateFormatstartTimeDate18.parse(startTimeDate_2id);
+         startTimeDate_2idTemp = new java.util.GregorianCalendar();
+        startTimeDate_2idTemp.setTime(dateTempstartTimeDate18);
         }
-        String id_3id=  request.getParameter("id20");
-        int id_3idTemp  = Integer.parseInt(id_3id);
-        String startDate_5id=  request.getParameter("startDate24");
-            java.util.Calendar startDate_5idTemp = null;
-        if(!startDate_5id.equals("")){
-        java.text.DateFormat dateFormatstartDate24 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempstartDate24  = dateFormatstartDate24.parse(startDate_5id);
-         startDate_5idTemp = new java.util.GregorianCalendar();
-        startDate_5idTemp.setTime(dateTempstartDate24);
-        }
-        String address_6id=  request.getParameter("address26");
-            java.lang.String address_6idTemp = null;
-        if(!address_6id.equals("")){
-         address_6idTemp  = address_6id;
-        }
-        String endDate_7id=  request.getParameter("endDate28");
-            java.util.Calendar endDate_7idTemp = null;
-        if(!endDate_7id.equals("")){
-        java.text.DateFormat dateFormatendDate28 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempendDate28  = dateFormatendDate28.parse(endDate_7id);
-         endDate_7idTemp = new java.util.GregorianCalendar();
-        endDate_7idTemp.setTime(dateTempendDate28);
-        }
-        String telefone_9id=  request.getParameter("telefone32");
-            java.lang.String telefone_9idTemp = null;
-        if(!telefone_9id.equals("")){
-         telefone_9idTemp  = telefone_9id;
-        }
-        String cvr_10id=  request.getParameter("cvr34");
-        int cvr_10idTemp  = Integer.parseInt(cvr_10id);
-        String address_11id=  request.getParameter("address36");
-            java.lang.String address_11idTemp = null;
-        if(!address_11id.equals("")){
-         address_11idTemp  = address_11id;
-        }
-        String lastName_12id=  request.getParameter("lastName38");
-            java.lang.String lastName_12idTemp = null;
-        if(!lastName_12id.equals("")){
-         lastName_12idTemp  = lastName_12id;
-        }
-        String firstName_13id=  request.getParameter("firstName40");
-            java.lang.String firstName_13idTemp = null;
-        if(!firstName_13id.equals("")){
-         firstName_13idTemp  = firstName_13id;
-        }
-        String companyName_14id=  request.getParameter("companyName42");
-            java.lang.String companyName_14idTemp = null;
-        if(!companyName_14id.equals("")){
-         companyName_14idTemp  = companyName_14id;
-        }
-        String id_15id=  request.getParameter("id44");
-        int id_15idTemp  = Integer.parseInt(id_15id);
-        %>
-        <jsp:useBean id="webservice_layer1Customer_8id" scope="session" class="webservice_layer.Customer" />
-        <%
-        webservice_layer1Customer_8id.setTelefone(telefone_9idTemp);
-        webservice_layer1Customer_8id.setCvr(cvr_10idTemp);
-        webservice_layer1Customer_8id.setAddress(address_11idTemp);
-        webservice_layer1Customer_8id.setLastName(lastName_12idTemp);
-        webservice_layer1Customer_8id.setFirstName(firstName_13idTemp);
-        webservice_layer1Customer_8id.setCompanyName(companyName_14idTemp);
-        webservice_layer1Customer_8id.setId(id_15idTemp);
-        String id_16id=  request.getParameter("id46");
-        int id_16idTemp  = Integer.parseInt(id_16id);
-        %>
-        <jsp:useBean id="webservice_layer1Job_4id" scope="session" class="webservice_layer.Job" />
-        <%
-        webservice_layer1Job_4id.setStartDate(startDate_5idTemp);
-        webservice_layer1Job_4id.setAddress(address_6idTemp);
-        webservice_layer1Job_4id.setEndDate(endDate_7idTemp);
-        webservice_layer1Job_4id.setCustomer(webservice_layer1Customer_8id);
-        webservice_layer1Job_4id.setId(id_16idTemp);
-        String duration_17id=  request.getParameter("duration48");
-            java.util.Calendar duration_17idTemp = null;
-        if(!duration_17id.equals("")){
-        java.text.DateFormat dateFormatduration48 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempduration48  = dateFormatduration48.parse(duration_17id);
-         duration_17idTemp = new java.util.GregorianCalendar();
-        duration_17idTemp.setTime(dateTempduration48);
-        }
-        String startTimeDate_18id=  request.getParameter("startTimeDate50");
-            java.util.Calendar startTimeDate_18idTemp = null;
-        if(!startTimeDate_18id.equals("")){
-        java.text.DateFormat dateFormatstartTimeDate50 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempstartTimeDate50  = dateFormatstartTimeDate50.parse(startTimeDate_18id);
-         startTimeDate_18idTemp = new java.util.GregorianCalendar();
-        startTimeDate_18idTemp.setTime(dateTempstartTimeDate50);
-        }
-        String competency_20id=  request.getParameter("competency54");
-            java.lang.String competency_20idTemp = null;
-        if(!competency_20id.equals("")){
-         competency_20idTemp  = competency_20id;
-        }
-        String id_21id=  request.getParameter("id56");
-        int id_21idTemp  = Integer.parseInt(id_21id);
-        %>
-        <jsp:useBean id="webservice_layer1Competency_19id" scope="session" class="webservice_layer.Competency" />
-        <%
-        webservice_layer1Competency_19id.setCompetency(competency_20idTemp);
-        webservice_layer1Competency_19id.setId(id_21idTemp);
-        String startTimeDateString_22id=  request.getParameter("startTimeDateString58");
-            java.lang.String startTimeDateString_22idTemp = null;
-        if(!startTimeDateString_22id.equals("")){
-         startTimeDateString_22idTemp  = startTimeDateString_22id;
-        }
-        String telefone_24id=  request.getParameter("telefone62");
-            java.lang.String telefone_24idTemp = null;
-        if(!telefone_24id.equals("")){
-         telefone_24idTemp  = telefone_24id;
-        }
-        String address_25id=  request.getParameter("address64");
-            java.lang.String address_25idTemp = null;
-        if(!address_25id.equals("")){
-         address_25idTemp  = address_25id;
-        }
-        String lastName_26id=  request.getParameter("lastName66");
-            java.lang.String lastName_26idTemp = null;
-        if(!lastName_26id.equals("")){
-         lastName_26idTemp  = lastName_26id;
-        }
-        String email_27id=  request.getParameter("email68");
-            java.lang.String email_27idTemp = null;
-        if(!email_27id.equals("")){
-         email_27idTemp  = email_27id;
-        }
-        String birthdate_28id=  request.getParameter("birthdate70");
-            java.lang.String birthdate_28idTemp = null;
-        if(!birthdate_28id.equals("")){
-         birthdate_28idTemp  = birthdate_28id;
-        }
-        String firstName_29id=  request.getParameter("firstName72");
-            java.lang.String firstName_29idTemp = null;
-        if(!firstName_29id.equals("")){
-         firstName_29idTemp  = firstName_29id;
-        }
-        String id_30id=  request.getParameter("id74");
-        int id_30idTemp  = Integer.parseInt(id_30id);
-        %>
-        <jsp:useBean id="webservice_layer1Employee_23id" scope="session" class="webservice_layer.Employee" />
-        <%
-        webservice_layer1Employee_23id.setTelefone(telefone_24idTemp);
-        webservice_layer1Employee_23id.setAddress(address_25idTemp);
-        webservice_layer1Employee_23id.setLastName(lastName_26idTemp);
-        webservice_layer1Employee_23id.setEmail(email_27idTemp);
-        webservice_layer1Employee_23id.setBirthdate(birthdate_28idTemp);
-        webservice_layer1Employee_23id.setFirstName(firstName_29idTemp);
-        webservice_layer1Employee_23id.setId(id_30idTemp);
-        String qantity_32id=  request.getParameter("qantity78");
-            java.lang.String qantity_32idTemp = null;
-        if(!qantity_32id.equals("")){
-         qantity_32idTemp  = qantity_32id;
-        }
-        String product_34id=  request.getParameter("product82");
-            java.lang.String product_34idTemp = null;
-        if(!product_34id.equals("")){
-         product_34idTemp  = product_34id;
-        }
-        String id_35id=  request.getParameter("id84");
-        int id_35idTemp  = Integer.parseInt(id_35id);
-        %>
-        <jsp:useBean id="webservice_layer1Product_33id" scope="session" class="webservice_layer.Product" />
-        <%
-        webservice_layer1Product_33id.setProduct(product_34idTemp);
-        webservice_layer1Product_33id.setId(id_35idTemp);
-        String id_36id=  request.getParameter("id86");
-        int id_36idTemp  = Integer.parseInt(id_36id);
-        %>
-        <jsp:useBean id="webservice_layer1Item_31id" scope="session" class="webservice_layer.Item" />
-        <%
-        webservice_layer1Item_31id.setQantity(qantity_32idTemp);
-        webservice_layer1Item_31id.setProduct(webservice_layer1Product_33id);
-        webservice_layer1Item_31id.setId(id_36idTemp);
-        %>
-        <jsp:useBean id="webservice_layer1Schedule_1id" scope="session" class="webservice_layer.Schedule" />
-        <%
-        webservice_layer1Schedule_1id.setStartTimeString(startTimeString_2idTemp);
-        webservice_layer1Schedule_1id.setId(id_3idTemp);
-        webservice_layer1Schedule_1id.setJob(webservice_layer1Job_4id);
-        webservice_layer1Schedule_1id.setDuration(duration_17idTemp);
-        webservice_layer1Schedule_1id.setStartTimeDate(startTimeDate_18idTemp);
-        webservice_layer1Schedule_1id.setCompetency(webservice_layer1Competency_19id);
-        webservice_layer1Schedule_1id.setStartTimeDateString(startTimeDateString_22idTemp);
-        webservice_layer1Schedule_1id.setEmployee(webservice_layer1Employee_23id);
-        webservice_layer1Schedule_1id.setItem(webservice_layer1Item_31id);
-        java.lang.String deleteSchedule13mtemp = sampleScheduleWebserviceProxyid.deleteSchedule(webservice_layer1Schedule_1id);
-if(deleteSchedule13mtemp == null){
+        webservice_layer.Schedule[] findScheduleArrayByEmployeeDate13mtemp = sampleScheduleWebserviceProxyid.findScheduleArrayByEmployeeDate(employeeId_1idTemp,startTimeDate_2idTemp);
+if(findScheduleArrayByEmployeeDate13mtemp == null){
 %>
-<%=deleteSchedule13mtemp %>
+<%=findScheduleArrayByEmployeeDate13mtemp %>
 <%
 }else{
-        String tempResultreturnp14 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteSchedule13mtemp));
+        String tempreturnp14 = null;
+        if(findScheduleArrayByEmployeeDate13mtemp != null){
+        java.util.List listreturnp14= java.util.Arrays.asList(findScheduleArrayByEmployeeDate13mtemp);
+        tempreturnp14 = listreturnp14.toString();
+        }
         %>
-        <%= tempResultreturnp14 %>
+        <%=tempreturnp14%>
         <%
 }
 break;
-case 88:
+case 20:
         gotMethod = true;
-        String startTimeString_38id=  request.getParameter("startTimeString93");
-            java.lang.String startTimeString_38idTemp = null;
-        if(!startTimeString_38id.equals("")){
-         startTimeString_38idTemp  = startTimeString_38id;
-        }
-        String id_39id=  request.getParameter("id95");
-        int id_39idTemp  = Integer.parseInt(id_39id);
-        String startDate_41id=  request.getParameter("startDate99");
-            java.util.Calendar startDate_41idTemp = null;
-        if(!startDate_41id.equals("")){
-        java.text.DateFormat dateFormatstartDate99 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempstartDate99  = dateFormatstartDate99.parse(startDate_41id);
-         startDate_41idTemp = new java.util.GregorianCalendar();
-        startDate_41idTemp.setTime(dateTempstartDate99);
-        }
-        String address_42id=  request.getParameter("address101");
-            java.lang.String address_42idTemp = null;
-        if(!address_42id.equals("")){
-         address_42idTemp  = address_42id;
-        }
-        String endDate_43id=  request.getParameter("endDate103");
-            java.util.Calendar endDate_43idTemp = null;
-        if(!endDate_43id.equals("")){
-        java.text.DateFormat dateFormatendDate103 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempendDate103  = dateFormatendDate103.parse(endDate_43id);
-         endDate_43idTemp = new java.util.GregorianCalendar();
-        endDate_43idTemp.setTime(dateTempendDate103);
-        }
-        String telefone_45id=  request.getParameter("telefone107");
-            java.lang.String telefone_45idTemp = null;
-        if(!telefone_45id.equals("")){
-         telefone_45idTemp  = telefone_45id;
-        }
-        String cvr_46id=  request.getParameter("cvr109");
-        int cvr_46idTemp  = Integer.parseInt(cvr_46id);
-        String address_47id=  request.getParameter("address111");
-            java.lang.String address_47idTemp = null;
-        if(!address_47id.equals("")){
-         address_47idTemp  = address_47id;
-        }
-        String lastName_48id=  request.getParameter("lastName113");
-            java.lang.String lastName_48idTemp = null;
-        if(!lastName_48id.equals("")){
-         lastName_48idTemp  = lastName_48id;
-        }
-        String firstName_49id=  request.getParameter("firstName115");
-            java.lang.String firstName_49idTemp = null;
-        if(!firstName_49id.equals("")){
-         firstName_49idTemp  = firstName_49id;
-        }
-        String companyName_50id=  request.getParameter("companyName117");
-            java.lang.String companyName_50idTemp = null;
-        if(!companyName_50id.equals("")){
-         companyName_50idTemp  = companyName_50id;
-        }
-        String id_51id=  request.getParameter("id119");
-        int id_51idTemp  = Integer.parseInt(id_51id);
-        %>
-        <jsp:useBean id="webservice_layer1Customer_44id" scope="session" class="webservice_layer.Customer" />
-        <%
-        webservice_layer1Customer_44id.setTelefone(telefone_45idTemp);
-        webservice_layer1Customer_44id.setCvr(cvr_46idTemp);
-        webservice_layer1Customer_44id.setAddress(address_47idTemp);
-        webservice_layer1Customer_44id.setLastName(lastName_48idTemp);
-        webservice_layer1Customer_44id.setFirstName(firstName_49idTemp);
-        webservice_layer1Customer_44id.setCompanyName(companyName_50idTemp);
-        webservice_layer1Customer_44id.setId(id_51idTemp);
-        String id_52id=  request.getParameter("id121");
-        int id_52idTemp  = Integer.parseInt(id_52id);
-        %>
-        <jsp:useBean id="webservice_layer1Job_40id" scope="session" class="webservice_layer.Job" />
-        <%
-        webservice_layer1Job_40id.setStartDate(startDate_41idTemp);
-        webservice_layer1Job_40id.setAddress(address_42idTemp);
-        webservice_layer1Job_40id.setEndDate(endDate_43idTemp);
-        webservice_layer1Job_40id.setCustomer(webservice_layer1Customer_44id);
-        webservice_layer1Job_40id.setId(id_52idTemp);
-        String duration_53id=  request.getParameter("duration123");
-            java.util.Calendar duration_53idTemp = null;
-        if(!duration_53id.equals("")){
-        java.text.DateFormat dateFormatduration123 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempduration123  = dateFormatduration123.parse(duration_53id);
-         duration_53idTemp = new java.util.GregorianCalendar();
-        duration_53idTemp.setTime(dateTempduration123);
-        }
-        String startTimeDate_54id=  request.getParameter("startTimeDate125");
-            java.util.Calendar startTimeDate_54idTemp = null;
-        if(!startTimeDate_54id.equals("")){
-        java.text.DateFormat dateFormatstartTimeDate125 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempstartTimeDate125  = dateFormatstartTimeDate125.parse(startTimeDate_54id);
-         startTimeDate_54idTemp = new java.util.GregorianCalendar();
-        startTimeDate_54idTemp.setTime(dateTempstartTimeDate125);
-        }
-        String competency_56id=  request.getParameter("competency129");
-            java.lang.String competency_56idTemp = null;
-        if(!competency_56id.equals("")){
-         competency_56idTemp  = competency_56id;
-        }
-        String id_57id=  request.getParameter("id131");
-        int id_57idTemp  = Integer.parseInt(id_57id);
-        %>
-        <jsp:useBean id="webservice_layer1Competency_55id" scope="session" class="webservice_layer.Competency" />
-        <%
-        webservice_layer1Competency_55id.setCompetency(competency_56idTemp);
-        webservice_layer1Competency_55id.setId(id_57idTemp);
-        String startTimeDateString_58id=  request.getParameter("startTimeDateString133");
-            java.lang.String startTimeDateString_58idTemp = null;
-        if(!startTimeDateString_58id.equals("")){
-         startTimeDateString_58idTemp  = startTimeDateString_58id;
-        }
-        String telefone_60id=  request.getParameter("telefone137");
-            java.lang.String telefone_60idTemp = null;
-        if(!telefone_60id.equals("")){
-         telefone_60idTemp  = telefone_60id;
-        }
-        String address_61id=  request.getParameter("address139");
-            java.lang.String address_61idTemp = null;
-        if(!address_61id.equals("")){
-         address_61idTemp  = address_61id;
-        }
-        String lastName_62id=  request.getParameter("lastName141");
-            java.lang.String lastName_62idTemp = null;
-        if(!lastName_62id.equals("")){
-         lastName_62idTemp  = lastName_62id;
-        }
-        String email_63id=  request.getParameter("email143");
-            java.lang.String email_63idTemp = null;
-        if(!email_63id.equals("")){
-         email_63idTemp  = email_63id;
-        }
-        String birthdate_64id=  request.getParameter("birthdate145");
-            java.lang.String birthdate_64idTemp = null;
-        if(!birthdate_64id.equals("")){
-         birthdate_64idTemp  = birthdate_64id;
-        }
-        String firstName_65id=  request.getParameter("firstName147");
-            java.lang.String firstName_65idTemp = null;
-        if(!firstName_65id.equals("")){
-         firstName_65idTemp  = firstName_65id;
-        }
-        String id_66id=  request.getParameter("id149");
-        int id_66idTemp  = Integer.parseInt(id_66id);
-        %>
-        <jsp:useBean id="webservice_layer1Employee_59id" scope="session" class="webservice_layer.Employee" />
-        <%
-        webservice_layer1Employee_59id.setTelefone(telefone_60idTemp);
-        webservice_layer1Employee_59id.setAddress(address_61idTemp);
-        webservice_layer1Employee_59id.setLastName(lastName_62idTemp);
-        webservice_layer1Employee_59id.setEmail(email_63idTemp);
-        webservice_layer1Employee_59id.setBirthdate(birthdate_64idTemp);
-        webservice_layer1Employee_59id.setFirstName(firstName_65idTemp);
-        webservice_layer1Employee_59id.setId(id_66idTemp);
-        String qantity_68id=  request.getParameter("qantity153");
-            java.lang.String qantity_68idTemp = null;
-        if(!qantity_68id.equals("")){
-         qantity_68idTemp  = qantity_68id;
-        }
-        String product_70id=  request.getParameter("product157");
-            java.lang.String product_70idTemp = null;
-        if(!product_70id.equals("")){
-         product_70idTemp  = product_70id;
-        }
-        String id_71id=  request.getParameter("id159");
-        int id_71idTemp  = Integer.parseInt(id_71id);
-        %>
-        <jsp:useBean id="webservice_layer1Product_69id" scope="session" class="webservice_layer.Product" />
-        <%
-        webservice_layer1Product_69id.setProduct(product_70idTemp);
-        webservice_layer1Product_69id.setId(id_71idTemp);
-        String id_72id=  request.getParameter("id161");
-        int id_72idTemp  = Integer.parseInt(id_72id);
-        %>
-        <jsp:useBean id="webservice_layer1Item_67id" scope="session" class="webservice_layer.Item" />
-        <%
-        webservice_layer1Item_67id.setQantity(qantity_68idTemp);
-        webservice_layer1Item_67id.setProduct(webservice_layer1Product_69id);
-        webservice_layer1Item_67id.setId(id_72idTemp);
-        %>
-        <jsp:useBean id="webservice_layer1Schedule_37id" scope="session" class="webservice_layer.Schedule" />
-        <%
-        webservice_layer1Schedule_37id.setStartTimeString(startTimeString_38idTemp);
-        webservice_layer1Schedule_37id.setId(id_39idTemp);
-        webservice_layer1Schedule_37id.setJob(webservice_layer1Job_40id);
-        webservice_layer1Schedule_37id.setDuration(duration_53idTemp);
-        webservice_layer1Schedule_37id.setStartTimeDate(startTimeDate_54idTemp);
-        webservice_layer1Schedule_37id.setCompetency(webservice_layer1Competency_55id);
-        webservice_layer1Schedule_37id.setStartTimeDateString(startTimeDateString_58idTemp);
-        webservice_layer1Schedule_37id.setEmployee(webservice_layer1Employee_59id);
-        webservice_layer1Schedule_37id.setItem(webservice_layer1Item_67id);
-        sampleScheduleWebserviceProxyid.createSchedule(webservice_layer1Schedule_37id);
-break;
-case 163:
-        gotMethod = true;
-        String startTimeString_74id=  request.getParameter("startTimeString168");
-            java.lang.String startTimeString_74idTemp = null;
-        if(!startTimeString_74id.equals("")){
-         startTimeString_74idTemp  = startTimeString_74id;
-        }
-        String id_75id=  request.getParameter("id170");
-        int id_75idTemp  = Integer.parseInt(id_75id);
-        String startDate_77id=  request.getParameter("startDate174");
-            java.util.Calendar startDate_77idTemp = null;
-        if(!startDate_77id.equals("")){
-        java.text.DateFormat dateFormatstartDate174 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempstartDate174  = dateFormatstartDate174.parse(startDate_77id);
-         startDate_77idTemp = new java.util.GregorianCalendar();
-        startDate_77idTemp.setTime(dateTempstartDate174);
-        }
-        String address_78id=  request.getParameter("address176");
-            java.lang.String address_78idTemp = null;
-        if(!address_78id.equals("")){
-         address_78idTemp  = address_78id;
-        }
-        String endDate_79id=  request.getParameter("endDate178");
-            java.util.Calendar endDate_79idTemp = null;
-        if(!endDate_79id.equals("")){
-        java.text.DateFormat dateFormatendDate178 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempendDate178  = dateFormatendDate178.parse(endDate_79id);
-         endDate_79idTemp = new java.util.GregorianCalendar();
-        endDate_79idTemp.setTime(dateTempendDate178);
-        }
-        String telefone_81id=  request.getParameter("telefone182");
-            java.lang.String telefone_81idTemp = null;
-        if(!telefone_81id.equals("")){
-         telefone_81idTemp  = telefone_81id;
-        }
-        String cvr_82id=  request.getParameter("cvr184");
-        int cvr_82idTemp  = Integer.parseInt(cvr_82id);
-        String address_83id=  request.getParameter("address186");
-            java.lang.String address_83idTemp = null;
-        if(!address_83id.equals("")){
-         address_83idTemp  = address_83id;
-        }
-        String lastName_84id=  request.getParameter("lastName188");
-            java.lang.String lastName_84idTemp = null;
-        if(!lastName_84id.equals("")){
-         lastName_84idTemp  = lastName_84id;
-        }
-        String firstName_85id=  request.getParameter("firstName190");
-            java.lang.String firstName_85idTemp = null;
-        if(!firstName_85id.equals("")){
-         firstName_85idTemp  = firstName_85id;
-        }
-        String companyName_86id=  request.getParameter("companyName192");
-            java.lang.String companyName_86idTemp = null;
-        if(!companyName_86id.equals("")){
-         companyName_86idTemp  = companyName_86id;
-        }
-        String id_87id=  request.getParameter("id194");
-        int id_87idTemp  = Integer.parseInt(id_87id);
-        %>
-        <jsp:useBean id="webservice_layer1Customer_80id" scope="session" class="webservice_layer.Customer" />
-        <%
-        webservice_layer1Customer_80id.setTelefone(telefone_81idTemp);
-        webservice_layer1Customer_80id.setCvr(cvr_82idTemp);
-        webservice_layer1Customer_80id.setAddress(address_83idTemp);
-        webservice_layer1Customer_80id.setLastName(lastName_84idTemp);
-        webservice_layer1Customer_80id.setFirstName(firstName_85idTemp);
-        webservice_layer1Customer_80id.setCompanyName(companyName_86idTemp);
-        webservice_layer1Customer_80id.setId(id_87idTemp);
-        String id_88id=  request.getParameter("id196");
-        int id_88idTemp  = Integer.parseInt(id_88id);
-        %>
-        <jsp:useBean id="webservice_layer1Job_76id" scope="session" class="webservice_layer.Job" />
-        <%
-        webservice_layer1Job_76id.setStartDate(startDate_77idTemp);
-        webservice_layer1Job_76id.setAddress(address_78idTemp);
-        webservice_layer1Job_76id.setEndDate(endDate_79idTemp);
-        webservice_layer1Job_76id.setCustomer(webservice_layer1Customer_80id);
-        webservice_layer1Job_76id.setId(id_88idTemp);
-        String duration_89id=  request.getParameter("duration198");
-            java.util.Calendar duration_89idTemp = null;
-        if(!duration_89id.equals("")){
-        java.text.DateFormat dateFormatduration198 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempduration198  = dateFormatduration198.parse(duration_89id);
-         duration_89idTemp = new java.util.GregorianCalendar();
-        duration_89idTemp.setTime(dateTempduration198);
-        }
-        String startTimeDate_90id=  request.getParameter("startTimeDate200");
-            java.util.Calendar startTimeDate_90idTemp = null;
-        if(!startTimeDate_90id.equals("")){
-        java.text.DateFormat dateFormatstartTimeDate200 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempstartTimeDate200  = dateFormatstartTimeDate200.parse(startTimeDate_90id);
-         startTimeDate_90idTemp = new java.util.GregorianCalendar();
-        startTimeDate_90idTemp.setTime(dateTempstartTimeDate200);
-        }
-        String competency_92id=  request.getParameter("competency204");
-            java.lang.String competency_92idTemp = null;
-        if(!competency_92id.equals("")){
-         competency_92idTemp  = competency_92id;
-        }
-        String id_93id=  request.getParameter("id206");
-        int id_93idTemp  = Integer.parseInt(id_93id);
-        %>
-        <jsp:useBean id="webservice_layer1Competency_91id" scope="session" class="webservice_layer.Competency" />
-        <%
-        webservice_layer1Competency_91id.setCompetency(competency_92idTemp);
-        webservice_layer1Competency_91id.setId(id_93idTemp);
-        String startTimeDateString_94id=  request.getParameter("startTimeDateString208");
-            java.lang.String startTimeDateString_94idTemp = null;
-        if(!startTimeDateString_94id.equals("")){
-         startTimeDateString_94idTemp  = startTimeDateString_94id;
-        }
-        String telefone_96id=  request.getParameter("telefone212");
-            java.lang.String telefone_96idTemp = null;
-        if(!telefone_96id.equals("")){
-         telefone_96idTemp  = telefone_96id;
-        }
-        String address_97id=  request.getParameter("address214");
-            java.lang.String address_97idTemp = null;
-        if(!address_97id.equals("")){
-         address_97idTemp  = address_97id;
-        }
-        String lastName_98id=  request.getParameter("lastName216");
-            java.lang.String lastName_98idTemp = null;
-        if(!lastName_98id.equals("")){
-         lastName_98idTemp  = lastName_98id;
-        }
-        String email_99id=  request.getParameter("email218");
-            java.lang.String email_99idTemp = null;
-        if(!email_99id.equals("")){
-         email_99idTemp  = email_99id;
-        }
-        String birthdate_100id=  request.getParameter("birthdate220");
-            java.lang.String birthdate_100idTemp = null;
-        if(!birthdate_100id.equals("")){
-         birthdate_100idTemp  = birthdate_100id;
-        }
-        String firstName_101id=  request.getParameter("firstName222");
-            java.lang.String firstName_101idTemp = null;
-        if(!firstName_101id.equals("")){
-         firstName_101idTemp  = firstName_101id;
-        }
-        String id_102id=  request.getParameter("id224");
-        int id_102idTemp  = Integer.parseInt(id_102id);
-        %>
-        <jsp:useBean id="webservice_layer1Employee_95id" scope="session" class="webservice_layer.Employee" />
-        <%
-        webservice_layer1Employee_95id.setTelefone(telefone_96idTemp);
-        webservice_layer1Employee_95id.setAddress(address_97idTemp);
-        webservice_layer1Employee_95id.setLastName(lastName_98idTemp);
-        webservice_layer1Employee_95id.setEmail(email_99idTemp);
-        webservice_layer1Employee_95id.setBirthdate(birthdate_100idTemp);
-        webservice_layer1Employee_95id.setFirstName(firstName_101idTemp);
-        webservice_layer1Employee_95id.setId(id_102idTemp);
-        String qantity_104id=  request.getParameter("qantity228");
-            java.lang.String qantity_104idTemp = null;
-        if(!qantity_104id.equals("")){
-         qantity_104idTemp  = qantity_104id;
-        }
-        String product_106id=  request.getParameter("product232");
-            java.lang.String product_106idTemp = null;
-        if(!product_106id.equals("")){
-         product_106idTemp  = product_106id;
-        }
-        String id_107id=  request.getParameter("id234");
-        int id_107idTemp  = Integer.parseInt(id_107id);
-        %>
-        <jsp:useBean id="webservice_layer1Product_105id" scope="session" class="webservice_layer.Product" />
-        <%
-        webservice_layer1Product_105id.setProduct(product_106idTemp);
-        webservice_layer1Product_105id.setId(id_107idTemp);
-        String id_108id=  request.getParameter("id236");
-        int id_108idTemp  = Integer.parseInt(id_108id);
-        %>
-        <jsp:useBean id="webservice_layer1Item_103id" scope="session" class="webservice_layer.Item" />
-        <%
-        webservice_layer1Item_103id.setQantity(qantity_104idTemp);
-        webservice_layer1Item_103id.setProduct(webservice_layer1Product_105id);
-        webservice_layer1Item_103id.setId(id_108idTemp);
-        %>
-        <jsp:useBean id="webservice_layer1Schedule_73id" scope="session" class="webservice_layer.Schedule" />
-        <%
-        webservice_layer1Schedule_73id.setStartTimeString(startTimeString_74idTemp);
-        webservice_layer1Schedule_73id.setId(id_75idTemp);
-        webservice_layer1Schedule_73id.setJob(webservice_layer1Job_76id);
-        webservice_layer1Schedule_73id.setDuration(duration_89idTemp);
-        webservice_layer1Schedule_73id.setStartTimeDate(startTimeDate_90idTemp);
-        webservice_layer1Schedule_73id.setCompetency(webservice_layer1Competency_91id);
-        webservice_layer1Schedule_73id.setStartTimeDateString(startTimeDateString_94idTemp);
-        webservice_layer1Schedule_73id.setEmployee(webservice_layer1Employee_95id);
-        webservice_layer1Schedule_73id.setItem(webservice_layer1Item_103id);
-        java.lang.String updateSchedule163mtemp = sampleScheduleWebserviceProxyid.updateSchedule(webservice_layer1Schedule_73id);
-if(updateSchedule163mtemp == null){
+        webservice_layer.Schedule[] findScheduleArray20mtemp = sampleScheduleWebserviceProxyid.findScheduleArray();
+if(findScheduleArray20mtemp == null){
 %>
-<%=updateSchedule163mtemp %>
+<%=findScheduleArray20mtemp %>
 <%
 }else{
-        String tempResultreturnp164 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateSchedule163mtemp));
+        String tempreturnp21 = null;
+        if(findScheduleArray20mtemp != null){
+        java.util.List listreturnp21= java.util.Arrays.asList(findScheduleArray20mtemp);
+        tempreturnp21 = listreturnp21.toString();
+        }
         %>
-        <%= tempResultreturnp164 %>
+        <%=tempreturnp21%>
         <%
 }
 break;
-case 238:
+case 23:
         gotMethod = true;
-        String scheduleId_109id=  request.getParameter("scheduleId311");
-        int scheduleId_109idTemp  = Integer.parseInt(scheduleId_109id);
-        webservice_layer.Schedule findSchedule238mtemp = sampleScheduleWebserviceProxyid.findSchedule(scheduleId_109idTemp);
-if(findSchedule238mtemp == null){
+        String startTimeString_4id=  request.getParameter("startTimeString28");
+            java.lang.String startTimeString_4idTemp = null;
+        if(!startTimeString_4id.equals("")){
+         startTimeString_4idTemp  = startTimeString_4id;
+        }
+        String id_5id=  request.getParameter("id30");
+        int id_5idTemp  = Integer.parseInt(id_5id);
+        String startDate_7id=  request.getParameter("startDate34");
+            java.util.Calendar startDate_7idTemp = null;
+        if(!startDate_7id.equals("")){
+        java.text.DateFormat dateFormatstartDate34 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempstartDate34  = dateFormatstartDate34.parse(startDate_7id);
+         startDate_7idTemp = new java.util.GregorianCalendar();
+        startDate_7idTemp.setTime(dateTempstartDate34);
+        }
+        String address_8id=  request.getParameter("address36");
+            java.lang.String address_8idTemp = null;
+        if(!address_8id.equals("")){
+         address_8idTemp  = address_8id;
+        }
+        String endDate_9id=  request.getParameter("endDate38");
+            java.util.Calendar endDate_9idTemp = null;
+        if(!endDate_9id.equals("")){
+        java.text.DateFormat dateFormatendDate38 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempendDate38  = dateFormatendDate38.parse(endDate_9id);
+         endDate_9idTemp = new java.util.GregorianCalendar();
+        endDate_9idTemp.setTime(dateTempendDate38);
+        }
+        String telefone_11id=  request.getParameter("telefone42");
+            java.lang.String telefone_11idTemp = null;
+        if(!telefone_11id.equals("")){
+         telefone_11idTemp  = telefone_11id;
+        }
+        String cvr_12id=  request.getParameter("cvr44");
+        int cvr_12idTemp  = Integer.parseInt(cvr_12id);
+        String address_13id=  request.getParameter("address46");
+            java.lang.String address_13idTemp = null;
+        if(!address_13id.equals("")){
+         address_13idTemp  = address_13id;
+        }
+        String lastName_14id=  request.getParameter("lastName48");
+            java.lang.String lastName_14idTemp = null;
+        if(!lastName_14id.equals("")){
+         lastName_14idTemp  = lastName_14id;
+        }
+        String firstName_15id=  request.getParameter("firstName50");
+            java.lang.String firstName_15idTemp = null;
+        if(!firstName_15id.equals("")){
+         firstName_15idTemp  = firstName_15id;
+        }
+        String companyName_16id=  request.getParameter("companyName52");
+            java.lang.String companyName_16idTemp = null;
+        if(!companyName_16id.equals("")){
+         companyName_16idTemp  = companyName_16id;
+        }
+        String id_17id=  request.getParameter("id54");
+        int id_17idTemp  = Integer.parseInt(id_17id);
+        %>
+        <jsp:useBean id="webservice_layer1Customer_10id" scope="session" class="webservice_layer.Customer" />
+        <%
+        webservice_layer1Customer_10id.setTelefone(telefone_11idTemp);
+        webservice_layer1Customer_10id.setCvr(cvr_12idTemp);
+        webservice_layer1Customer_10id.setAddress(address_13idTemp);
+        webservice_layer1Customer_10id.setLastName(lastName_14idTemp);
+        webservice_layer1Customer_10id.setFirstName(firstName_15idTemp);
+        webservice_layer1Customer_10id.setCompanyName(companyName_16idTemp);
+        webservice_layer1Customer_10id.setId(id_17idTemp);
+        String id_18id=  request.getParameter("id56");
+        int id_18idTemp  = Integer.parseInt(id_18id);
+        %>
+        <jsp:useBean id="webservice_layer1Job_6id" scope="session" class="webservice_layer.Job" />
+        <%
+        webservice_layer1Job_6id.setStartDate(startDate_7idTemp);
+        webservice_layer1Job_6id.setAddress(address_8idTemp);
+        webservice_layer1Job_6id.setEndDate(endDate_9idTemp);
+        webservice_layer1Job_6id.setCustomer(webservice_layer1Customer_10id);
+        webservice_layer1Job_6id.setId(id_18idTemp);
+        String duration_19id=  request.getParameter("duration58");
+            java.util.Calendar duration_19idTemp = null;
+        if(!duration_19id.equals("")){
+        java.text.DateFormat dateFormatduration58 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempduration58  = dateFormatduration58.parse(duration_19id);
+         duration_19idTemp = new java.util.GregorianCalendar();
+        duration_19idTemp.setTime(dateTempduration58);
+        }
+        String startTimeDate_20id=  request.getParameter("startTimeDate60");
+            java.util.Calendar startTimeDate_20idTemp = null;
+        if(!startTimeDate_20id.equals("")){
+        java.text.DateFormat dateFormatstartTimeDate60 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempstartTimeDate60  = dateFormatstartTimeDate60.parse(startTimeDate_20id);
+         startTimeDate_20idTemp = new java.util.GregorianCalendar();
+        startTimeDate_20idTemp.setTime(dateTempstartTimeDate60);
+        }
+        String competency_22id=  request.getParameter("competency64");
+            java.lang.String competency_22idTemp = null;
+        if(!competency_22id.equals("")){
+         competency_22idTemp  = competency_22id;
+        }
+        String id_23id=  request.getParameter("id66");
+        int id_23idTemp  = Integer.parseInt(id_23id);
+        %>
+        <jsp:useBean id="webservice_layer1Competency_21id" scope="session" class="webservice_layer.Competency" />
+        <%
+        webservice_layer1Competency_21id.setCompetency(competency_22idTemp);
+        webservice_layer1Competency_21id.setId(id_23idTemp);
+        String startTimeDateString_24id=  request.getParameter("startTimeDateString68");
+            java.lang.String startTimeDateString_24idTemp = null;
+        if(!startTimeDateString_24id.equals("")){
+         startTimeDateString_24idTemp  = startTimeDateString_24id;
+        }
+        String telefone_26id=  request.getParameter("telefone72");
+            java.lang.String telefone_26idTemp = null;
+        if(!telefone_26id.equals("")){
+         telefone_26idTemp  = telefone_26id;
+        }
+        String address_27id=  request.getParameter("address74");
+            java.lang.String address_27idTemp = null;
+        if(!address_27id.equals("")){
+         address_27idTemp  = address_27id;
+        }
+        String lastName_28id=  request.getParameter("lastName76");
+            java.lang.String lastName_28idTemp = null;
+        if(!lastName_28id.equals("")){
+         lastName_28idTemp  = lastName_28id;
+        }
+        String email_29id=  request.getParameter("email78");
+            java.lang.String email_29idTemp = null;
+        if(!email_29id.equals("")){
+         email_29idTemp  = email_29id;
+        }
+        String birthdate_30id=  request.getParameter("birthdate80");
+            java.lang.String birthdate_30idTemp = null;
+        if(!birthdate_30id.equals("")){
+         birthdate_30idTemp  = birthdate_30id;
+        }
+        String firstName_31id=  request.getParameter("firstName82");
+            java.lang.String firstName_31idTemp = null;
+        if(!firstName_31id.equals("")){
+         firstName_31idTemp  = firstName_31id;
+        }
+        String id_32id=  request.getParameter("id84");
+        int id_32idTemp  = Integer.parseInt(id_32id);
+        %>
+        <jsp:useBean id="webservice_layer1Employee_25id" scope="session" class="webservice_layer.Employee" />
+        <%
+        webservice_layer1Employee_25id.setTelefone(telefone_26idTemp);
+        webservice_layer1Employee_25id.setAddress(address_27idTemp);
+        webservice_layer1Employee_25id.setLastName(lastName_28idTemp);
+        webservice_layer1Employee_25id.setEmail(email_29idTemp);
+        webservice_layer1Employee_25id.setBirthdate(birthdate_30idTemp);
+        webservice_layer1Employee_25id.setFirstName(firstName_31idTemp);
+        webservice_layer1Employee_25id.setId(id_32idTemp);
+        String qantity_34id=  request.getParameter("qantity88");
+            java.lang.String qantity_34idTemp = null;
+        if(!qantity_34id.equals("")){
+         qantity_34idTemp  = qantity_34id;
+        }
+        String product_36id=  request.getParameter("product92");
+            java.lang.String product_36idTemp = null;
+        if(!product_36id.equals("")){
+         product_36idTemp  = product_36id;
+        }
+        String id_37id=  request.getParameter("id94");
+        int id_37idTemp  = Integer.parseInt(id_37id);
+        %>
+        <jsp:useBean id="webservice_layer1Product_35id" scope="session" class="webservice_layer.Product" />
+        <%
+        webservice_layer1Product_35id.setProduct(product_36idTemp);
+        webservice_layer1Product_35id.setId(id_37idTemp);
+        String id_38id=  request.getParameter("id96");
+        int id_38idTemp  = Integer.parseInt(id_38id);
+        %>
+        <jsp:useBean id="webservice_layer1Item_33id" scope="session" class="webservice_layer.Item" />
+        <%
+        webservice_layer1Item_33id.setQantity(qantity_34idTemp);
+        webservice_layer1Item_33id.setProduct(webservice_layer1Product_35id);
+        webservice_layer1Item_33id.setId(id_38idTemp);
+        %>
+        <jsp:useBean id="webservice_layer1Schedule_3id" scope="session" class="webservice_layer.Schedule" />
+        <%
+        webservice_layer1Schedule_3id.setStartTimeString(startTimeString_4idTemp);
+        webservice_layer1Schedule_3id.setId(id_5idTemp);
+        webservice_layer1Schedule_3id.setJob(webservice_layer1Job_6id);
+        webservice_layer1Schedule_3id.setDuration(duration_19idTemp);
+        webservice_layer1Schedule_3id.setStartTimeDate(startTimeDate_20idTemp);
+        webservice_layer1Schedule_3id.setCompetency(webservice_layer1Competency_21id);
+        webservice_layer1Schedule_3id.setStartTimeDateString(startTimeDateString_24idTemp);
+        webservice_layer1Schedule_3id.setEmployee(webservice_layer1Employee_25id);
+        webservice_layer1Schedule_3id.setItem(webservice_layer1Item_33id);
+        sampleScheduleWebserviceProxyid.createSchedule(webservice_layer1Schedule_3id);
+break;
+case 98:
+        gotMethod = true;
+        String startTimeString_40id=  request.getParameter("startTimeString103");
+            java.lang.String startTimeString_40idTemp = null;
+        if(!startTimeString_40id.equals("")){
+         startTimeString_40idTemp  = startTimeString_40id;
+        }
+        String id_41id=  request.getParameter("id105");
+        int id_41idTemp  = Integer.parseInt(id_41id);
+        String startDate_43id=  request.getParameter("startDate109");
+            java.util.Calendar startDate_43idTemp = null;
+        if(!startDate_43id.equals("")){
+        java.text.DateFormat dateFormatstartDate109 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempstartDate109  = dateFormatstartDate109.parse(startDate_43id);
+         startDate_43idTemp = new java.util.GregorianCalendar();
+        startDate_43idTemp.setTime(dateTempstartDate109);
+        }
+        String address_44id=  request.getParameter("address111");
+            java.lang.String address_44idTemp = null;
+        if(!address_44id.equals("")){
+         address_44idTemp  = address_44id;
+        }
+        String endDate_45id=  request.getParameter("endDate113");
+            java.util.Calendar endDate_45idTemp = null;
+        if(!endDate_45id.equals("")){
+        java.text.DateFormat dateFormatendDate113 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempendDate113  = dateFormatendDate113.parse(endDate_45id);
+         endDate_45idTemp = new java.util.GregorianCalendar();
+        endDate_45idTemp.setTime(dateTempendDate113);
+        }
+        String telefone_47id=  request.getParameter("telefone117");
+            java.lang.String telefone_47idTemp = null;
+        if(!telefone_47id.equals("")){
+         telefone_47idTemp  = telefone_47id;
+        }
+        String cvr_48id=  request.getParameter("cvr119");
+        int cvr_48idTemp  = Integer.parseInt(cvr_48id);
+        String address_49id=  request.getParameter("address121");
+            java.lang.String address_49idTemp = null;
+        if(!address_49id.equals("")){
+         address_49idTemp  = address_49id;
+        }
+        String lastName_50id=  request.getParameter("lastName123");
+            java.lang.String lastName_50idTemp = null;
+        if(!lastName_50id.equals("")){
+         lastName_50idTemp  = lastName_50id;
+        }
+        String firstName_51id=  request.getParameter("firstName125");
+            java.lang.String firstName_51idTemp = null;
+        if(!firstName_51id.equals("")){
+         firstName_51idTemp  = firstName_51id;
+        }
+        String companyName_52id=  request.getParameter("companyName127");
+            java.lang.String companyName_52idTemp = null;
+        if(!companyName_52id.equals("")){
+         companyName_52idTemp  = companyName_52id;
+        }
+        String id_53id=  request.getParameter("id129");
+        int id_53idTemp  = Integer.parseInt(id_53id);
+        %>
+        <jsp:useBean id="webservice_layer1Customer_46id" scope="session" class="webservice_layer.Customer" />
+        <%
+        webservice_layer1Customer_46id.setTelefone(telefone_47idTemp);
+        webservice_layer1Customer_46id.setCvr(cvr_48idTemp);
+        webservice_layer1Customer_46id.setAddress(address_49idTemp);
+        webservice_layer1Customer_46id.setLastName(lastName_50idTemp);
+        webservice_layer1Customer_46id.setFirstName(firstName_51idTemp);
+        webservice_layer1Customer_46id.setCompanyName(companyName_52idTemp);
+        webservice_layer1Customer_46id.setId(id_53idTemp);
+        String id_54id=  request.getParameter("id131");
+        int id_54idTemp  = Integer.parseInt(id_54id);
+        %>
+        <jsp:useBean id="webservice_layer1Job_42id" scope="session" class="webservice_layer.Job" />
+        <%
+        webservice_layer1Job_42id.setStartDate(startDate_43idTemp);
+        webservice_layer1Job_42id.setAddress(address_44idTemp);
+        webservice_layer1Job_42id.setEndDate(endDate_45idTemp);
+        webservice_layer1Job_42id.setCustomer(webservice_layer1Customer_46id);
+        webservice_layer1Job_42id.setId(id_54idTemp);
+        String duration_55id=  request.getParameter("duration133");
+            java.util.Calendar duration_55idTemp = null;
+        if(!duration_55id.equals("")){
+        java.text.DateFormat dateFormatduration133 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempduration133  = dateFormatduration133.parse(duration_55id);
+         duration_55idTemp = new java.util.GregorianCalendar();
+        duration_55idTemp.setTime(dateTempduration133);
+        }
+        String startTimeDate_56id=  request.getParameter("startTimeDate135");
+            java.util.Calendar startTimeDate_56idTemp = null;
+        if(!startTimeDate_56id.equals("")){
+        java.text.DateFormat dateFormatstartTimeDate135 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempstartTimeDate135  = dateFormatstartTimeDate135.parse(startTimeDate_56id);
+         startTimeDate_56idTemp = new java.util.GregorianCalendar();
+        startTimeDate_56idTemp.setTime(dateTempstartTimeDate135);
+        }
+        String competency_58id=  request.getParameter("competency139");
+            java.lang.String competency_58idTemp = null;
+        if(!competency_58id.equals("")){
+         competency_58idTemp  = competency_58id;
+        }
+        String id_59id=  request.getParameter("id141");
+        int id_59idTemp  = Integer.parseInt(id_59id);
+        %>
+        <jsp:useBean id="webservice_layer1Competency_57id" scope="session" class="webservice_layer.Competency" />
+        <%
+        webservice_layer1Competency_57id.setCompetency(competency_58idTemp);
+        webservice_layer1Competency_57id.setId(id_59idTemp);
+        String startTimeDateString_60id=  request.getParameter("startTimeDateString143");
+            java.lang.String startTimeDateString_60idTemp = null;
+        if(!startTimeDateString_60id.equals("")){
+         startTimeDateString_60idTemp  = startTimeDateString_60id;
+        }
+        String telefone_62id=  request.getParameter("telefone147");
+            java.lang.String telefone_62idTemp = null;
+        if(!telefone_62id.equals("")){
+         telefone_62idTemp  = telefone_62id;
+        }
+        String address_63id=  request.getParameter("address149");
+            java.lang.String address_63idTemp = null;
+        if(!address_63id.equals("")){
+         address_63idTemp  = address_63id;
+        }
+        String lastName_64id=  request.getParameter("lastName151");
+            java.lang.String lastName_64idTemp = null;
+        if(!lastName_64id.equals("")){
+         lastName_64idTemp  = lastName_64id;
+        }
+        String email_65id=  request.getParameter("email153");
+            java.lang.String email_65idTemp = null;
+        if(!email_65id.equals("")){
+         email_65idTemp  = email_65id;
+        }
+        String birthdate_66id=  request.getParameter("birthdate155");
+            java.lang.String birthdate_66idTemp = null;
+        if(!birthdate_66id.equals("")){
+         birthdate_66idTemp  = birthdate_66id;
+        }
+        String firstName_67id=  request.getParameter("firstName157");
+            java.lang.String firstName_67idTemp = null;
+        if(!firstName_67id.equals("")){
+         firstName_67idTemp  = firstName_67id;
+        }
+        String id_68id=  request.getParameter("id159");
+        int id_68idTemp  = Integer.parseInt(id_68id);
+        %>
+        <jsp:useBean id="webservice_layer1Employee_61id" scope="session" class="webservice_layer.Employee" />
+        <%
+        webservice_layer1Employee_61id.setTelefone(telefone_62idTemp);
+        webservice_layer1Employee_61id.setAddress(address_63idTemp);
+        webservice_layer1Employee_61id.setLastName(lastName_64idTemp);
+        webservice_layer1Employee_61id.setEmail(email_65idTemp);
+        webservice_layer1Employee_61id.setBirthdate(birthdate_66idTemp);
+        webservice_layer1Employee_61id.setFirstName(firstName_67idTemp);
+        webservice_layer1Employee_61id.setId(id_68idTemp);
+        String qantity_70id=  request.getParameter("qantity163");
+            java.lang.String qantity_70idTemp = null;
+        if(!qantity_70id.equals("")){
+         qantity_70idTemp  = qantity_70id;
+        }
+        String product_72id=  request.getParameter("product167");
+            java.lang.String product_72idTemp = null;
+        if(!product_72id.equals("")){
+         product_72idTemp  = product_72id;
+        }
+        String id_73id=  request.getParameter("id169");
+        int id_73idTemp  = Integer.parseInt(id_73id);
+        %>
+        <jsp:useBean id="webservice_layer1Product_71id" scope="session" class="webservice_layer.Product" />
+        <%
+        webservice_layer1Product_71id.setProduct(product_72idTemp);
+        webservice_layer1Product_71id.setId(id_73idTemp);
+        String id_74id=  request.getParameter("id171");
+        int id_74idTemp  = Integer.parseInt(id_74id);
+        %>
+        <jsp:useBean id="webservice_layer1Item_69id" scope="session" class="webservice_layer.Item" />
+        <%
+        webservice_layer1Item_69id.setQantity(qantity_70idTemp);
+        webservice_layer1Item_69id.setProduct(webservice_layer1Product_71id);
+        webservice_layer1Item_69id.setId(id_74idTemp);
+        %>
+        <jsp:useBean id="webservice_layer1Schedule_39id" scope="session" class="webservice_layer.Schedule" />
+        <%
+        webservice_layer1Schedule_39id.setStartTimeString(startTimeString_40idTemp);
+        webservice_layer1Schedule_39id.setId(id_41idTemp);
+        webservice_layer1Schedule_39id.setJob(webservice_layer1Job_42id);
+        webservice_layer1Schedule_39id.setDuration(duration_55idTemp);
+        webservice_layer1Schedule_39id.setStartTimeDate(startTimeDate_56idTemp);
+        webservice_layer1Schedule_39id.setCompetency(webservice_layer1Competency_57id);
+        webservice_layer1Schedule_39id.setStartTimeDateString(startTimeDateString_60idTemp);
+        webservice_layer1Schedule_39id.setEmployee(webservice_layer1Employee_61id);
+        webservice_layer1Schedule_39id.setItem(webservice_layer1Item_69id);
+        java.lang.String deleteSchedule98mtemp = sampleScheduleWebserviceProxyid.deleteSchedule(webservice_layer1Schedule_39id);
+if(deleteSchedule98mtemp == null){
 %>
-<%=findSchedule238mtemp %>
+<%=deleteSchedule98mtemp %>
+<%
+}else{
+        String tempResultreturnp99 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteSchedule98mtemp));
+        %>
+        <%= tempResultreturnp99 %>
+        <%
+}
+break;
+case 173:
+        gotMethod = true;
+        String startTimeString_76id=  request.getParameter("startTimeString178");
+            java.lang.String startTimeString_76idTemp = null;
+        if(!startTimeString_76id.equals("")){
+         startTimeString_76idTemp  = startTimeString_76id;
+        }
+        String id_77id=  request.getParameter("id180");
+        int id_77idTemp  = Integer.parseInt(id_77id);
+        String startDate_79id=  request.getParameter("startDate184");
+            java.util.Calendar startDate_79idTemp = null;
+        if(!startDate_79id.equals("")){
+        java.text.DateFormat dateFormatstartDate184 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempstartDate184  = dateFormatstartDate184.parse(startDate_79id);
+         startDate_79idTemp = new java.util.GregorianCalendar();
+        startDate_79idTemp.setTime(dateTempstartDate184);
+        }
+        String address_80id=  request.getParameter("address186");
+            java.lang.String address_80idTemp = null;
+        if(!address_80id.equals("")){
+         address_80idTemp  = address_80id;
+        }
+        String endDate_81id=  request.getParameter("endDate188");
+            java.util.Calendar endDate_81idTemp = null;
+        if(!endDate_81id.equals("")){
+        java.text.DateFormat dateFormatendDate188 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempendDate188  = dateFormatendDate188.parse(endDate_81id);
+         endDate_81idTemp = new java.util.GregorianCalendar();
+        endDate_81idTemp.setTime(dateTempendDate188);
+        }
+        String telefone_83id=  request.getParameter("telefone192");
+            java.lang.String telefone_83idTemp = null;
+        if(!telefone_83id.equals("")){
+         telefone_83idTemp  = telefone_83id;
+        }
+        String cvr_84id=  request.getParameter("cvr194");
+        int cvr_84idTemp  = Integer.parseInt(cvr_84id);
+        String address_85id=  request.getParameter("address196");
+            java.lang.String address_85idTemp = null;
+        if(!address_85id.equals("")){
+         address_85idTemp  = address_85id;
+        }
+        String lastName_86id=  request.getParameter("lastName198");
+            java.lang.String lastName_86idTemp = null;
+        if(!lastName_86id.equals("")){
+         lastName_86idTemp  = lastName_86id;
+        }
+        String firstName_87id=  request.getParameter("firstName200");
+            java.lang.String firstName_87idTemp = null;
+        if(!firstName_87id.equals("")){
+         firstName_87idTemp  = firstName_87id;
+        }
+        String companyName_88id=  request.getParameter("companyName202");
+            java.lang.String companyName_88idTemp = null;
+        if(!companyName_88id.equals("")){
+         companyName_88idTemp  = companyName_88id;
+        }
+        String id_89id=  request.getParameter("id204");
+        int id_89idTemp  = Integer.parseInt(id_89id);
+        %>
+        <jsp:useBean id="webservice_layer1Customer_82id" scope="session" class="webservice_layer.Customer" />
+        <%
+        webservice_layer1Customer_82id.setTelefone(telefone_83idTemp);
+        webservice_layer1Customer_82id.setCvr(cvr_84idTemp);
+        webservice_layer1Customer_82id.setAddress(address_85idTemp);
+        webservice_layer1Customer_82id.setLastName(lastName_86idTemp);
+        webservice_layer1Customer_82id.setFirstName(firstName_87idTemp);
+        webservice_layer1Customer_82id.setCompanyName(companyName_88idTemp);
+        webservice_layer1Customer_82id.setId(id_89idTemp);
+        String id_90id=  request.getParameter("id206");
+        int id_90idTemp  = Integer.parseInt(id_90id);
+        %>
+        <jsp:useBean id="webservice_layer1Job_78id" scope="session" class="webservice_layer.Job" />
+        <%
+        webservice_layer1Job_78id.setStartDate(startDate_79idTemp);
+        webservice_layer1Job_78id.setAddress(address_80idTemp);
+        webservice_layer1Job_78id.setEndDate(endDate_81idTemp);
+        webservice_layer1Job_78id.setCustomer(webservice_layer1Customer_82id);
+        webservice_layer1Job_78id.setId(id_90idTemp);
+        String duration_91id=  request.getParameter("duration208");
+            java.util.Calendar duration_91idTemp = null;
+        if(!duration_91id.equals("")){
+        java.text.DateFormat dateFormatduration208 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempduration208  = dateFormatduration208.parse(duration_91id);
+         duration_91idTemp = new java.util.GregorianCalendar();
+        duration_91idTemp.setTime(dateTempduration208);
+        }
+        String startTimeDate_92id=  request.getParameter("startTimeDate210");
+            java.util.Calendar startTimeDate_92idTemp = null;
+        if(!startTimeDate_92id.equals("")){
+        java.text.DateFormat dateFormatstartTimeDate210 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempstartTimeDate210  = dateFormatstartTimeDate210.parse(startTimeDate_92id);
+         startTimeDate_92idTemp = new java.util.GregorianCalendar();
+        startTimeDate_92idTemp.setTime(dateTempstartTimeDate210);
+        }
+        String competency_94id=  request.getParameter("competency214");
+            java.lang.String competency_94idTemp = null;
+        if(!competency_94id.equals("")){
+         competency_94idTemp  = competency_94id;
+        }
+        String id_95id=  request.getParameter("id216");
+        int id_95idTemp  = Integer.parseInt(id_95id);
+        %>
+        <jsp:useBean id="webservice_layer1Competency_93id" scope="session" class="webservice_layer.Competency" />
+        <%
+        webservice_layer1Competency_93id.setCompetency(competency_94idTemp);
+        webservice_layer1Competency_93id.setId(id_95idTemp);
+        String startTimeDateString_96id=  request.getParameter("startTimeDateString218");
+            java.lang.String startTimeDateString_96idTemp = null;
+        if(!startTimeDateString_96id.equals("")){
+         startTimeDateString_96idTemp  = startTimeDateString_96id;
+        }
+        String telefone_98id=  request.getParameter("telefone222");
+            java.lang.String telefone_98idTemp = null;
+        if(!telefone_98id.equals("")){
+         telefone_98idTemp  = telefone_98id;
+        }
+        String address_99id=  request.getParameter("address224");
+            java.lang.String address_99idTemp = null;
+        if(!address_99id.equals("")){
+         address_99idTemp  = address_99id;
+        }
+        String lastName_100id=  request.getParameter("lastName226");
+            java.lang.String lastName_100idTemp = null;
+        if(!lastName_100id.equals("")){
+         lastName_100idTemp  = lastName_100id;
+        }
+        String email_101id=  request.getParameter("email228");
+            java.lang.String email_101idTemp = null;
+        if(!email_101id.equals("")){
+         email_101idTemp  = email_101id;
+        }
+        String birthdate_102id=  request.getParameter("birthdate230");
+            java.lang.String birthdate_102idTemp = null;
+        if(!birthdate_102id.equals("")){
+         birthdate_102idTemp  = birthdate_102id;
+        }
+        String firstName_103id=  request.getParameter("firstName232");
+            java.lang.String firstName_103idTemp = null;
+        if(!firstName_103id.equals("")){
+         firstName_103idTemp  = firstName_103id;
+        }
+        String id_104id=  request.getParameter("id234");
+        int id_104idTemp  = Integer.parseInt(id_104id);
+        %>
+        <jsp:useBean id="webservice_layer1Employee_97id" scope="session" class="webservice_layer.Employee" />
+        <%
+        webservice_layer1Employee_97id.setTelefone(telefone_98idTemp);
+        webservice_layer1Employee_97id.setAddress(address_99idTemp);
+        webservice_layer1Employee_97id.setLastName(lastName_100idTemp);
+        webservice_layer1Employee_97id.setEmail(email_101idTemp);
+        webservice_layer1Employee_97id.setBirthdate(birthdate_102idTemp);
+        webservice_layer1Employee_97id.setFirstName(firstName_103idTemp);
+        webservice_layer1Employee_97id.setId(id_104idTemp);
+        String qantity_106id=  request.getParameter("qantity238");
+            java.lang.String qantity_106idTemp = null;
+        if(!qantity_106id.equals("")){
+         qantity_106idTemp  = qantity_106id;
+        }
+        String product_108id=  request.getParameter("product242");
+            java.lang.String product_108idTemp = null;
+        if(!product_108id.equals("")){
+         product_108idTemp  = product_108id;
+        }
+        String id_109id=  request.getParameter("id244");
+        int id_109idTemp  = Integer.parseInt(id_109id);
+        %>
+        <jsp:useBean id="webservice_layer1Product_107id" scope="session" class="webservice_layer.Product" />
+        <%
+        webservice_layer1Product_107id.setProduct(product_108idTemp);
+        webservice_layer1Product_107id.setId(id_109idTemp);
+        String id_110id=  request.getParameter("id246");
+        int id_110idTemp  = Integer.parseInt(id_110id);
+        %>
+        <jsp:useBean id="webservice_layer1Item_105id" scope="session" class="webservice_layer.Item" />
+        <%
+        webservice_layer1Item_105id.setQantity(qantity_106idTemp);
+        webservice_layer1Item_105id.setProduct(webservice_layer1Product_107id);
+        webservice_layer1Item_105id.setId(id_110idTemp);
+        %>
+        <jsp:useBean id="webservice_layer1Schedule_75id" scope="session" class="webservice_layer.Schedule" />
+        <%
+        webservice_layer1Schedule_75id.setStartTimeString(startTimeString_76idTemp);
+        webservice_layer1Schedule_75id.setId(id_77idTemp);
+        webservice_layer1Schedule_75id.setJob(webservice_layer1Job_78id);
+        webservice_layer1Schedule_75id.setDuration(duration_91idTemp);
+        webservice_layer1Schedule_75id.setStartTimeDate(startTimeDate_92idTemp);
+        webservice_layer1Schedule_75id.setCompetency(webservice_layer1Competency_93id);
+        webservice_layer1Schedule_75id.setStartTimeDateString(startTimeDateString_96idTemp);
+        webservice_layer1Schedule_75id.setEmployee(webservice_layer1Employee_97id);
+        webservice_layer1Schedule_75id.setItem(webservice_layer1Item_105id);
+        java.lang.String updateSchedule173mtemp = sampleScheduleWebserviceProxyid.updateSchedule(webservice_layer1Schedule_75id);
+if(updateSchedule173mtemp == null){
+%>
+<%=updateSchedule173mtemp %>
+<%
+}else{
+        String tempResultreturnp174 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateSchedule173mtemp));
+        %>
+        <%= tempResultreturnp174 %>
+        <%
+}
+break;
+case 248:
+        gotMethod = true;
+        String scheduleId_111id=  request.getParameter("scheduleId321");
+        int scheduleId_111idTemp  = Integer.parseInt(scheduleId_111id);
+        webservice_layer.Schedule findSchedule248mtemp = sampleScheduleWebserviceProxyid.findSchedule(scheduleId_111idTemp);
+if(findSchedule248mtemp == null){
+%>
+<%=findSchedule248mtemp %>
 <%
 }else{
 %>
@@ -679,11 +725,11 @@ if(findSchedule238mtemp == null){
 <TD COLSPAN="2" ALIGN="LEFT">startTimeString:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-java.lang.String typestartTimeString241 = findSchedule238mtemp.getStartTimeString();
-        String tempResultstartTimeString241 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typestartTimeString241));
+if(findSchedule248mtemp != null){
+java.lang.String typestartTimeString251 = findSchedule248mtemp.getStartTimeString();
+        String tempResultstartTimeString251 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typestartTimeString251));
         %>
-        <%= tempResultstartTimeString241 %>
+        <%= tempResultstartTimeString251 %>
         <%
 }%>
 </TD>
@@ -692,9 +738,9 @@ java.lang.String typestartTimeString241 = findSchedule238mtemp.getStartTimeStrin
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
+if(findSchedule248mtemp != null){
 %>
-<%=findSchedule238mtemp.getId()
+<%=findSchedule248mtemp.getId()
 %><%}%>
 </TD>
 <TR>
@@ -706,15 +752,15 @@ if(findSchedule238mtemp != null){
 <TD COLSPAN="1" ALIGN="LEFT">startDate:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Job tebece0=findSchedule238mtemp.getJob();
+if(findSchedule248mtemp != null){
+webservice_layer.Job tebece0=findSchedule248mtemp.getJob();
 if(tebece0 != null){
-java.util.Calendar typestartDate247 = tebece0.getStartDate();
-        java.text.DateFormat dateFormatstartDate247 = java.text.DateFormat.getDateInstance();
-        java.util.Date datestartDate247 = typestartDate247.getTime();
-        String tempResultstartDate247 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatstartDate247.format(datestartDate247));
+java.util.Calendar typestartDate257 = tebece0.getStartDate();
+        java.text.DateFormat dateFormatstartDate257 = java.text.DateFormat.getDateInstance();
+        java.util.Date datestartDate257 = typestartDate257.getTime();
+        String tempResultstartDate257 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatstartDate257.format(datestartDate257));
         %>
-        <%= tempResultstartDate247 %>
+        <%= tempResultstartDate257 %>
         <%
 }}%>
 </TD>
@@ -724,13 +770,13 @@ java.util.Calendar typestartDate247 = tebece0.getStartDate();
 <TD COLSPAN="1" ALIGN="LEFT">address:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Job tebece0=findSchedule238mtemp.getJob();
+if(findSchedule248mtemp != null){
+webservice_layer.Job tebece0=findSchedule248mtemp.getJob();
 if(tebece0 != null){
-java.lang.String typeaddress249 = tebece0.getAddress();
-        String tempResultaddress249 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress249));
+java.lang.String typeaddress259 = tebece0.getAddress();
+        String tempResultaddress259 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress259));
         %>
-        <%= tempResultaddress249 %>
+        <%= tempResultaddress259 %>
         <%
 }}%>
 </TD>
@@ -740,15 +786,15 @@ java.lang.String typeaddress249 = tebece0.getAddress();
 <TD COLSPAN="1" ALIGN="LEFT">endDate:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Job tebece0=findSchedule238mtemp.getJob();
+if(findSchedule248mtemp != null){
+webservice_layer.Job tebece0=findSchedule248mtemp.getJob();
 if(tebece0 != null){
-java.util.Calendar typeendDate251 = tebece0.getEndDate();
-        java.text.DateFormat dateFormatendDate251 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateendDate251 = typeendDate251.getTime();
-        String tempResultendDate251 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatendDate251.format(dateendDate251));
+java.util.Calendar typeendDate261 = tebece0.getEndDate();
+        java.text.DateFormat dateFormatendDate261 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateendDate261 = typeendDate261.getTime();
+        String tempResultendDate261 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatendDate261.format(dateendDate261));
         %>
-        <%= tempResultendDate251 %>
+        <%= tempResultendDate261 %>
         <%
 }}%>
 </TD>
@@ -763,15 +809,15 @@ java.util.Calendar typeendDate251 = tebece0.getEndDate();
 <TD COLSPAN="0" ALIGN="LEFT">telefone:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Job tebece0=findSchedule238mtemp.getJob();
+if(findSchedule248mtemp != null){
+webservice_layer.Job tebece0=findSchedule248mtemp.getJob();
 if(tebece0 != null){
 webservice_layer.Customer tebece1=tebece0.getCustomer();
 if(tebece1 != null){
-java.lang.String typetelefone255 = tebece1.getTelefone();
-        String tempResulttelefone255 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typetelefone255));
+java.lang.String typetelefone265 = tebece1.getTelefone();
+        String tempResulttelefone265 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typetelefone265));
         %>
-        <%= tempResulttelefone255 %>
+        <%= tempResulttelefone265 %>
         <%
 }}}%>
 </TD>
@@ -782,8 +828,8 @@ java.lang.String typetelefone255 = tebece1.getTelefone();
 <TD COLSPAN="0" ALIGN="LEFT">cvr:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Job tebece0=findSchedule238mtemp.getJob();
+if(findSchedule248mtemp != null){
+webservice_layer.Job tebece0=findSchedule248mtemp.getJob();
 if(tebece0 != null){
 webservice_layer.Customer tebece1=tebece0.getCustomer();
 if(tebece1 != null){
@@ -798,15 +844,15 @@ if(tebece1 != null){
 <TD COLSPAN="0" ALIGN="LEFT">address:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Job tebece0=findSchedule238mtemp.getJob();
+if(findSchedule248mtemp != null){
+webservice_layer.Job tebece0=findSchedule248mtemp.getJob();
 if(tebece0 != null){
 webservice_layer.Customer tebece1=tebece0.getCustomer();
 if(tebece1 != null){
-java.lang.String typeaddress259 = tebece1.getAddress();
-        String tempResultaddress259 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress259));
+java.lang.String typeaddress269 = tebece1.getAddress();
+        String tempResultaddress269 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress269));
         %>
-        <%= tempResultaddress259 %>
+        <%= tempResultaddress269 %>
         <%
 }}}%>
 </TD>
@@ -817,15 +863,15 @@ java.lang.String typeaddress259 = tebece1.getAddress();
 <TD COLSPAN="0" ALIGN="LEFT">lastName:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Job tebece0=findSchedule238mtemp.getJob();
+if(findSchedule248mtemp != null){
+webservice_layer.Job tebece0=findSchedule248mtemp.getJob();
 if(tebece0 != null){
 webservice_layer.Customer tebece1=tebece0.getCustomer();
 if(tebece1 != null){
-java.lang.String typelastName261 = tebece1.getLastName();
-        String tempResultlastName261 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typelastName261));
+java.lang.String typelastName271 = tebece1.getLastName();
+        String tempResultlastName271 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typelastName271));
         %>
-        <%= tempResultlastName261 %>
+        <%= tempResultlastName271 %>
         <%
 }}}%>
 </TD>
@@ -836,15 +882,15 @@ java.lang.String typelastName261 = tebece1.getLastName();
 <TD COLSPAN="0" ALIGN="LEFT">firstName:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Job tebece0=findSchedule238mtemp.getJob();
+if(findSchedule248mtemp != null){
+webservice_layer.Job tebece0=findSchedule248mtemp.getJob();
 if(tebece0 != null){
 webservice_layer.Customer tebece1=tebece0.getCustomer();
 if(tebece1 != null){
-java.lang.String typefirstName263 = tebece1.getFirstName();
-        String tempResultfirstName263 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typefirstName263));
+java.lang.String typefirstName273 = tebece1.getFirstName();
+        String tempResultfirstName273 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typefirstName273));
         %>
-        <%= tempResultfirstName263 %>
+        <%= tempResultfirstName273 %>
         <%
 }}}%>
 </TD>
@@ -855,15 +901,15 @@ java.lang.String typefirstName263 = tebece1.getFirstName();
 <TD COLSPAN="0" ALIGN="LEFT">companyName:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Job tebece0=findSchedule238mtemp.getJob();
+if(findSchedule248mtemp != null){
+webservice_layer.Job tebece0=findSchedule248mtemp.getJob();
 if(tebece0 != null){
 webservice_layer.Customer tebece1=tebece0.getCustomer();
 if(tebece1 != null){
-java.lang.String typecompanyName265 = tebece1.getCompanyName();
-        String tempResultcompanyName265 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecompanyName265));
+java.lang.String typecompanyName275 = tebece1.getCompanyName();
+        String tempResultcompanyName275 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecompanyName275));
         %>
-        <%= tempResultcompanyName265 %>
+        <%= tempResultcompanyName275 %>
         <%
 }}}%>
 </TD>
@@ -874,8 +920,8 @@ java.lang.String typecompanyName265 = tebece1.getCompanyName();
 <TD COLSPAN="0" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Job tebece0=findSchedule238mtemp.getJob();
+if(findSchedule248mtemp != null){
+webservice_layer.Job tebece0=findSchedule248mtemp.getJob();
 if(tebece0 != null){
 webservice_layer.Customer tebece1=tebece0.getCustomer();
 if(tebece1 != null){
@@ -889,8 +935,8 @@ if(tebece1 != null){
 <TD COLSPAN="1" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Job tebece0=findSchedule238mtemp.getJob();
+if(findSchedule248mtemp != null){
+webservice_layer.Job tebece0=findSchedule248mtemp.getJob();
 if(tebece0 != null){
 %>
 <%=tebece0.getId()
@@ -901,13 +947,13 @@ if(tebece0 != null){
 <TD COLSPAN="2" ALIGN="LEFT">duration:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-java.util.Calendar typeduration271 = findSchedule238mtemp.getDuration();
-        java.text.DateFormat dateFormatduration271 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateduration271 = typeduration271.getTime();
-        String tempResultduration271 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatduration271.format(dateduration271));
+if(findSchedule248mtemp != null){
+java.util.Calendar typeduration281 = findSchedule248mtemp.getDuration();
+        java.text.DateFormat dateFormatduration281 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateduration281 = typeduration281.getTime();
+        String tempResultduration281 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatduration281.format(dateduration281));
         %>
-        <%= tempResultduration271 %>
+        <%= tempResultduration281 %>
         <%
 }%>
 </TD>
@@ -916,13 +962,13 @@ java.util.Calendar typeduration271 = findSchedule238mtemp.getDuration();
 <TD COLSPAN="2" ALIGN="LEFT">startTimeDate:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-java.util.Calendar typestartTimeDate273 = findSchedule238mtemp.getStartTimeDate();
-        java.text.DateFormat dateFormatstartTimeDate273 = java.text.DateFormat.getDateInstance();
-        java.util.Date datestartTimeDate273 = typestartTimeDate273.getTime();
-        String tempResultstartTimeDate273 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatstartTimeDate273.format(datestartTimeDate273));
+if(findSchedule248mtemp != null){
+java.util.Calendar typestartTimeDate283 = findSchedule248mtemp.getStartTimeDate();
+        java.text.DateFormat dateFormatstartTimeDate283 = java.text.DateFormat.getDateInstance();
+        java.util.Date datestartTimeDate283 = typestartTimeDate283.getTime();
+        String tempResultstartTimeDate283 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatstartTimeDate283.format(datestartTimeDate283));
         %>
-        <%= tempResultstartTimeDate273 %>
+        <%= tempResultstartTimeDate283 %>
         <%
 }%>
 </TD>
@@ -935,13 +981,13 @@ java.util.Calendar typestartTimeDate273 = findSchedule238mtemp.getStartTimeDate(
 <TD COLSPAN="1" ALIGN="LEFT">competency:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Competency tebece0=findSchedule238mtemp.getCompetency();
+if(findSchedule248mtemp != null){
+webservice_layer.Competency tebece0=findSchedule248mtemp.getCompetency();
 if(tebece0 != null){
-java.lang.String typecompetency277 = tebece0.getCompetency();
-        String tempResultcompetency277 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecompetency277));
+java.lang.String typecompetency287 = tebece0.getCompetency();
+        String tempResultcompetency287 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecompetency287));
         %>
-        <%= tempResultcompetency277 %>
+        <%= tempResultcompetency287 %>
         <%
 }}%>
 </TD>
@@ -951,8 +997,8 @@ java.lang.String typecompetency277 = tebece0.getCompetency();
 <TD COLSPAN="1" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Competency tebece0=findSchedule238mtemp.getCompetency();
+if(findSchedule248mtemp != null){
+webservice_layer.Competency tebece0=findSchedule248mtemp.getCompetency();
 if(tebece0 != null){
 %>
 <%=tebece0.getId()
@@ -963,11 +1009,11 @@ if(tebece0 != null){
 <TD COLSPAN="2" ALIGN="LEFT">startTimeDateString:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-java.lang.String typestartTimeDateString281 = findSchedule238mtemp.getStartTimeDateString();
-        String tempResultstartTimeDateString281 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typestartTimeDateString281));
+if(findSchedule248mtemp != null){
+java.lang.String typestartTimeDateString291 = findSchedule248mtemp.getStartTimeDateString();
+        String tempResultstartTimeDateString291 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typestartTimeDateString291));
         %>
-        <%= tempResultstartTimeDateString281 %>
+        <%= tempResultstartTimeDateString291 %>
         <%
 }%>
 </TD>
@@ -980,13 +1026,13 @@ java.lang.String typestartTimeDateString281 = findSchedule238mtemp.getStartTimeD
 <TD COLSPAN="1" ALIGN="LEFT">telefone:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Employee tebece0=findSchedule238mtemp.getEmployee();
+if(findSchedule248mtemp != null){
+webservice_layer.Employee tebece0=findSchedule248mtemp.getEmployee();
 if(tebece0 != null){
-java.lang.String typetelefone285 = tebece0.getTelefone();
-        String tempResulttelefone285 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typetelefone285));
+java.lang.String typetelefone295 = tebece0.getTelefone();
+        String tempResulttelefone295 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typetelefone295));
         %>
-        <%= tempResulttelefone285 %>
+        <%= tempResulttelefone295 %>
         <%
 }}%>
 </TD>
@@ -996,13 +1042,13 @@ java.lang.String typetelefone285 = tebece0.getTelefone();
 <TD COLSPAN="1" ALIGN="LEFT">address:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Employee tebece0=findSchedule238mtemp.getEmployee();
+if(findSchedule248mtemp != null){
+webservice_layer.Employee tebece0=findSchedule248mtemp.getEmployee();
 if(tebece0 != null){
-java.lang.String typeaddress287 = tebece0.getAddress();
-        String tempResultaddress287 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress287));
+java.lang.String typeaddress297 = tebece0.getAddress();
+        String tempResultaddress297 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeaddress297));
         %>
-        <%= tempResultaddress287 %>
+        <%= tempResultaddress297 %>
         <%
 }}%>
 </TD>
@@ -1012,13 +1058,13 @@ java.lang.String typeaddress287 = tebece0.getAddress();
 <TD COLSPAN="1" ALIGN="LEFT">lastName:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Employee tebece0=findSchedule238mtemp.getEmployee();
+if(findSchedule248mtemp != null){
+webservice_layer.Employee tebece0=findSchedule248mtemp.getEmployee();
 if(tebece0 != null){
-java.lang.String typelastName289 = tebece0.getLastName();
-        String tempResultlastName289 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typelastName289));
+java.lang.String typelastName299 = tebece0.getLastName();
+        String tempResultlastName299 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typelastName299));
         %>
-        <%= tempResultlastName289 %>
+        <%= tempResultlastName299 %>
         <%
 }}%>
 </TD>
@@ -1028,13 +1074,13 @@ java.lang.String typelastName289 = tebece0.getLastName();
 <TD COLSPAN="1" ALIGN="LEFT">email:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Employee tebece0=findSchedule238mtemp.getEmployee();
+if(findSchedule248mtemp != null){
+webservice_layer.Employee tebece0=findSchedule248mtemp.getEmployee();
 if(tebece0 != null){
-java.lang.String typeemail291 = tebece0.getEmail();
-        String tempResultemail291 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeemail291));
+java.lang.String typeemail301 = tebece0.getEmail();
+        String tempResultemail301 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeemail301));
         %>
-        <%= tempResultemail291 %>
+        <%= tempResultemail301 %>
         <%
 }}%>
 </TD>
@@ -1044,13 +1090,13 @@ java.lang.String typeemail291 = tebece0.getEmail();
 <TD COLSPAN="1" ALIGN="LEFT">birthdate:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Employee tebece0=findSchedule238mtemp.getEmployee();
+if(findSchedule248mtemp != null){
+webservice_layer.Employee tebece0=findSchedule248mtemp.getEmployee();
 if(tebece0 != null){
-java.lang.String typebirthdate293 = tebece0.getBirthdate();
-        String tempResultbirthdate293 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typebirthdate293));
+java.lang.String typebirthdate303 = tebece0.getBirthdate();
+        String tempResultbirthdate303 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typebirthdate303));
         %>
-        <%= tempResultbirthdate293 %>
+        <%= tempResultbirthdate303 %>
         <%
 }}%>
 </TD>
@@ -1060,13 +1106,13 @@ java.lang.String typebirthdate293 = tebece0.getBirthdate();
 <TD COLSPAN="1" ALIGN="LEFT">firstName:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Employee tebece0=findSchedule238mtemp.getEmployee();
+if(findSchedule248mtemp != null){
+webservice_layer.Employee tebece0=findSchedule248mtemp.getEmployee();
 if(tebece0 != null){
-java.lang.String typefirstName295 = tebece0.getFirstName();
-        String tempResultfirstName295 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typefirstName295));
+java.lang.String typefirstName305 = tebece0.getFirstName();
+        String tempResultfirstName305 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typefirstName305));
         %>
-        <%= tempResultfirstName295 %>
+        <%= tempResultfirstName305 %>
         <%
 }}%>
 </TD>
@@ -1076,8 +1122,8 @@ java.lang.String typefirstName295 = tebece0.getFirstName();
 <TD COLSPAN="1" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Employee tebece0=findSchedule238mtemp.getEmployee();
+if(findSchedule248mtemp != null){
+webservice_layer.Employee tebece0=findSchedule248mtemp.getEmployee();
 if(tebece0 != null){
 %>
 <%=tebece0.getId()
@@ -1092,13 +1138,13 @@ if(tebece0 != null){
 <TD COLSPAN="1" ALIGN="LEFT">qantity:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Item tebece0=findSchedule238mtemp.getItem();
+if(findSchedule248mtemp != null){
+webservice_layer.Item tebece0=findSchedule248mtemp.getItem();
 if(tebece0 != null){
-java.lang.String typeqantity301 = tebece0.getQantity();
-        String tempResultqantity301 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeqantity301));
+java.lang.String typeqantity311 = tebece0.getQantity();
+        String tempResultqantity311 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeqantity311));
         %>
-        <%= tempResultqantity301 %>
+        <%= tempResultqantity311 %>
         <%
 }}%>
 </TD>
@@ -1113,15 +1159,15 @@ java.lang.String typeqantity301 = tebece0.getQantity();
 <TD COLSPAN="0" ALIGN="LEFT">product:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Item tebece0=findSchedule238mtemp.getItem();
+if(findSchedule248mtemp != null){
+webservice_layer.Item tebece0=findSchedule248mtemp.getItem();
 if(tebece0 != null){
 webservice_layer.Product tebece1=tebece0.getProduct();
 if(tebece1 != null){
-java.lang.String typeproduct305 = tebece1.getProduct();
-        String tempResultproduct305 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeproduct305));
+java.lang.String typeproduct315 = tebece1.getProduct();
+        String tempResultproduct315 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeproduct315));
         %>
-        <%= tempResultproduct305 %>
+        <%= tempResultproduct315 %>
         <%
 }}}%>
 </TD>
@@ -1132,8 +1178,8 @@ java.lang.String typeproduct305 = tebece1.getProduct();
 <TD COLSPAN="0" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Item tebece0=findSchedule238mtemp.getItem();
+if(findSchedule248mtemp != null){
+webservice_layer.Item tebece0=findSchedule248mtemp.getItem();
 if(tebece0 != null){
 webservice_layer.Product tebece1=tebece0.getProduct();
 if(tebece1 != null){
@@ -1147,8 +1193,8 @@ if(tebece1 != null){
 <TD COLSPAN="1" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findSchedule238mtemp != null){
-webservice_layer.Item tebece0=findSchedule238mtemp.getItem();
+if(findSchedule248mtemp != null){
+webservice_layer.Item tebece0=findSchedule248mtemp.getItem();
 if(tebece0 != null){
 %>
 <%=tebece0.getId()
@@ -1156,52 +1202,6 @@ if(tebece0 != null){
 </TD>
 </TABLE>
 <%
-}
-break;
-case 313:
-        gotMethod = true;
-        webservice_layer.Schedule[] findScheduleArray313mtemp = sampleScheduleWebserviceProxyid.findScheduleArray();
-if(findScheduleArray313mtemp == null){
-%>
-<%=findScheduleArray313mtemp %>
-<%
-}else{
-        String tempreturnp314 = null;
-        if(findScheduleArray313mtemp != null){
-        java.util.List listreturnp314= java.util.Arrays.asList(findScheduleArray313mtemp);
-        tempreturnp314 = listreturnp314.toString();
-        }
-        %>
-        <%=tempreturnp314%>
-        <%
-}
-break;
-case 316:
-        gotMethod = true;
-        String employeeId_110id=  request.getParameter("employeeId319");
-        int employeeId_110idTemp  = Integer.parseInt(employeeId_110id);
-        String startTimeDate_111id=  request.getParameter("startTimeDate321");
-            java.util.Calendar startTimeDate_111idTemp = null;
-        if(!startTimeDate_111id.equals("")){
-        java.text.DateFormat dateFormatstartTimeDate321 = java.text.DateFormat.getDateInstance();
-        java.util.Date dateTempstartTimeDate321  = dateFormatstartTimeDate321.parse(startTimeDate_111id);
-         startTimeDate_111idTemp = new java.util.GregorianCalendar();
-        startTimeDate_111idTemp.setTime(dateTempstartTimeDate321);
-        }
-        webservice_layer.Schedule[] findScheduleArrayByEmployeeDate316mtemp = sampleScheduleWebserviceProxyid.findScheduleArrayByEmployeeDate(employeeId_110idTemp,startTimeDate_111idTemp);
-if(findScheduleArrayByEmployeeDate316mtemp == null){
-%>
-<%=findScheduleArrayByEmployeeDate316mtemp %>
-<%
-}else{
-        String tempreturnp317 = null;
-        if(findScheduleArrayByEmployeeDate316mtemp != null){
-        java.util.List listreturnp317= java.util.Arrays.asList(findScheduleArrayByEmployeeDate316mtemp);
-        tempreturnp317 = listreturnp317.toString();
-        }
-        %>
-        <%=tempreturnp317%>
-        <%
 }
 break;
 }
