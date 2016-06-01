@@ -10,7 +10,7 @@ public class RoleSQL {
 	
 DBConnect dbconn = new DBConnect();
 	
-	public RoleArray getAllRoles() {
+	public Role[] getAllRoles() {
 		System.out.println("Select all roles");
 		try {
 			dbconn.connect(); // Calling a static method to solve
@@ -18,19 +18,17 @@ DBConnect dbconn = new DBConnect();
 			rs.next();
 			int count = rs.getInt("result");
 			
-			RoleArray roleArray = new RoleArray(count);
+			Role[] roleArray = new Role[count];
 
 			ResultSet rs2 = dbconn.select("SELECT Id,roleName FROM role");
 
+			int i=0;
 			while (rs2.next()){
 				Role role = new Role();
-				System.out.println("Id=" + rs2.getInt("Id"));
-				System.out.println("roleName=" + rs2.getString("roleName"));
-		
 				role.setId(rs2.getString("Id"));
 				role.setRole_name(rs2.getString("roleName"));
-			
-				roleArray.addRole(role);
+				roleArray[i] = role;
+				i++;
 			}	
 			return roleArray;
 		} catch (SQLException e) {

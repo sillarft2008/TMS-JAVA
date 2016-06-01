@@ -11,10 +11,6 @@ public class RoleWebservice {
 		return RC.createRole(role);
 	}
 
-	public Role[] getAllRoles(){		
-		return RC.getAllRoles().getRoleArray();
-	}
-	
 	public Role findRole(int Id){
 		return RC.findRole(Id);
 	}

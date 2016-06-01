@@ -90,15 +90,17 @@ if(createEmployeeCompetency15mtemp == null){
 break;
 case 26:
         gotMethod = true;
-        webservice_layer.EmployeeCompetency[] getAllEmployeeCompetencies26mtemp = sampleEmployeeCompetencyWebserviceProxyid.getAllEmployeeCompetencies();
-if(getAllEmployeeCompetencies26mtemp == null){
+        String id_5id=  request.getParameter("id29");
+        int id_5idTemp  = Integer.parseInt(id_5id);
+        webservice_layer.EmployeeCompetency[] findAllEmployeeCompetencies26mtemp = sampleEmployeeCompetencyWebserviceProxyid.findAllEmployeeCompetencies(id_5idTemp);
+if(findAllEmployeeCompetencies26mtemp == null){
 %>
-<%=getAllEmployeeCompetencies26mtemp %>
+<%=findAllEmployeeCompetencies26mtemp %>
 <%
 }else{
         String tempreturnp27 = null;
-        if(getAllEmployeeCompetencies26mtemp != null){
-        java.util.List listreturnp27= java.util.Arrays.asList(getAllEmployeeCompetencies26mtemp);
+        if(findAllEmployeeCompetencies26mtemp != null){
+        java.util.List listreturnp27= java.util.Arrays.asList(findAllEmployeeCompetencies26mtemp);
         tempreturnp27 = listreturnp27.toString();
         }
         %>
@@ -106,33 +108,13 @@ if(getAllEmployeeCompetencies26mtemp == null){
         <%
 }
 break;
-case 29:
+case 31:
         gotMethod = true;
-        String id_5id=  request.getParameter("id32");
-        int id_5idTemp  = Integer.parseInt(id_5id);
-        webservice_layer.EmployeeCompetency[] findAllEmployeeCompetencies29mtemp = sampleEmployeeCompetencyWebserviceProxyid.findAllEmployeeCompetencies(id_5idTemp);
-if(findAllEmployeeCompetencies29mtemp == null){
-%>
-<%=findAllEmployeeCompetencies29mtemp %>
-<%
-}else{
-        String tempreturnp30 = null;
-        if(findAllEmployeeCompetencies29mtemp != null){
-        java.util.List listreturnp30= java.util.Arrays.asList(findAllEmployeeCompetencies29mtemp);
-        tempreturnp30 = listreturnp30.toString();
-        }
-        %>
-        <%=tempreturnp30%>
-        <%
-}
-break;
-case 34:
-        gotMethod = true;
-        String competencyId_7id=  request.getParameter("competencyId39");
+        String competencyId_7id=  request.getParameter("competencyId36");
         int competencyId_7idTemp  = Integer.parseInt(competencyId_7id);
-        String employeeId_8id=  request.getParameter("employeeId41");
+        String employeeId_8id=  request.getParameter("employeeId38");
         int employeeId_8idTemp  = Integer.parseInt(employeeId_8id);
-        String id_9id=  request.getParameter("id43");
+        String id_9id=  request.getParameter("id40");
         int id_9idTemp  = Integer.parseInt(id_9id);
         %>
         <jsp:useBean id="webservice_layer1EmployeeCompetency_6id" scope="session" class="webservice_layer.EmployeeCompetency" />
@@ -140,25 +122,25 @@ case 34:
         webservice_layer1EmployeeCompetency_6id.setCompetencyId(competencyId_7idTemp);
         webservice_layer1EmployeeCompetency_6id.setEmployeeId(employeeId_8idTemp);
         webservice_layer1EmployeeCompetency_6id.setId(id_9idTemp);
-        java.lang.String updateEmployeeCompetency34mtemp = sampleEmployeeCompetencyWebserviceProxyid.updateEmployeeCompetency(webservice_layer1EmployeeCompetency_6id);
-if(updateEmployeeCompetency34mtemp == null){
+        java.lang.String deleteEmployeeCompetency31mtemp = sampleEmployeeCompetencyWebserviceProxyid.deleteEmployeeCompetency(webservice_layer1EmployeeCompetency_6id);
+if(deleteEmployeeCompetency31mtemp == null){
 %>
-<%=updateEmployeeCompetency34mtemp %>
+<%=deleteEmployeeCompetency31mtemp %>
 <%
 }else{
-        String tempResultreturnp35 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateEmployeeCompetency34mtemp));
+        String tempResultreturnp32 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteEmployeeCompetency31mtemp));
         %>
-        <%= tempResultreturnp35 %>
+        <%= tempResultreturnp32 %>
         <%
 }
 break;
-case 45:
+case 42:
         gotMethod = true;
-        String competencyId_11id=  request.getParameter("competencyId50");
+        String competencyId_11id=  request.getParameter("competencyId47");
         int competencyId_11idTemp  = Integer.parseInt(competencyId_11id);
-        String employeeId_12id=  request.getParameter("employeeId52");
+        String employeeId_12id=  request.getParameter("employeeId49");
         int employeeId_12idTemp  = Integer.parseInt(employeeId_12id);
-        String id_13id=  request.getParameter("id54");
+        String id_13id=  request.getParameter("id51");
         int id_13idTemp  = Integer.parseInt(id_13id);
         %>
         <jsp:useBean id="webservice_layer1EmployeeCompetency_10id" scope="session" class="webservice_layer.EmployeeCompetency" />
@@ -166,26 +148,26 @@ case 45:
         webservice_layer1EmployeeCompetency_10id.setCompetencyId(competencyId_11idTemp);
         webservice_layer1EmployeeCompetency_10id.setEmployeeId(employeeId_12idTemp);
         webservice_layer1EmployeeCompetency_10id.setId(id_13idTemp);
-        java.lang.String deleteEmployeeCompetency45mtemp = sampleEmployeeCompetencyWebserviceProxyid.deleteEmployeeCompetency(webservice_layer1EmployeeCompetency_10id);
-if(deleteEmployeeCompetency45mtemp == null){
+        java.lang.String updateEmployeeCompetency42mtemp = sampleEmployeeCompetencyWebserviceProxyid.updateEmployeeCompetency(webservice_layer1EmployeeCompetency_10id);
+if(updateEmployeeCompetency42mtemp == null){
 %>
-<%=deleteEmployeeCompetency45mtemp %>
+<%=updateEmployeeCompetency42mtemp %>
 <%
 }else{
-        String tempResultreturnp46 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteEmployeeCompetency45mtemp));
+        String tempResultreturnp43 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateEmployeeCompetency42mtemp));
         %>
-        <%= tempResultreturnp46 %>
+        <%= tempResultreturnp43 %>
         <%
 }
 break;
-case 56:
+case 53:
         gotMethod = true;
-        String id_14id=  request.getParameter("id65");
+        String id_14id=  request.getParameter("id62");
         int id_14idTemp  = Integer.parseInt(id_14id);
-        webservice_layer.EmployeeCompetency findEmployeeCompetency56mtemp = sampleEmployeeCompetencyWebserviceProxyid.findEmployeeCompetency(id_14idTemp);
-if(findEmployeeCompetency56mtemp == null){
+        webservice_layer.EmployeeCompetency findEmployeeCompetency53mtemp = sampleEmployeeCompetencyWebserviceProxyid.findEmployeeCompetency(id_14idTemp);
+if(findEmployeeCompetency53mtemp == null){
 %>
-<%=findEmployeeCompetency56mtemp %>
+<%=findEmployeeCompetency53mtemp %>
 <%
 }else{
 %>
@@ -197,9 +179,9 @@ if(findEmployeeCompetency56mtemp == null){
 <TD COLSPAN="2" ALIGN="LEFT">competencyId:</TD>
 <TD>
 <%
-if(findEmployeeCompetency56mtemp != null){
+if(findEmployeeCompetency53mtemp != null){
 %>
-<%=findEmployeeCompetency56mtemp.getCompetencyId()
+<%=findEmployeeCompetency53mtemp.getCompetencyId()
 %><%}%>
 </TD>
 <TR>
@@ -207,9 +189,9 @@ if(findEmployeeCompetency56mtemp != null){
 <TD COLSPAN="2" ALIGN="LEFT">employeeId:</TD>
 <TD>
 <%
-if(findEmployeeCompetency56mtemp != null){
+if(findEmployeeCompetency53mtemp != null){
 %>
-<%=findEmployeeCompetency56mtemp.getEmployeeId()
+<%=findEmployeeCompetency53mtemp.getEmployeeId()
 %><%}%>
 </TD>
 <TR>
@@ -217,13 +199,31 @@ if(findEmployeeCompetency56mtemp != null){
 <TD COLSPAN="2" ALIGN="LEFT">id:</TD>
 <TD>
 <%
-if(findEmployeeCompetency56mtemp != null){
+if(findEmployeeCompetency53mtemp != null){
 %>
-<%=findEmployeeCompetency56mtemp.getId()
+<%=findEmployeeCompetency53mtemp.getId()
 %><%}%>
 </TD>
 </TABLE>
 <%
+}
+break;
+case 64:
+        gotMethod = true;
+        webservice_layer.EmployeeCompetency[] getAllEmployeeCompetencies64mtemp = sampleEmployeeCompetencyWebserviceProxyid.getAllEmployeeCompetencies();
+if(getAllEmployeeCompetencies64mtemp == null){
+%>
+<%=getAllEmployeeCompetencies64mtemp %>
+<%
+}else{
+        String tempreturnp65 = null;
+        if(getAllEmployeeCompetencies64mtemp != null){
+        java.util.List listreturnp65= java.util.Arrays.asList(getAllEmployeeCompetencies64mtemp);
+        tempreturnp65 = listreturnp65.toString();
+        }
+        %>
+        <%=tempreturnp65%>
+        <%
 }
 break;
 }

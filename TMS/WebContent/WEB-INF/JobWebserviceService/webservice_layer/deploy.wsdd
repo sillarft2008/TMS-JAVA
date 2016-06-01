@@ -10,13 +10,10 @@
       <parameter name="className" value="webservice_layer.JobWebservice"/>
       <parameter name="wsdlPortType" value="JobWebservice"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findCustomerJobArray" qname="operNS:findCustomerJobArray" returnQName="retNS:findCustomerJobArrayReturn" returnType="rtns:Job" soapAction="">
-        <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:customerId" type="tns:int"/>
-      </operation>
-      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteJob" qname="operNS:deleteJob" returnQName="retNS:deleteJobReturn" returnType="rtns:string" soapAction="">
+      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateJob" qname="operNS:updateJob" returnQName="retNS:updateJobReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://webservice_layer" qname="pns:job" type="tns:Job"/>
       </operation>
-      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateJob" qname="operNS:updateJob" returnQName="retNS:updateJobReturn" returnType="rtns:string" soapAction="">
+      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteJob" qname="operNS:deleteJob" returnQName="retNS:deleteJobReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://webservice_layer" qname="pns:job" type="tns:Job"/>
       </operation>
       <operation xmlns:operNS="http://webservice_layer" name="createJob" qname="operNS:createJob" soapAction="">
@@ -26,6 +23,9 @@
         <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:jobId" type="tns:int"/>
       </operation>
       <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findJobArray" qname="operNS:findJobArray" returnQName="retNS:findJobArrayReturn" returnType="rtns:Job" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://webservice_layer" xmlns:retNS="http://webservice_layer" xmlns:rtns="http://webservice_layer" name="findCustomerJobArray" qname="operNS:findCustomerJobArray" returnQName="retNS:findCustomerJobArrayReturn" returnType="rtns:Job" soapAction="">
+        <parameter xmlns:pns="http://webservice_layer" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:customerId" type="tns:int"/>
       </operation>
       <parameter name="allowedMethods" value="findJob updateJob findCustomerJobArray createJob findJobArray deleteJob"/>
 

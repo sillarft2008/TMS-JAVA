@@ -50,22 +50,10 @@ public class EmployeeCompetencyWebserviceProxy implements webservice_layer.Emplo
     return employeeCompetencyWebservice.createEmployeeCompetency(ec);
   }
   
-  public webservice_layer.EmployeeCompetency[] getAllEmployeeCompetencies() throws java.rmi.RemoteException{
-    if (employeeCompetencyWebservice == null)
-      _initEmployeeCompetencyWebserviceProxy();
-    return employeeCompetencyWebservice.getAllEmployeeCompetencies();
-  }
-  
   public webservice_layer.EmployeeCompetency[] findAllEmployeeCompetencies(int id) throws java.rmi.RemoteException{
     if (employeeCompetencyWebservice == null)
       _initEmployeeCompetencyWebserviceProxy();
     return employeeCompetencyWebservice.findAllEmployeeCompetencies(id);
-  }
-  
-  public java.lang.String updateEmployeeCompetency(webservice_layer.EmployeeCompetency ec) throws java.rmi.RemoteException{
-    if (employeeCompetencyWebservice == null)
-      _initEmployeeCompetencyWebserviceProxy();
-    return employeeCompetencyWebservice.updateEmployeeCompetency(ec);
   }
   
   public java.lang.String deleteEmployeeCompetency(webservice_layer.EmployeeCompetency ec) throws java.rmi.RemoteException{
@@ -74,10 +62,22 @@ public class EmployeeCompetencyWebserviceProxy implements webservice_layer.Emplo
     return employeeCompetencyWebservice.deleteEmployeeCompetency(ec);
   }
   
+  public java.lang.String updateEmployeeCompetency(webservice_layer.EmployeeCompetency ec) throws java.rmi.RemoteException{
+    if (employeeCompetencyWebservice == null)
+      _initEmployeeCompetencyWebserviceProxy();
+    return employeeCompetencyWebservice.updateEmployeeCompetency(ec);
+  }
+  
   public webservice_layer.EmployeeCompetency findEmployeeCompetency(int id) throws java.rmi.RemoteException{
     if (employeeCompetencyWebservice == null)
       _initEmployeeCompetencyWebserviceProxy();
     return employeeCompetencyWebservice.findEmployeeCompetency(id);
+  }
+  
+  public webservice_layer.EmployeeCompetency[] getAllEmployeeCompetencies() throws java.rmi.RemoteException{
+    if (employeeCompetencyWebservice == null)
+      _initEmployeeCompetencyWebserviceProxy();
+    return employeeCompetencyWebservice.getAllEmployeeCompetencies();
   }
   
   

@@ -4,13 +4,10 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://webservice_layer" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="findCustomerArray">
-    <complexType/>
-   </element>
-   <element name="findCustomerArrayResponse">
+   <element name="createCustomer">
     <complexType>
      <sequence>
-      <element maxOccurs="unbounded" name="findCustomerArrayReturn" type="impl:Customer"/>
+      <element name="cust" type="impl:Customer"/>
      </sequence>
     </complexType>
    </element>
@@ -25,6 +22,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="telefone" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
+   <element name="createCustomerResponse">
+    <complexType>
+     <sequence>
+      <element name="createCustomerReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="findCustomer">
     <complexType>
      <sequence>
@@ -36,20 +40,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="findCustomerReturn" type="impl:Customer"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="createCustomer">
-    <complexType>
-     <sequence>
-      <element name="cust" type="impl:Customer"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="createCustomerResponse">
-    <complexType>
-     <sequence>
-      <element name="createCustomerReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -78,6 +68,16 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="deleteCustomerReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findCustomerArray">
+    <complexType/>
+   </element>
+   <element name="findCustomerArrayResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="findCustomerArrayReturn" type="impl:Customer"/>
      </sequence>
     </complexType>
    </element>
@@ -166,13 +166,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="CustomerWebservice">
 
-      <wsdl:operation name="findCustomerArray">
+      <wsdl:operation name="createCustomer">
 
-         <wsdl:input message="impl:findCustomerArrayRequest" name="findCustomerArrayRequest">
+         <wsdl:input message="impl:createCustomerRequest" name="createCustomerRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:findCustomerArrayResponse" name="findCustomerArrayResponse">
+         <wsdl:output message="impl:createCustomerResponse" name="createCustomerResponse">
 
        </wsdl:output>
 
@@ -185,18 +185,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:findCustomerResponse" name="findCustomerResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="createCustomer">
-
-         <wsdl:input message="impl:createCustomerRequest" name="createCustomerRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:createCustomerResponse" name="createCustomerResponse">
 
        </wsdl:output>
 
@@ -226,23 +214,35 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="findCustomerArray">
+
+         <wsdl:input message="impl:findCustomerArrayRequest" name="findCustomerArrayRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findCustomerArrayResponse" name="findCustomerArrayResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="CustomerWebserviceSoapBinding" type="impl:CustomerWebservice">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="findCustomerArray">
+      <wsdl:operation name="createCustomer">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="findCustomerArrayRequest">
+         <wsdl:input name="createCustomerRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="findCustomerArrayResponse">
+         <wsdl:output name="createCustomerResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -261,24 +261,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="findCustomerResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="createCustomer">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="createCustomerRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="createCustomerResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -315,6 +297,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="deleteCustomerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findCustomerArray">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findCustomerArrayRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findCustomerArrayResponse">
 
             <wsdlsoap:body use="literal"/>
 

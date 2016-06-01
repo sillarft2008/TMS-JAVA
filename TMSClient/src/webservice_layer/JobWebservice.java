@@ -8,10 +8,10 @@
 package webservice_layer;
 
 public interface JobWebservice extends java.rmi.Remote {
+    public java.lang.String updateJob(webservice_layer.Job job) throws java.rmi.RemoteException;
     public java.lang.String deleteJob(webservice_layer.Job job) throws java.rmi.RemoteException;
-    public webservice_layer.Job[] findCustomerJobArray(int customerId) throws java.rmi.RemoteException;
+    public void createJob(webservice_layer.Job job) throws java.rmi.RemoteException;
     public webservice_layer.Job findJob(int jobId) throws java.rmi.RemoteException;
     public webservice_layer.Job[] findJobArray() throws java.rmi.RemoteException;
-    public java.lang.String updateJob(webservice_layer.Job job) throws java.rmi.RemoteException;
-    public void createJob(webservice_layer.Job job) throws java.rmi.RemoteException;
+    public webservice_layer.Job[] findCustomerJobArray(int customerId) throws java.rmi.RemoteException;
 }

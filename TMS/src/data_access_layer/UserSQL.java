@@ -4,15 +4,54 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import webservice_layer.Customer;
+import webservice_layer.CustomerArray;
 //import com.mysql.jdbc.PreparedStatement;
 import webservice_layer.User;
+import webservice_layer.UserRole;
 
 public class UserSQL {
+	
      
 	private Connection conn = null;
 	private PreparedStatement preparedStatement = null;
 	private static ResultSet rs = null;
 	
+	
+	public User[] FindUserArray(){
+		
+		DBConnect dbconn = new DBConnect();
+		
+		System.out.println("FindUserArray");
+		try {
+			dbconn.connect();
+			ResultSet rs = dbconn.select("SELECT count(*) as result FROM user");
+			rs.next();
+			int count = rs.getInt("result");
+			User[] userArray = new User[count];
+			
+			ResultSet rs2 = dbconn.select("SELECT Id,userName,password,securityStamp FROM user");
+			
+			int i = 0;
+			while (rs2.next()){
+				User user = new User();
+				user.setId(rs2.getString("Id"));
+				user.setUsername(rs2.getString("userName"));
+				user.setPassword(rs2.getString("password"));
+				user.setSecurityStamp(rs2.getString("securityStamp"));
+		        userArray[i] = user;
+		        i++;
+			}	
+			dbconn.close();
+			return userArray;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("error");
+			return null;
+		}
+	}
 	
 	public User selectUserByName(String name) {
 		User user = new User();
@@ -50,7 +89,7 @@ public class UserSQL {
 		} 
 		
 	}
-	
+
 	public User selectUserById(String id) {
 		User user = new User();
 
@@ -140,7 +179,7 @@ public class UserSQL {
 		System.out.println("DeleteUser");
 		try {
 			this.conn = DBConnect.getConn();
-			preparedStatement = conn.prepareStatement("delete user where id = ? ");
+			preparedStatement = conn.prepareStatement("delete from user where id = ? ");
 			preparedStatement.setString(1, id);
 			preparedStatement.executeUpdate();
 			
@@ -156,6 +195,8 @@ public class UserSQL {
 		return "DeleteUser failed";
 	}	 
 
+	
+	
 }
 
 

@@ -1,41 +1,32 @@
 package webservice_layer;
 
 public class UserRole {
-	private int Id;
-	private int userId;
-	private int roleId;
+	private String userId;
+	private String roleId;
 	
 	public UserRole() {
 		
 	}
 
-	public int getId() {
-		return Id;
-	}
-
-	public void setId(int id) {
-		Id = id;
-	}
-
-	public int getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
-	public int getRoleId() {
+	public String getRoleId() {
 		return roleId;
 	}
 
-	public void setRoleId(int roleId) {
+	public void setRoleId(String roleId) {
 		this.roleId = roleId;
 	}
 
 	@Override
 	public String toString() {
-		return "UserRole [Id=" + Id + ", userId=" + userId + ", roleId=" + roleId + "]";
+		return "UserRole [userId=" + userId + ", roleId=" + roleId + "]";
 	}
 	
 	

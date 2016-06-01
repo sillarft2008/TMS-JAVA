@@ -20,22 +20,22 @@
       <parameter name="className" value="webservice_layer.EmployeeCompetencyWebserviceSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="EmployeeCompetencyWebservice"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="findEmployeeCompetency" qname="operNS:findEmployeeCompetency" xmlns:operNS="http://webservice_layer" returnQName="retNS:findEmployeeCompetencyReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:EmployeeCompetency" xmlns:rtns="http://webservice_layer" soapAction="" >
-        <parameter qname="pns:Id" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
       <operation name="createEmployeeCompetency" qname="operNS:createEmployeeCompetency" xmlns:operNS="http://webservice_layer" returnQName="retNS:createEmployeeCompetencyReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:ec" xmlns:pns="http://webservice_layer" type="tns:EmployeeCompetency" xmlns:tns="http://webservice_layer"/>
-      </operation>
-      <operation name="deleteEmployeeCompetency" qname="operNS:deleteEmployeeCompetency" xmlns:operNS="http://webservice_layer" returnQName="retNS:deleteEmployeeCompetencyReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:ec" xmlns:pns="http://webservice_layer" type="tns:EmployeeCompetency" xmlns:tns="http://webservice_layer"/>
-      </operation>
-      <operation name="getAllEmployeeCompetencies" qname="operNS:getAllEmployeeCompetencies" xmlns:operNS="http://webservice_layer" returnQName="retNS:getAllEmployeeCompetenciesReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:EmployeeCompetency" xmlns:rtns="http://webservice_layer" soapAction="" >
       </operation>
       <operation name="findAllEmployeeCompetencies" qname="operNS:findAllEmployeeCompetencies" xmlns:operNS="http://webservice_layer" returnQName="retNS:findAllEmployeeCompetenciesReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:EmployeeCompetency" xmlns:rtns="http://webservice_layer" soapAction="" >
         <parameter qname="pns:Id" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
+      <operation name="deleteEmployeeCompetency" qname="operNS:deleteEmployeeCompetency" xmlns:operNS="http://webservice_layer" returnQName="retNS:deleteEmployeeCompetencyReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:ec" xmlns:pns="http://webservice_layer" type="tns:EmployeeCompetency" xmlns:tns="http://webservice_layer"/>
+      </operation>
       <operation name="updateEmployeeCompetency" qname="operNS:updateEmployeeCompetency" xmlns:operNS="http://webservice_layer" returnQName="retNS:updateEmployeeCompetencyReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:ec" xmlns:pns="http://webservice_layer" type="tns:EmployeeCompetency" xmlns:tns="http://webservice_layer"/>
+      </operation>
+      <operation name="findEmployeeCompetency" qname="operNS:findEmployeeCompetency" xmlns:operNS="http://webservice_layer" returnQName="retNS:findEmployeeCompetencyReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:EmployeeCompetency" xmlns:rtns="http://webservice_layer" soapAction="" >
+        <parameter qname="pns:Id" xmlns:pns="http://webservice_layer" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getAllEmployeeCompetencies" qname="operNS:getAllEmployeeCompetencies" xmlns:operNS="http://webservice_layer" returnQName="retNS:getAllEmployeeCompetenciesReturn" xmlns:retNS="http://webservice_layer" returnType="rtns:EmployeeCompetency" xmlns:rtns="http://webservice_layer" soapAction="" >
       </operation>
       <parameter name="allowedMethods" value="findAllEmployeeCompetencies updateEmployeeCompetency createEmployeeCompetency findEmployeeCompetency getAllEmployeeCompetencies deleteEmployeeCompetency"/>
 

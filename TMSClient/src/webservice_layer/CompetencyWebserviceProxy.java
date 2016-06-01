@@ -44,6 +44,18 @@ public class CompetencyWebserviceProxy implements webservice_layer.CompetencyWeb
     return competencyWebservice;
   }
   
+  public webservice_layer.Competency[] getAllCompetencies() throws java.rmi.RemoteException{
+    if (competencyWebservice == null)
+      _initCompetencyWebserviceProxy();
+    return competencyWebservice.getAllCompetencies();
+  }
+  
+  public webservice_layer.Competency findCompetency(int id) throws java.rmi.RemoteException{
+    if (competencyWebservice == null)
+      _initCompetencyWebserviceProxy();
+    return competencyWebservice.findCompetency(id);
+  }
+  
   public java.lang.String deleteCompetency(webservice_layer.Competency competency) throws java.rmi.RemoteException{
     if (competencyWebservice == null)
       _initCompetencyWebserviceProxy();
@@ -60,18 +72,6 @@ public class CompetencyWebserviceProxy implements webservice_layer.CompetencyWeb
     if (competencyWebservice == null)
       _initCompetencyWebserviceProxy();
     return competencyWebservice.createCompetency(competency);
-  }
-  
-  public webservice_layer.Competency findCompetency(int id) throws java.rmi.RemoteException{
-    if (competencyWebservice == null)
-      _initCompetencyWebserviceProxy();
-    return competencyWebservice.findCompetency(id);
-  }
-  
-  public webservice_layer.Competency[] getAllCompetencies() throws java.rmi.RemoteException{
-    if (competencyWebservice == null)
-      _initCompetencyWebserviceProxy();
-    return competencyWebservice.getAllCompetencies();
   }
   
   

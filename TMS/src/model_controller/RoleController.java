@@ -14,7 +14,7 @@ private RoleSQL RS = new RoleSQL();
 	public Role findRole(int Id){
 		return RS.FindRole(Id);
 	}
-	public RoleArray getAllRoles(){
+	public Role[] getAllRoles(){
 		return RS.getAllRoles();
 	}
 	public String deleteRole(Role role){

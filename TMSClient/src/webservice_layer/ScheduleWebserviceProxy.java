@@ -44,10 +44,10 @@ public class ScheduleWebserviceProxy implements webservice_layer.ScheduleWebserv
     return scheduleWebservice;
   }
   
-  public webservice_layer.Schedule findSchedule(int scheduleId) throws java.rmi.RemoteException{
+  public java.lang.String deleteSchedule(webservice_layer.Schedule schedule) throws java.rmi.RemoteException{
     if (scheduleWebservice == null)
       _initScheduleWebserviceProxy();
-    return scheduleWebservice.findSchedule(scheduleId);
+    return scheduleWebservice.deleteSchedule(schedule);
   }
   
   public void createSchedule(webservice_layer.Schedule schedule) throws java.rmi.RemoteException{
@@ -62,22 +62,22 @@ public class ScheduleWebserviceProxy implements webservice_layer.ScheduleWebserv
     return scheduleWebservice.updateSchedule(schedule);
   }
   
-  public java.lang.String deleteSchedule(webservice_layer.Schedule schedule) throws java.rmi.RemoteException{
+  public webservice_layer.Schedule findSchedule(int scheduleId) throws java.rmi.RemoteException{
     if (scheduleWebservice == null)
       _initScheduleWebserviceProxy();
-    return scheduleWebservice.deleteSchedule(schedule);
-  }
-  
-  public webservice_layer.Schedule[] findScheduleArrayByEmployeeDate(int employeeId, java.util.Calendar startTimeDate) throws java.rmi.RemoteException{
-    if (scheduleWebservice == null)
-      _initScheduleWebserviceProxy();
-    return scheduleWebservice.findScheduleArrayByEmployeeDate(employeeId, startTimeDate);
+    return scheduleWebservice.findSchedule(scheduleId);
   }
   
   public webservice_layer.Schedule[] findScheduleArray() throws java.rmi.RemoteException{
     if (scheduleWebservice == null)
       _initScheduleWebserviceProxy();
     return scheduleWebservice.findScheduleArray();
+  }
+  
+  public webservice_layer.Schedule[] findScheduleArrayByEmployeeDate(int employeeId, java.util.Calendar startTimeDate) throws java.rmi.RemoteException{
+    if (scheduleWebservice == null)
+      _initScheduleWebserviceProxy();
+    return scheduleWebservice.findScheduleArrayByEmployeeDate(employeeId, startTimeDate);
   }
   
   

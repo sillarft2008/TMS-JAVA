@@ -12,6 +12,10 @@ public class UserController {
     private	UserSQL US = new UserSQL();
     private UserRoleSQL URS = new UserRoleSQL();
     
+    public User[] FindUserArray()
+    {
+    	return US.FindUserArray();
+    }
     
     public void addRole(UserRole ur){
 		URS.CreateUserRole(ur);
@@ -41,5 +45,13 @@ public class UserController {
 
 	public Role[] FindRoleByUserId(String userId){
 		return  URS.FindRoleByUserId(userId);
+	}
+	
+	public String DeleteUserRoles(String userId){
+		return URS.DeleteUserRoles(userId);
+	}
+	
+	public String CreateUserRole(UserRole ur){
+		return URS.CreateUserRole(ur);
 	}
 }

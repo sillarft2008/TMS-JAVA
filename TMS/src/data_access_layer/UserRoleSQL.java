@@ -78,7 +78,7 @@ public class UserRoleSQL {
 		System.out.println("CreateUserRole");
 		try {
 			dbconn.connect();
-			dbconn.insert("INSERT INTO user_role (Id,userId,roleId) VALUES (" + ur.getId() + "," + ur.getUserId() + ","+ ur.getRoleId() + ")");
+			dbconn.insert("INSERT INTO user_role (userId,roleId) VALUES ('" + ur.getUserId() + "','"+ ur.getRoleId() + "')");
 			return "UserRole Created";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -102,5 +102,24 @@ public class UserRoleSQL {
 		return "Delete failed";
 	}
 	
+	public String DeleteUserRoles(String userId){
+		
+		System.out.println("DeleteUserRoles");
+		try {
+			dbconn.connect();
+			dbconn.delete("delete from user_role where userId = '" + userId + "'");
+			return "UserRoles Deleted";
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("error");
+		}
+		//finally{
+			//DBConnect.connClose();
+			//System.out.println("Closed Connection");
+		//}
+		return "DeleteUserRoles failed";
+	}
 
 }

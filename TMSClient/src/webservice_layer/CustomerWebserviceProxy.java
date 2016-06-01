@@ -44,16 +44,10 @@ public class CustomerWebserviceProxy implements webservice_layer.CustomerWebserv
     return customerWebservice;
   }
   
-  public java.lang.String deleteCustomer(webservice_layer.Customer cust) throws java.rmi.RemoteException{
+  public java.lang.String createCustomer(webservice_layer.Customer cust) throws java.rmi.RemoteException{
     if (customerWebservice == null)
       _initCustomerWebserviceProxy();
-    return customerWebservice.deleteCustomer(cust);
-  }
-  
-  public java.lang.String updateCustomer(webservice_layer.Customer cust) throws java.rmi.RemoteException{
-    if (customerWebservice == null)
-      _initCustomerWebserviceProxy();
-    return customerWebservice.updateCustomer(cust);
+    return customerWebservice.createCustomer(cust);
   }
   
   public webservice_layer.Customer findCustomer(int customerNo) throws java.rmi.RemoteException{
@@ -62,10 +56,16 @@ public class CustomerWebserviceProxy implements webservice_layer.CustomerWebserv
     return customerWebservice.findCustomer(customerNo);
   }
   
-  public java.lang.String createCustomer(webservice_layer.Customer cust) throws java.rmi.RemoteException{
+  public java.lang.String updateCustomer(webservice_layer.Customer cust) throws java.rmi.RemoteException{
     if (customerWebservice == null)
       _initCustomerWebserviceProxy();
-    return customerWebservice.createCustomer(cust);
+    return customerWebservice.updateCustomer(cust);
+  }
+  
+  public java.lang.String deleteCustomer(webservice_layer.Customer cust) throws java.rmi.RemoteException{
+    if (customerWebservice == null)
+      _initCustomerWebserviceProxy();
+    return customerWebservice.deleteCustomer(cust);
   }
   
   public webservice_layer.Customer[] findCustomerArray() throws java.rmi.RemoteException{

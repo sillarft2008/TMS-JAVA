@@ -44,22 +44,10 @@ public class EmployeeWebserviceProxy implements webservice_layer.EmployeeWebserv
     return employeeWebservice;
   }
   
-  public java.lang.String deleteEmployee(webservice_layer.Employee employee) throws java.rmi.RemoteException{
-    if (employeeWebservice == null)
-      _initEmployeeWebserviceProxy();
-    return employeeWebservice.deleteEmployee(employee);
-  }
-  
   public java.lang.String updateEmployee(webservice_layer.Employee employee) throws java.rmi.RemoteException{
     if (employeeWebservice == null)
       _initEmployeeWebserviceProxy();
     return employeeWebservice.updateEmployee(employee);
-  }
-  
-  public java.lang.String createEmployee(webservice_layer.Employee employee) throws java.rmi.RemoteException{
-    if (employeeWebservice == null)
-      _initEmployeeWebserviceProxy();
-    return employeeWebservice.createEmployee(employee);
   }
   
   public webservice_layer.Employee findEmployee(int id) throws java.rmi.RemoteException{
@@ -72,6 +60,18 @@ public class EmployeeWebserviceProxy implements webservice_layer.EmployeeWebserv
     if (employeeWebservice == null)
       _initEmployeeWebserviceProxy();
     return employeeWebservice.getAllEmployees();
+  }
+  
+  public java.lang.String deleteEmployee(webservice_layer.Employee employee) throws java.rmi.RemoteException{
+    if (employeeWebservice == null)
+      _initEmployeeWebserviceProxy();
+    return employeeWebservice.deleteEmployee(employee);
+  }
+  
+  public java.lang.String createEmployee(webservice_layer.Employee employee) throws java.rmi.RemoteException{
+    if (employeeWebservice == null)
+      _initEmployeeWebserviceProxy();
+    return employeeWebservice.createEmployee(employee);
   }
   
   
