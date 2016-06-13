@@ -19,7 +19,7 @@ public class ScheduleSQL {
 			int count = rs.getInt("result");
 			Schedule[] scheduleArray = new Schedule[count];
 			
-			ResultSet rs2 = dbconn.select("SELECT Id,employeeId,jobId,itemId,competencyId,startTimeDate,duration FROM schedule");
+			ResultSet rs2 = dbconn.select("SELECT Id,employeeId,jobId,competencyId,startTimeDate,duration FROM schedule");
 			int i = 0;
 			while (rs2.next()){
 				Schedule schedule = new Schedule();
@@ -27,7 +27,6 @@ public class ScheduleSQL {
 				System.out.println("employeeId=" + rs2.getString("employeeId"));
 				System.out.println("jobId=" + rs2.getString("jobId"));
 				System.out.println("competencyId=" + rs2.getInt("competencyId"));		
-				System.out.println("itemId=" + rs2.getString("itemId"));	
 				System.out.println("startTimeDate=" + rs2.getString("startTimeDate"));		
 				System.out.println("duration=" + rs2.getString("duration"));		
 				Employee employee = new Employee();
@@ -36,12 +35,9 @@ public class ScheduleSQL {
 				job.setId(rs2.getInt("jobId"));
 				Competency competency = new Competency();
 				competency.setId(rs2.getInt("competencyId"));
-				Item item = new Item();
-				item.setId(rs2.getInt("itemId"));
 				schedule.setId(rs2.getInt("Id"));
 				schedule.setEmployee(employee);
 				schedule.setJob(job);
-				schedule.setItem(item);
 				schedule.setCompetency(competency);
 				schedule.setStartTimeDate(rs2.getDate("startTimeDate"));
 				schedule.setDuration(rs2.getDate("duration"));
@@ -84,7 +80,6 @@ public class ScheduleSQL {
 				job.setId(rs2.getInt("jobId"));
 				Competency competency = new Competency();
 				competency.setId(rs2.getInt("competencyId"));
-				Item item = new Item();
 				schedule.setId(rs2.getInt("Id"));
 				schedule.setEmployee(employee);
 				schedule.setJob(job);
@@ -130,7 +125,6 @@ public class ScheduleSQL {
 				job.setId(rs2.getInt("jobId"));
 				Competency competency = new Competency();
 				competency.setId(rs2.getInt("competencyId"));
-				Item item = new Item();
 				schedule.setId(rs2.getInt("Id"));
 				schedule.setEmployee(employee);
 				schedule.setJob(job);
@@ -175,7 +169,6 @@ public class ScheduleSQL {
 				job.setId(rs2.getInt("jobId"));
 				Competency competency = new Competency();
 				competency.setId(rs2.getInt("competencyId"));
-				Item item = new Item();
 				schedule.setId(rs2.getInt("Id"));
 				schedule.setEmployee(employee);
 				schedule.setJob(job);
@@ -213,7 +206,6 @@ public class ScheduleSQL {
 			job.setId(rs2.getInt("jobId"));
 			Competency competency = new Competency();
 			competency.setId(rs2.getInt("competencyId"));
-			Item item = new Item();
 			schedule.setId(rs2.getInt("Id"));
 			schedule.setEmployee(employee);
 			schedule.setJob(job);
@@ -242,7 +234,7 @@ public class ScheduleSQL {
 			schedule.setId(count + 1);
 			}
 			
-			dbconn.insert("INSERT INTO schedule (Id,employeeId,jobId,competencyId,startTimeDate,duration) VALUES (" + schedule.getId() + "," + schedule.getEmployee().getId() + "," + schedule.getJob().getId() + "," + schedule.getItem().getId() + "," + schedule.getCompetency().getId() + ",'" + dbconn.convertDateTime(schedule.getStartTimeDate()) + "','" + dbconn.convertDateTime(schedule.getDuration()) + "')");
+			dbconn.insert("INSERT INTO schedule (Id,employeeId,jobId,competencyId,startTimeDate,duration) VALUES (" + schedule.getId() + "," + schedule.getEmployee().getId() + "," + schedule.getJob().getId() + "," + schedule.getCompetency().getId() + ",'" + dbconn.convertDateTime(schedule.getStartTimeDate()) + "','" + dbconn.convertDateTime(schedule.getDuration()) + "')");
 			dbconn.close();
 			return "Schedule Created";
 		} catch (SQLException e) {
